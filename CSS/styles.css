@@ -1,0 +1,52 @@
+* {
+  background-color: black;
+  font-family: "Bebas Neue", "Oswald", "Anton", "Arial", sans-serif;
+}
+
+p {
+  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+  color: white;
+}
+
+.Menu {
+  color: white;
+}
+
+.Titulo_Home {
+  color: white;
+}
+
+.Titulo_Seccion60s {
+  color: #e63946;
+  text-transform: uppercase;
+}
+
+.Titulo_Seccion70s {
+  color: #d97706;
+  text-transform: uppercase;
+}
+
+.Titulo_Seccion80s {
+  color: #fd24a6;
+  text-transform: uppercase;
+}
+
+.Titulo_Seccion90s {
+  color: #2563eb;
+  text-transform: uppercase;
+}
+
+.Titulo_Seccion00s {
+  color: #9ca3af;
+  text-transform: uppercase;
+}
+
+.Titulo_Seccion10s {
+  color: #dcebff;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  color: white;
+  text-transform: uppercase;
+}
