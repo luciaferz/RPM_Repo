@@ -8,8 +8,72 @@ p {
   color: white;
 }
 
+/* Menú */
 .Menu {
+  display: flex;
+  justify-content: space-between; /* RPM a la izquierda, lista a la derecha */
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 10px 20px;
+  font-family: "Oswald", sans-serif;
+}
+
+/* RPM destacado */
+.nav-link-home {
   color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-decoration: none;
+  position: relative; /* necesario para la línea */
+  transition: color 0.2s;
+}
+
+/* Hover RPM */
+.nav-link-home:hover {
+  color: #f20a0a;
+}
+
+/* Lista de enlaces a la derecha */
+.Menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 30px; /* poca separación entre enlaces */
+}
+
+/* Enlaces secundarios */
+.Menu ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 8px;
+  position: relative; /* para la línea animada */
+  transition: color 0.2s;
+}
+
+/* Hover: color rojo */
+.Menu ul li a:hover {
+  color: #f20a0a;
+}
+
+/* Línea animada debajo de los enlaces */
+.Menu ul li a::after,
+.nav-link-home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f20a0a;
+  transition: width 0.3s ease;
+}
+
+/* Línea al hover */
+.Menu ul li a:hover::after,
+.nav-link-home:hover::after {
+  width: 100%;
 }
 
 .Titulo_Home {
