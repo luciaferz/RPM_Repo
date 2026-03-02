@@ -78,136 +78,39 @@ p {
 
 .Titulo_Home {
   color: white;
-  font-weight: bold;
-  text-align: start;
-  font-size: 70px;
 }
 
 .Titulo_Seccion60s {
   color: #e63946;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900; /* más grueso */
 }
 
 .Titulo_Seccion70s {
   color: #d97706;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .Titulo_Seccion80s {
   color: #fd24a6;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .Titulo_Seccion90s {
   color: #2563eb;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .Titulo_Seccion00s {
   color: #9ca3af;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .Titulo_Seccion10s {
   color: #dcebff;
   text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .subtitulo {
   color: white;
   text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 650;
-}
-
-.car-scroll {
-  width: 800px; /* ancho total del catálogo */
-  margin: 60px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 60px; /* separación vertical entre tarjetas */
-}
-
-/* tarjeta completa */
-.car-card {
-  width: 100%; /* ocupa todo el ancho del contenedor */
-  perspective: 1000px; /* profundidad 3D para el giro */
-  margin: 0 auto;
-}
-
-/* contenedor interno que gira */
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 400px; /* altura de la primera imagen */
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* gira al pasar el ratón */
-.car-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* cara frontal y trasera */
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* imagen frontal */
-.card-front img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* cara trasera con info */
-.card-back {
-  color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-
-/* Las otras imágenes del coche */
-.car-card .car-image {
-  display: block; /* evita que se alineen horizontalmente */
-  width: 100%; /* ancho del contenedor */
-  height: 400px; /* mismo alto que la primera */
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 30px; /* separación entre imágenes */
-}
-
-/* Estilo para el enlace activo en el menú */
-.nav-link.active,
-.nav-link-home.active {
-  color: #f20a0a;
-  font-weight: 900;
-  border-bottom: 2px solid #f20a0a;
-  padding-bottom: 3px;
 }
