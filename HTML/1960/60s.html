@@ -11,10 +11,10 @@
 <body>
     <div class="Menu">
         <!-- Enlace al Home -->
-        <a href="Home.html" class="nav-link-home">RPM</a>
+        <a href="/HTML/Home/Home.html" class="nav-link-home">RPM</a>
 
         <!-- Enlaces a cada sección -->
-        <ul>
+        <ul translate="no">
             <li><a href="/HTML/1960/60s.html" class="nav-link">60s</a></li>
             <li><a href="/HTML/1970/70s.html" class="nav-link">70s</a></li>
             <li><a href="/HTML/1980/80s.html" class="nav-link">80s</a></li>
@@ -26,22 +26,72 @@
 
     <h1 class="Titulo_Seccion60s">1960 – Los Clásicos</h1>
 
-    <h2 class="subtitulo">Ford Mustang</h2>
-    <img src="img/Mustang_1.jpg" alt="Ford Mustang Frente">
-    <img src="img/Mustang_2.webp" alt="Ford Mustang Destras">
-    <img src="img/Muestang_3.webp" alt="Ford Mustang Interior">
+  <div class="car-scroll">
 
-    <h3 class="subtitulo">Chevrolet Camaro</h3>
-    <img src="img/Camaro_1.jpg" alt="Chevrolet Camaro Frente">
-    <img src="img/Camaro_2.avif" alt="Chevrolet Camaro Destras">
-    <img src="img/Camaro_3.jpg" alt="Chevrolet Camaro Interior">
+  <!-- Ford Mustang -->
+  <div class="car-card">
+    <div class="car-title-container">
+      <h2 class="subtitulo">Ford Mustang</h2>
+    </div>
 
-    <h4 class="subtitulo">Volkswagen Beetle</h4>
-    <img src="img/Escarabajo_1.webp" alt="Volkswagen Beetle Frente">
-    <img src="img/Escarabajo_2.jpg" alt="Volkswagen Beetle Destras">
-    <img src="img/Escarabajo_3.jpg" alt="Volkswagen Beetle Interior">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="img/Mustang_1.jpg" alt="Ford Mustang Frente">
+      </div>
+      <div class="card-back">
+        <h2>Ford Mustang 1967</h2>
+        <p>Motor V8, 450 CV</p>
+        <p>Color: Rojo</p>
+      </div>
+    </div>
 
-    <script src="../../js/script.js"></script>
+    <img class="car-image" src="img/Mustang_2.webp" alt="Ford Mustang Trasera">
+    <img class="car-image" src="img/Muestang_3.webp" alt="Ford Mustang Interior">
+  </div>
+
+  <!-- Chevrolet Camaro -->
+  <div class="car-card">
+    <div class="car-title-container">
+      <h2 class="subtitulo">Chevrolet Camaro</h2>
+    </div>
+
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="img/Camaro_1.jpg" alt="Chevrolet Camaro Frente">
+      </div>
+      <div class="card-back">
+        <h2>Chevrolet Camaro</h2>
+        <p>Motor V8, 480 CV</p>
+        <p>Color: Azul</p>
+      </div>
+    </div>
+
+    <img class="car-image" src="img/Camaro_2.avif" alt="Camaro Trasera">
+    <img class="car-image" src="img/Camaro_3.jpg" alt="Camaro Interior">
+  </div>
+
+  <!-- Volkswagen Beetle -->
+  <div class="car-card">
+    <div class="car-title-container">
+      <h2 class="subtitulo">Volkswagen Beetle</h2>
+    </div>
+
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="img/Escarabajo_1.jpg" alt="Volkswagen Beetle Frente">
+      </div>
+      <div class="card-back">
+        <h2>Volkswagen Beetle</h2>
+        <p>Motor 1.3, 50 CV</p>
+        <p>Color: Verde</p>
+      </div>
+    </div>
+
+    <img class="car-image" src="img/Escarabajo_2.jpg" alt="Beetle Trasera">
+    <img class="car-image" src="img/Escarabajo_3.jpg" alt="Beetle Interior">
+  </div>
+</div>
+    <script src="../../Java_Script/script.js"></script>
 </body>
 
 </html>
