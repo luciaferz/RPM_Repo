@@ -1,43 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coches de los años 00 - Lamborghini Gallardo, BMW M3 GTR, Porsche Carrera GT" />
     <title>2000 - Modernización</title>
 
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <!-- Bootstrap CSS (framework de estilos) desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace a CSS personalizado -->
+    <link rel="stylesheet" href="../../CSS/styles.css" />
   </head>
+
   <body>
-    <div class="Menu">
-      <!-- Enlace al Home -->
-      <a href="Home.html" class="nav-link-home">RPM</a>
+    <!-- NAV - Barra de navegación -->
+    <nav class="Menu">
+      <a href="../../HTML/Home/Home.html" class="nav-link-home">RPM</a>
 
-      <!-- Enlaces a cada sección -->
       <ul>
-        <li><a href="/HTML/1960/60s.html" class="nav-link">60s</a></li>
-        <li><a href="/HTML/1970/70s.html" class="nav-link">70s</a></li>
-        <li><a href="/HTML/1980/80s.html" class="nav-link">80s</a></li>
-        <li><a href="/HTML/1990/90s.html" class="nav-link">90s</a></li>
-        <li><a href="/HTML/2000/00s.html" class="nav-link">00s</a></li>
-        <li><a href="/HTML/2010/10s.html" class="nav-link">10s</a></li>
+        <li><a href="../../HTML/1960/60s.html" class="nav-link">60s</a></li>
+        <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
+        <li><a href="../../HTML/1980/80s.html" class="nav-link">80s</a></li>
+        <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
+        <li><a href="00s.html" class="nav-link">00s</a></li>
+        <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
       </ul>
-    </div>
-    <h1 class="Titulo_Seccion00s">2000 - Modernización</h1>
+    </nav>
 
-    <h2 class="subtitulo">Lamborghini Gallardo</h2>
-    <img src="img/Gallardo_1.avif" alt="Lamborghini Gallardo Frente" />
-    <img src="img/Gallardo_2.jpg" alt="Lamborghini Gallardo Destras" />
-    <img src="img/Gallardo_3.webp" alt="Lamborghini Gallardo Interior" />
+    <main>
+      <h1 class="Titulo_Seccion00s">2000 - Modernización</h1>
 
-    <h3 class="subtitulo">BMW M3 GTR</h3>
-    <img src="img/M3_1.webp" alt="BMW M3 GTR Frente" />
-    <img src="img/M3_2.jpeg" alt="BMW M3 GTR Destras" />
-    <img src="img/M3_3.avif" alt="BMW M3 GTR Interior" />
+      <div class="car-scroll">
+        
+        <!-- TARJETA 1: Lamborghini Gallardo -->
+        <article class="car-card">
+          <h2 class="subtitulo">Lamborghini Gallardo</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/Gallardo_1.avif" alt="Lamborghini Gallardo - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>Lamborghini Gallardo</h2>
+              <p>Motor V10, 520 CV</p>
+              <p>Producción más exitosa de Lamborghini</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/Gallardo_2.jpg" alt="Lamborghini Gallardo - Vista trasera" />
+          <img class="car-image" src="img/Gallardo_3.webp" alt="Lamborghini Gallardo - Interior" />
+        </article>
 
-    <h4 class="subtitulo">Porsche Carrera GT</h4>
-    <img src="img/PorscheGT_1.jpg" alt="Porsche Carrera GT MK4 Frente" />
-    <img src="img/PorscheGT_2.jpeg" alt="Porsche Carrera GT Destras" />
-    <img src="img/PorscheGT_3.avif" alt="Porsche Carrera GT Interior" />
+        <!-- TARJETA 2: BMW M3 GTR -->
+        <article class="car-card">
+          <h2 class="subtitulo">BMW M3 GTR</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/M3_1.webp" alt="BMW M3 GTR - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>BMW M3 GTR E46</h2>
+              <p>Motor V8, 360 CV</p>
+              <p>Campeón de endurance</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/M3_2.jpeg" alt="BMW M3 GTR - Vista trasera" />
+          <img class="car-image" src="img/M3_3.avif" alt="BMW M3 GTR - Interior" />
+        </article>
+
+        <!-- TARJETA 3: Porsche Carrera GT -->
+        <article class="car-card">
+          <h2 class="subtitulo">Porsche Carrera GT</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/PorscheGT_1.jpg" alt="Porsche Carrera GT - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>Porsche Carrera GT</h2>
+              <p>Motor V10, 612 CV</p>
+              <p>Superdeportivo híbrido</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/PorscheGT_2.jpeg" alt="Porsche Carrera GT - Vista trasera" />
+          <img class="car-image" src="img/PorscheGT_3.avif" alt="Porsche Carrera GT - Interior" />
+        </article>
+
+      </div>
+    </main>
 
     <script src="../../Java_Script/script.js"></script>
   </body>

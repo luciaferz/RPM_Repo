@@ -1,45 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coches de los años 80 - DeLorean, Ferrari Testarossa, BMW M3 E30" />
     <title>1980 - Tecnología emergente</title>
 
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <!-- Bootstrap CSS (framework de estilos) desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace a CSS personalizado -->
+    <link rel="stylesheet" href="../../CSS/styles.css" />
   </head>
+
   <body>
-    <div class="Menu">
-      <!-- Enlace al Home -->
-      <a href="Home.html" class="nav-link-home">RPM</a>
+    <!-- NAV - Barra de navegación -->
+    <nav class="Menu">
+      <a href="../../HTML/Home/Home.html" class="nav-link-home">RPM</a>
 
-      <!-- Enlaces a cada sección -->
       <ul>
-        <li><a href="/HTML/1960/60s.html" class="nav-link">60s</a></li>
-        <li><a href="/HTML/1970/70s.html" class="nav-link">70s</a></li>
-        <li><a href="/HTML/1980/80s.html" class="nav-link">80s</a></li>
-        <li><a href="/HTML/1990/90s.html" class="nav-link">90s</a></li>
-        <li><a href="/HTML/2000/00s.html" class="nav-link">00s</a></li>
-        <li><a href="/HTML/2010/10s.html" class="nav-link">10s</a></li>
+        <li><a href="../../HTML/1960/60s.html" class="nav-link">60s</a></li>
+        <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
+        <li><a href="80s.html" class="nav-link">80s</a></li>
+        <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
+        <li><a href="../../HTML/2000/00s.html" class="nav-link">00s</a></li>
+        <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <h1 class="Titulo_Seccion80s">1980 - Tecnología emergente</h1>
+    <main>
+      <h1 class="Titulo_Seccion80s">1980 - Tecnología emergente</h1>
 
-    <h2 class="subtitulo">DeLorean DMC-12</h2>
-    <img src="img/DeLorean_1.webp" alt="DeLorean DMC-12 Frente" />
-    <img src="img/DeLorean_2.webp" alt="DeLorean DMC-12 Destras" />
-    <img src="img/Delorean_3.jfif" alt="DeLorean DMC-12 Interior" />
+      <div class="car-scroll">
+        
+        <!-- TARJETA 1: DeLorean DMC-12 -->
+        <article class="car-card">
+          <h2 class="subtitulo">DeLorean DMC-12</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/DeLorean_1.webp" alt="DeLorean DMC-12 - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>DeLorean DMC-12</h2>
+              <p>Motor V6, 130 CV</p>
+              <p>Puertas de alas de gaviota</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/DeLorean_2.webp" alt="DeLorean DMC-12 - Vista lateral" />
+          <img class="car-image" src="img/Delorean_3.jfif" alt="DeLorean DMC-12 - Interior" />
+        </article>
 
-    <h3 class="subtitulo">Ferrari Testarossa</h3>
-    <img src="img/Testarrosa_1.jpg" alt="Ferrari Testarossa Frente" />
-    <img src="img/Testarrosa_2.jpg" alt="Ferrari Testarossa Destras" />
-    <img src="img/Testarrosa_3.jpg" alt="Ferrari Testarossa Maletero" />
-    <img src="img/Testarrosa_4.webp" alt="Ferrari Testarossa Interior" />
+        <!-- TARJETA 2: Ferrari Testarossa -->
+        <article class="car-card">
+          <h2 class="subtitulo">Ferrari Testarossa</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/Testarrosa_1.jpg" alt="Ferrari Testarossa - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>Ferrari Testarossa</h2>
+              <p>Motor V12 Flat, 390 CV</p>
+              <p>Icono de los 80</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/Testarrosa_2.jpg" alt="Ferrari Testarossa - Vista trasera" />
+          <img class="car-image" src="img/Testarrosa_3.jpg" alt="Ferrari Testarossa - Detalle" />
+          <img class="car-image" src="img/Testarrosa_4.webp" alt="Ferrari Testarossa - Interior" />
+        </article>
 
-    <h4 class="subtitulo">BMW M3 E30</h4>
-    <img src="img/E30_1.avif" alt="BMW M3 E30 Frente" />
-    <img src="img/E30_2.jpg" alt="BMW M3 E30 Destras" />
-    <img src="img/E30_3.jpg" alt="BMW M3 E30 Interior" />
+        <!-- TARJETA 3: BMW M3 E30 -->
+        <article class="car-card">
+          <h2 class="subtitulo">BMW M3 E30</h2>
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/E30_1.avif" alt="BMW M3 E30 - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>BMW M3 E30</h2>
+              <p>Motor 4 cil, 215 CV</p>
+              <p>Legendario coche de turismo</p>
+            </div>
+          </div>
+          <img class="car-image" src="img/E30_2.jpg" alt="BMW M3 E30 - Vista trasera" />
+          <img class="car-image" src="img/E30_3.jpg" alt="BMW M3 E30 - Interior" />
+        </article>
+
+      </div>
+    </main>
 
     <script src="../../Java_Script/script.js"></script>
   </body>

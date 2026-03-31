@@ -1,26 +1,81 @@
-// Detecta la página actual y resaltar en el menú
+/* ============================================
+   SCRIPT.JS - Funcionalidades JavaScript
+   del proyecto RPM (Proyecto Educativo)
+   
+   Contenido:
+   1. Resaltar página activa en el menú
+   2. Detectar la URL actual y comparar con enlaces
+   ============================================ */
+
+/* ============================================
+   FUNCIÓN: highlightActivePage()
+   ============================================
+   Propósito: Resaltar el enlace del menú que
+   corresponde a la página actual.
+   
+   Cómo funciona:
+   1. Obtiene la ruta actual del navegador
+   2. Selecciona todos los enlaces del menú
+   3. Compara la URL actual con cada href
+   4. Añade/quita la clase 'active'
+   
+   Conceptos aprendidos:
+   - window.location.pathname: ruta actual
+   - document.querySelectorAll(): seleccionar varios
+   - forEach(): recorrer elementos
+   - getAttribute(): obtener valor de atributo
+   - classList.add/remove(): modificar clases CSS
+   ============================================ */
 function highlightActivePage() {
-  // Obtener la URL actual
+  // window.location.pathname devuelve la ruta actual
+  // Ejemplo: "/HTML/1960/60s.html"
   const currentPath = window.location.pathname;
 
-  // Obtener todos los enlaces del menú
+  // Selecciona todos los enlaces (<a>) dentro del menú
+  // document.querySelectorAll devuelve una NodeList (lista)
   const navLinks = document.querySelectorAll(".Menu a");
 
+  // forEach permite recorrer cada elemento de la lista
   navLinks.forEach((link) => {
-    // Obtener el href del enlace
+    // getAttribute("href") obtiene el valor del atributo href
+    // Ejemplo: "../../HTML/1960/60s.html"
     const href = link.getAttribute("href");
 
-    // Comparar si el enlace corresponde a la página actual
+    // Comparación:
+    // - currentPath.includes(href): la URL contiene la ruta del enlace
+    // - Especial caso para Home: si la URL contiene "Home"
     if (
       currentPath.includes(href) ||
       (currentPath.includes("Home") && href.includes("Home.html"))
     ) {
+      // Añadir clase 'active' para resaltar visualmente
       link.classList.add("active");
     } else {
+      // Quitar clase si no corresponde (por si se navega atrás)
       link.classList.remove("active");
     }
   });
 }
 
-// Ejecutar cuando carga la página
+/* ============================================
+   EVENTO: DOMContentLoaded
+   ============================================
+   Ejecuta el código cuando el HTML está listo
+   (antes de cargar imágenes y otros recursos).
+   
+   Esto asegura que el script funcione después
+   de que el DOM exista pero antes de que todo
+   esté completamente cargado.
+   ============================================ */
 document.addEventListener("DOMContentLoaded", highlightActivePage);
+
+/* ============================================
+   NOTA EDUCATIVA: Rutas relativas vs absolutas
+   ============================================
+   - Rutas relativas: "../CSS/styles.css" (respecto al archivo actual)
+   - Rutas absolutas: "/HTML/1960/60s.html" (desde raíz del servidor)
+   
+   En este proyecto usamos rutas relativas para
+   que funcione al abrir archivos directamente
+   desde el explorador (sin servidor).
+   ============================================ */

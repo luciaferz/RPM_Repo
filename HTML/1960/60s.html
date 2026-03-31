@@ -1,66 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
+    <!-- Codificación UTF-8 para caracteres especiales -->
     <meta charset="UTF-8" />
+    <!-- Viewport para diseño responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta description para SEO -->
+    <meta name="description" content="Coches clásicos de los años 60 - Ford Mustang, Chevrolet Camaro, Volkswagen Beetle" />
+    <!-- Título de la página -->
     <title>1960 – Los Clásicos</title>
 
+    <!-- Bootstrap CSS (framework de estilos) desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace a CSS personalizado -->
     <link rel="stylesheet" href="../../CSS/styles.css" />
   </head>
 
   <body>
-    <div class="Menu">
+    <!-- ============================================
+         NAV - Barra de navegación
+         ============================================ -->
+    <nav class="Menu">
       <!-- Enlace al Home -->
-      <a href="/HTML/Home/Home.html" class="nav-link-home">RPM</a>
+      <a href="../../HTML/Home/Home.html" class="nav-link-home">RPM</a>
 
-      <!-- Enlaces a cada sección -->
+      <!-- Enlaces a cada década -->
       <ul translate="no">
-        <li><a href="/HTML/1960/60s.html" class="nav-link">60s</a></li>
-        <li><a href="/HTML/1970/70s.html" class="nav-link">70s</a></li>
-        <li><a href="/HTML/1980/80s.html" class="nav-link">80s</a></li>
-        <li><a href="/HTML/1990/90s.html" class="nav-link">90s</a></li>
-        <li><a href="/HTML/2000/00s.html" class="nav-link">00s</a></li>
-        <li><a href="/HTML/2010/10s.html" class="nav-link">10s</a></li>
+        <li><a href="60s.html" class="nav-link">60s</a></li>
+        <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
+        <li><a href="../../HTML/1980/80s.html" class="nav-link">80s</a></li>
+        <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
+        <li><a href="../../HTML/2000/00s.html" class="nav-link">00s</a></li>
+        <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <h1 class="Titulo_Seccion60s">1960 – Los Clásicos</h1>
+    <!-- ============================================
+         MAIN - Contenido principal
+         ============================================ -->
+    <main>
+      <h1 class="Titulo_Seccion60s">1960 – Los Clásicos</h1>
 
-    <div class="car-scroll">
-      <!-- Ford Mustang -->
-      <div class="car-card">
-        <div class="car-title-container">
+      <!-- Contenedor de tarjetas de coches -->
+      <div class="car-scroll">
+        
+        <!-- ============================================
+             TARJETA 1: Ford Mustang
+             Estructura flip-card:
+             - car-card: contenedor principal con perspective
+             - card-inner: elemento que gira 180°
+             - card-front: cara visible inicialmente (imagen)
+             - card-back: cara oculta (información)
+             ============================================ -->
+        <article class="car-card">
+          <!-- Título del coche (fuera del flip para que siempre sea visible) -->
           <h2 class="subtitulo">Ford Mustang</h2>
+          
+          <!-- Contenedor interno que realiza el giro -->
           <div class="card-inner">
+            <!-- Cara frontal: imagen del coche -->
             <div class="card-front">
-              <img src="img/Mustang_1.jpg" alt="Ford Mustang Frente" />
+              <img src="img/Mustang_1.jpg" alt="Ford Mustang - Vista frontal" />
             </div>
+            <!-- Cara trasera: información del coche -->
             <div class="card-back">
               <h2>Ford Mustang 1967</h2>
               <p>Motor V8, 450 CV</p>
               <p>Color: Rojo</p>
             </div>
           </div>
-        </div>
-        <img
-          class="car-image"
-          src="img/Mustang_2.webp"
-          alt="Ford Mustang Trasera"
-        />
-        <img
-          class="car-image"
-          src="img/Muestang_3.webp"
-          alt="Ford Mustang Interior"
-        />
-      </div>
+          
+          <!-- Imágenes adicionales (vista trasera e interior) -->
+          <img class="car-image" src="img/Mustang_2.webp" alt="Ford Mustang - Vista trasera" />
+          <img class="car-image" src="img/Muestang_3.webp" alt="Ford Mustang - Interior" />
+        </article>
 
-      <!-- Chevrolet Camaro -->
-      <div class="car-card">
-        <div class="car-title-container">
+        <!-- ============================================
+             TARJETA 2: Chevrolet Camaro
+             Misma estructura flip-card
+             ============================================ -->
+        <article class="car-card">
           <h2 class="subtitulo">Chevrolet Camaro</h2>
           <div class="card-inner">
             <div class="card-front">
-              <img src="img/Camaro_1.jpg" alt="Chevrolet Camaro Frente" />
+              <img src="img/Camaro_1.jpg" alt="Chevrolet Camaro - Vista frontal" />
             </div>
             <div class="card-back">
               <h2>Chevrolet Camaro</h2>
@@ -68,39 +92,33 @@
               <p>Color: Azul</p>
             </div>
           </div>
-        </div>
-        <img class="car-image" src="img/Camaro_2.avif" alt="Camaro Trasera" />
-        <img class="car-image" src="img/Camaro_3.jpg" alt="Camaro Interior" />
-      </div>
+          <img class="car-image" src="img/Camaro_2.avif" alt="Chevrolet Camaro - Vista trasera" />
+          <img class="car-image" src="img/Camaro_3.jpg" alt="Chevrolet Camaro - Interior" />
+        </article>
 
-      <!-- Volkswagen Beetle -->
-      <div class="car-card">
-        <div class="car-title-container">
+        <!-- ============================================
+             TARJETA 3: Volkswagen Beetle
+             ============================================ -->
+        <article class="car-card">
           <h2 class="subtitulo">Volkswagen Beetle</h2>
-        </div>
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="img/Escarabajo_1.webp" alt="Volkswagen Beetle Frente" />
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="img/Escarabajo_1.webp" alt="Volkswagen Beetle - Vista frontal" />
+            </div>
+            <div class="card-back">
+              <h2>Volkswagen Beetle</h2>
+              <p>Motor 1.3, 50 CV</p>
+              <p>Color: Verde</p>
+            </div>
           </div>
-          <div class="card-back">
-            <h2>Volkswagen Beetle</h2>
-            <p>Motor 1.3, 50 CV</p>
-            <p>Color: Verde</p>
-          </div>
-        </div>
-        <img
-          class="car-image"
-          src="img/Escarabajo_2.jpg"
-          alt="Beetle Trasera"
-        />
-        <img
-          class="car-image"
-          src="img/Escarabajo_3.jpg"
-          alt="Beetle Interior"
-        />
-      </div>
-    </div>
+          <img class="car-image" src="img/Escarabajo_2.jpg" alt="Volkswagen Beetle - Vista trasera" />
+          <img class="car-image" src="img/Escarabajo_3.jpg" alt="Volkswagen Beetle - Interior" />
+        </article>
 
+      </div>
+    </main>
+
+    <!-- Script JavaScript al final del body -->
     <script src="../../Java_Script/script.js"></script>
   </body>
 </html>

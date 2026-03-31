@@ -1,44 +1,108 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
+  <!-- Codificación de caracteres UTF-8 para admitir tildes y caracteres especiales -->
   <meta charset="UTF-8" />
+  
+  <!-- Viewport: hace que la página sea responsive en dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  
+  <!-- Meta description: breve descripción para SEO (buscadores) -->
+  <meta name="description" content="RPM - Museo virtual de coches icónicos por décadas. Desde los clásicos de los 60 hasta los superdeportivos modernos." />
+  
+  <!-- Título de la página (visible en pestaña del navegador) -->
+  <title>RPM - Coches por Décadas</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="../../css/styles.css" />
-
+  <!-- Bootstrap CSS primero (framework de estilos) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap JS + Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Mis estilos personalizados después (sobrescriben Bootstrap) -->
+  <link rel="stylesheet" href="../../CSS/styles.css" />
 </head>
 
 <body>
-  <div id="root"></div>
-
-  <div class="Menu">
-    <!-- Enlace al Home -->
+  <!-- ============================================
+       ETIQUETA SEMÁNTICA <nav>
+       Representa la barra de navegación principal
+       ============================================ -->
+  <nav class="Menu">
+    <!-- Enlace al Home (logo de la web) -->
     <a href="Home.html" class="nav-link-home">RPM</a>
 
-    <!-- Enlace a cada seccion -->
+    <!-- Lista de enlaces a cada sección -->
+    <!-- ruta relativa: ../../HTML/1960/60s.html - sube 2 niveles y entra en carpeta -->
     <ul>
-      <li><a href="/HTML/1960/60s.html" class="nav-link">60s</a></li>
-      <li><a href="/HTML/1970/70s.html" class="nav-link">70s</a></li>
-      <li><a href="/HTML/1980/80s.html" class="nav-link">80s</a></li>
-      <li><a href="/HTML/1990/90s.html" class="nav-link">90s</a></li>
-      <li><a href="/HTML/2000/00s.html" class="nav-link">00s</a></li>
-      <li><a href="/HTML/2010/10s.html" class="nav-link">10s</a></li>
+      <li><a href="../../HTML/1960/60s.html" class="nav-link">60s</a></li>
+      <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
+      <li><a href="../../HTML/1980/80s.html" class="nav-link">80s</a></li>
+      <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
+      <li><a href="../../HTML/2000/00s.html" class="nav-link">00s</a></li>
+      <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
     </ul>
-    </header>
-  </div>
+  </nav>
 
-  <h1 class="Titulo_Home">RMP</h1>
+  <!-- Título principal de la página de inicio -->
+  <h1 class="Titulo_Home">RPM</h1>
 
- 
+  <!-- ============================================
+       ETIQUETA SEMÁNTICA <main>
+       Indica el contenido principal de la página
+       ============================================ -->
+  <main>
+    <!-- Texto de bienvenida -->
+    <p class="bienvenida">Bienvenido al museo virtual de coches icónicos.<br>Explora las décadas desde los 60 hasta hoy.</p>
+    
+    <!-- ============================================
+         LÍNEA DEL TIEMPO VISUAL
+         Muestra una imagen representativa por década
+         como entrada visual al contenido
+         Cada item es un enlace a la página de su década
+         ============================================ -->
+    <section class="timeline">
+      <!-- 60s: Chevrolet Camaro -->
+      <a href="../../HTML/1960/60s.html" class="timeline-item">
+        <img src="../../HTML/1960/img/Camaro_1.jpg" alt="Década 1960" class="timeline-img">
+        <span class="timeline-year">60s</span>
+      </a>
+      
+      <!-- 70s: Porsche 911 -->
+      <a href="../../HTML/1970/70s.html" class="timeline-item">
+        <img src="../../HTML/1970/img/Porsche_1.jfif" alt="Década 1970" class="timeline-img">
+        <span class="timeline-year">70s</span>
+      </a>
+      
+      <!-- 80s: BMW M3 E30 -->
+      <a href="../../HTML/1980/80s.html" class="timeline-item">
+        <img src="../../HTML/1980/img/E30_1.avif" alt="Década 1980" class="timeline-img">
+        <span class="timeline-year">80s</span>
+      </a>
+      
+      <!-- 90s: Toyota Supra -->
+      <a href="../../HTML/1990/90s.html" class="timeline-item">
+        <img src="../../HTML/1990/img/Supra_1.webp" alt="Década 1990" class="timeline-img">
+        <span class="timeline-year">90s</span>
+      </a>
+      
+      <!-- 00s: Porsche Carrera GT -->
+      <a href="../../HTML/2000/00s.html" class="timeline-item">
+        <img src="../../HTML/2000/img/PorscheGT_1.jpg" alt="Década 2000" class="timeline-img">
+        <span class="timeline-year">00s</span>
+      </a>
+      
+      <!-- 10s: Lamborghini Aventador -->
+      <a href="../../HTML/2010/10s.html" class="timeline-item">
+        <img src="../../HTML/2010/img/Aventador_1.webp" alt="Década 2010" class="timeline-img">
+        <span class="timeline-year">10s</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Enlace al script JavaScript (al final del body para mejor rendimiento) -->
   <script src="../../Java_Script/script.js"></script>
+
+  <!-- Bootstrap JS al final del body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

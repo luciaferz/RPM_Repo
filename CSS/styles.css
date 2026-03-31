@@ -1,14 +1,50 @@
+/* ============================================
+   IMPORTAR FUENTES ANTES QUE NADA
+   Google Fonts debe cargarse primero
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap');
+
+/* ============================================
+   RESET BÁSICO
+   El selector * aplica a TODOS los elementos
+   box-sizing: incluye padding/border en el ancho
+   ============================================ */
 * {
-  background-color: black;
-  font-family: "Bebas Neue", "Oswald", "Anton", "Arial", sans-serif;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+  font-family: "Bebas Neue", "Oswald", "Anton", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   OVERRIDES PARA BOOTSTRAP
+   Asegurar que Bootstrap no sobrescriba estilos
+   ============================================ */
+.bg-dark {
+  background-color: black !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+/* p: párrafos - fuente secundaria */
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
   color: white;
 }
 
-/* Menú */
+/* ============================================
+   MENÚ DE NAVEGACIÓN
+   Estructura flexbox para distribuir elementos
+   - display: flex = contenedor flexible
+   - justify-content: espacio entre elementos
+   - align-items: centrado vertical
+   ============================================ */
 .Menu {
   display: flex;
   justify-content: space-between; /* RPM a la izquierda, lista a la derecha */
@@ -19,45 +55,65 @@ p {
   font-family: "Oswald", sans-serif;
 }
 
-/* RPM destacado */
+/* ============================================
+   ENLACE RPM (LOGO)
+   position: relative necesario para la línea
+   animada con ::after
+   transition: permite animación suave del color
+   ============================================ */
 .nav-link-home {
   color: white;
   font-weight: bold;
   font-size: 1.3em;
   text-decoration: none;
-  position: relative; /* necesario para la línea */
+  position: relative;
   transition: color 0.2s;
 }
 
-/* Hover RPM */
+/* Hover: cambia color al pasar el ratón */
 .nav-link-home:hover {
   color: #f20a0a;
 }
 
-/* Lista de enlaces a la derecha */
+/* ============================================
+   LISTA DE ENLACES DEL MENÚ
+   - list-style: none = elimina viñetas
+   - display: flex = elementos en línea
+   - gap: separación entre elementos
+   ============================================ */
 .Menu ul {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 30px; /* poca separación entre enlaces */
+  gap: 30px;
 }
 
-/* Enlaces secundarios */
+/* ============================================
+   ENLACES SECUNDARIOS DEL MENÚ
+   position: relative necesario para ::after
+   transition: animación suave
+   ============================================ */
 .Menu ul li a {
   color: white;
   text-decoration: none;
   padding: 5px 8px;
-  position: relative; /* para la línea animada */
+  position: relative;
   transition: color 0.2s;
 }
 
-/* Hover: color rojo */
+/* Hover: color rojo al pasar ratón */
 .Menu ul li a:hover {
   color: #f20a0a;
 }
 
-/* Línea animada debajo de los enlaces */
+/* ============================================
+   LÍNEA ANIMADA BAJO ENLACES
+   ::after = pseudo-elemento que se genera
+   después del contenido del elemento
+   - width: 0% → 100% en hover
+   - transition: animación suave
+   ============================================ */
 .Menu ul li a::after,
 .nav-link-home::after {
   content: "";
@@ -70,12 +126,17 @@ p {
   transition: width 0.3s ease;
 }
 
-/* Línea al hover */
+/* Línea completa al hacer hover */
 .Menu ul li a:hover::after,
 .nav-link-home:hover::after {
   width: 100%;
 }
 
+/* ============================================
+   TÍTULOS DE PÁGINA
+   text-transform: uppercase = texto en mayúsculas
+   font-weight:900 = texto muy grueso
+   ============================================ */
 .Titulo_Home {
   color: white;
   font-weight: bold;
@@ -87,7 +148,7 @@ p {
   color: #e63946;
   text-transform: uppercase;
   font-size: 60px;
-  font-weight: 900; /* más grueso */
+  font-weight: 900;
 }
 
 .Titulo_Seccion70s {
@@ -132,36 +193,57 @@ p {
   font-weight: 650;
 }
 
+/* ============================================
+   CONTENEDOR DE TARJETAS (CATÁLOGO)
+   - flex-direction: column = tarjetas apiladas
+   - gap: espacio entre tarjetas
+   - margin: auto = centrar contenedor
+   ============================================ */
 .car-scroll {
-  width: 800px; /* ancho total del catálogo */
+  width: 800px;
   margin: 60px auto;
   display: flex;
   flex-direction: column;
-  gap: 60px; /* separación vertical entre tarjetas */
+  gap: 60px;
 }
 
-/* tarjeta completa */
+/* ============================================
+   TARJETA INDIVIDUAL (FLIP CARD)
+   - perspective: crea efecto 3D
+   - perspective: 1000px = distancia del observador
+   al plano de la tarjeta (más = menos efecto 3D)
+   ============================================ */
 .car-card {
-  width: 100%; /* ocupa todo el ancho del contenedor */
-  perspective: 1000px; /* profundidad 3D para el giro */
+  width: 100%;
+  perspective: 1000px;
   margin: 0 auto;
 }
 
-/* contenedor interno que gira */
+/* ============================================
+   CONTENEDOR INTERNO DE LA TARJETA
+   - transform-style: preserve-3d = mantiene
+   los hijos en espacio 3D
+   - transition: animación del giro (0.8s)
+   ============================================ */
 .card-inner {
   position: relative;
   width: 100%;
-  height: 400px; /* altura de la primera imagen */
+  height: 400px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
-/* gira al pasar el ratón */
+/* Al hacer hover en la tarjeta, gira 180 grados */
 .car-card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-/* cara frontal y trasera */
+/* ============================================
+   CARAS DELANTERA Y TRASERA
+   - position: absolute = ambas caras en mismo lugar
+   - backface-visibility: hidden = oculta la cara
+  背部 cuando no está visible
+   ============================================ */
 .card-front,
 .card-back {
   position: absolute;
@@ -172,7 +254,7 @@ p {
   overflow: hidden;
 }
 
-/* imagen frontal */
+/* Imagen frontal */
 .card-front img {
   display: block;
   width: 100%;
@@ -181,7 +263,11 @@ p {
   border-radius: 10px;
 }
 
-/* cara trasera con info */
+/* ============================================
+   CARA TRASERA (INFO DEL COCHE)
+   - rotateY(180deg): ya está girada inicialmente
+   - display: flex para centrar contenido
+   ============================================ */
 .card-back {
   color: white;
   transform: rotateY(180deg);
@@ -193,21 +279,133 @@ p {
   text-align: center;
 }
 
-/* Las otras imágenes del coche */
+/* Imágenes adicionales del coche */
 .car-card .car-image {
-  display: block; /* evita que se alineen horizontalmente */
-  width: 100%; /* ancho del contenedor */
-  height: 400px; /* mismo alto que la primera */
+  display: block;
+  width: 100%;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: 30px; /* separación entre imágenes */
+  margin-top: 30px;
 }
 
-/* Estilo para el enlace activo en el menú */
+/* ============================================
+   ESTILO PARA ENLACE ACTIVO EN MENÚ
+   Indica la página actual
+   ============================================ */
 .nav-link.active,
 .nav-link-home.active {
   color: #f20a0a;
   font-weight: 900;
   border-bottom: 2px solid #f20a0a;
   padding-bottom: 3px;
+}
+
+/* ============================================
+   BIENVENIDA - TEXTO DE PRESENTACIÓN
+   ============================================ */
+.bienvenida {
+  text-align: center;
+  font-size: 1.3em;
+  margin: 30px 0;
+  line-height: 1.6;
+}
+
+/* ============================================
+   LÍNEA DEL TIEMPO - TIMELINE
+   Contenedor horizontal con miniaturas
+   ============================================ */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: linear-gradient(90deg, #e63946, #d97706, #fd24a6, #2563eb, #9ca3af, #dcebff);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.timeline-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.timeline-year {
+  display: block;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.timeline-year:hover {
+  color: #f20a0a;
+}
+
+/* ============================================
+   DISEÑO RESPONSIVE - MÓVIL
+   Cambia a disposición vertical
+   ============================================ */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .timeline::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: auto;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .timeline-img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+  
+  .timeline-year {
+    margin-top: 0;
+    font-size: 1em;
+  }
 }
