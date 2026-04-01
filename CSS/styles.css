@@ -345,14 +345,6 @@ p {
    DESTACADOS - CATÁLOGO DE COCHES
    ============================================ */
 
-/* TITULO */
-.destacado {
-  text-align: center;
-  color: white;
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-
 /* CONTENEDOR */
 .car-showcase {
   height: 420px;
