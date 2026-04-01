@@ -302,73 +302,198 @@ p {
 }
 
 /* ============================================
-   BIENVENIDA - TEXTO DE PRESENTACIÓN
+    HERO SECTION
    ============================================ */
-.bienvenida {
+.hero {
+  height: 100vh;
+  background: url('../HTML/Home/img/hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.5s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero p {
+  color: #ccc;
+}
+
+/* ============================================
+   DESTACADOS - CATÁLOGO DE COCHES
+   ============================================ */
+
+/* TITULO */
+.destacado {
   text-align: center;
-  font-size: 1.3em;
-  margin: 30px 0;
-  line-height: 1.6;
+  color: white;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* CONTENEDOR */
+.car-showcase {
+  height: 420px;
+}
+
+/* PANEL */
+.car-panel {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* IMAGEN */
+.car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position:  center center; 
+  display: block;
+  transition: 0.5s ease;
+}
+
+/* OSCURECER SUAVE */
+.car-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  transition: 0.4s;
+}
+
+/* TEXTO */
+.overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+.overlay h3 {
+  font-weight: bold;
+}
+
+.overlay p {
+  color: white;
+}
+
+/* HOVER EFECTO */
+.car-panel:hover .car-img {
+  transform: scale(1.1);
+  filter: blur(4px) brightness(0.7);
+}
+
+.car-panel:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.car-panel:hover::after {
+  background: rgba(0,0,0,0.6);
 }
 
 /* ============================================
    LÍNEA DEL TIEMPO - TIMELINE
    Contenedor horizontal con miniaturas
    ============================================ */
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px;
+.timeline-modern {
+  background: #0a0a0a;
+}
+
+/* SECCIÓN */
+.decade {
+  padding: 100px 0;
+  border-bottom: 1px solid #1a1a1a;
   position: relative;
-  overflow-x: auto;
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  height: 4px;
-  background: linear-gradient(90deg, #e63946, #d97706, #fd24a6, #2563eb, #9ca3af, #dcebff);
-  z-index: 0;
+/* EFECTO HOVER SUAVE */
+.decade:hover {
+  background: #0f0f0f;
 }
 
-.timeline-item {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  flex: 1;
-  min-width: 120px;
-}
-
-.timeline-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+/* IMAGEN */
+.decade-img {
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  border: 4px solid white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s ease;
 }
 
-.timeline-img:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+/* HOVER IMAGEN */
+.decade-img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.8);
 }
 
-.timeline-year {
-  display: block;
-  color: white;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-top: 10px;
-  text-decoration: none;
+/* TÍTULO */
+.decade h2 {
+  font-size: 3rem;
+  color: #ff0000;
+  margin-bottom: 20px;
 }
 
-.timeline-year:hover {
-  color: #f20a0a;
+/* TEXTO */
+.decade p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* EFECTO APARICIÓN */
+.decade {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeIn 1s ease forwards;
+}
+
+.decade:nth-child(1) { animation-delay: 0.2s; }
+.decade:nth-child(2) { animation-delay: 0.4s; }
+.decade:nth-child(3) { animation-delay: 0.6s; }
+.decade:nth-child(4) { animation-delay: 0.8s; }
+.decade:nth-child(5) { animation-delay: 1s; }
+.decade:nth-child(6) { animation-delay: 1.2s; }
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.decade:hover .decade-img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
 }
 
 /* ============================================
@@ -408,4 +533,14 @@ p {
     margin-top: 0;
     font-size: 1em;
   }
+}
+
+/* ============================================
+   FRASE FINAL - QUOTE SECTION
+   ============================================ */
+.quote-section {
+  padding: 80px 20px;
+  background: linear-gradient(black, #111);
+  color: white;
+  font-style: italic;
 }
