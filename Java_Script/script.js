@@ -79,3 +79,24 @@ document.addEventListener("DOMContentLoaded", highlightActivePage);
    que funcione al abrir archivos directamente
    desde el explorador (sin servidor).
    ============================================ */
+
+
+const track = document.getElementById("sliderTrack");
+let speed = 0.3; // velocidad (ajustable)
+let pos = 0;
+
+function loopSlider() {
+  pos += speed;
+  if(pos >= track.scrollWidth / 2) pos = 0; // reinicia suavemente
+  track.style.transform = `translateX(-${pos}px)`;
+  requestAnimationFrame(loopSlider);
+}
+
+loopSlider();
+
+document.querySelectorAll('.car-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const link = item.querySelector('a').getAttribute('href');
+    window.location.href = link;
+  });
+});
