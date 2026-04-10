@@ -1,124 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <!-- Codificación UTF-8 para caracteres especiales -->
     <meta charset="UTF-8" />
-    <!-- Viewport para diseño responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Meta description para SEO -->
-    <meta name="description" content="Coches clásicos de los años 60 - Ford Mustang, Chevrolet Camaro, Volkswagen Beetle" />
-    <!-- Título de la página -->
-    <title>1960 – Los Clásicos</title>
 
-    <!-- Bootstrap CSS (framework de estilos) desde CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>60s Cars</title>
 
-    <!-- Enlace a CSS personalizado -->
-    <link rel="stylesheet" href="../../CSS/styles.css" />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
-    <!-- ============================================
-         NAV - Barra de navegación
-         ============================================ -->
-    <nav class="Menu">
-      <!-- Enlace al Home -->
-      <a href="../../HTML/Home/Home.html" class="nav-link-home">RPM</a>
-
-      <!-- Enlaces a cada década -->
-      <ul translate="no">
-        <li><a href="60s.html" class="nav-link">60s</a></li>
-        <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
-        <li><a href="../../HTML/1980/80s.html" class="nav-link">80s</a></li>
-        <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
-        <li><a href="../../HTML/2000/00s.html" class="nav-link">00s</a></li>
-        <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
-      </ul>
-    </nav>
-
-    <!-- ============================================
-         MAIN - Contenido principal
-         ============================================ -->
+  <body class="bg-black text-white">
     <main>
       <h1 class="Titulo_Seccion60s">1960 – Los Clásicos</h1>
 
-      <!-- Contenedor de tarjetas de coches -->
-      <div class="car-scroll">
-        
-        <!-- ============================================
-             TARJETA 1: Ford Mustang
-             Estructura flip-card:
-             - car-card: contenedor principal con perspective
-             - card-inner: elemento que gira 180°
-             - card-front: cara visible inicialmente (imagen)
-             - card-back: cara oculta (información)
-             ============================================ -->
-        <article id="mustang-69" class="car-card">
-          <!-- Título del coche (fuera del flip para que siempre sea visible) -->
-          <h2 class="subtitulo">Ford Mustang</h2>
-          
-          <!-- Contenedor interno que realiza el giro -->
-          <div class="card-inner">
-            <!-- Cara frontal: imagen del coche -->
-            <div class="card-front">
-              <img src="img/Mustang_1.jpg" alt="Ford Mustang - Vista frontal" />
-            </div>
-            <!-- Cara trasera: información del coche -->
-            <div class="card-back">
-              <h2>Ford Mustang 1967</h2>
-              <p>Motor V8, 450 CV</p>
-              <p>Color: Rojo</p>
-            </div>
+      <!-- =========================
+       MUSTANG
+  ========================= -->
+      <section class="car">
+        <div class="slider" data-slider>
+          <button class="slider-btn prev" aria-label="Anterior">
+            &#10094;
+          </button>
+          <div class="slides">
+            <img src="img/Mustang_1.jpg" />
+            <img src="img/Mustang_2.webp" />
+            <img src="img/Muestang_3.webp" />
           </div>
-          
-          <!-- Imágenes adicionales (vista trasera e interior) -->
-          <img class="car-image" src="img/Mustang_2.webp" alt="Ford Mustang - Vista trasera" />
-          <img class="car-image" src="img/Muestang_3.webp" alt="Ford Mustang - Interior" />
-        </article>
+          <button class="slider-btn next" aria-label="Siguiente">
+            &#10095;
+          </button>
+        </div>
 
-        <!-- ============================================
-             TARJETA 2: Chevrolet Camaro
-             Misma estructura flip-card
-             ============================================ -->
-        <article id="camaro-67" class="car-card">
-          <h2 class="subtitulo">Chevrolet Camaro</h2>
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="img/Camaro_1.jpg" alt="Chevrolet Camaro - Vista frontal" />
-            </div>
-            <div class="card-back">
-              <h2>Chevrolet Camaro</h2>
-              <p>Motor V8, 480 CV</p>
-              <p>Color: Azul</p>
-            </div>
+        <div class="car-text">
+          <h2>Ford Mustang</h2>
+          <p>
+            Este coche es uno de los iconos más importantes de los años 60.
+            Representa potencia, libertad y el nacimiento del muscle car
+            americano.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+       CAMARO
+  ========================= -->
+      <section class="car">
+        <div class="slider" data-slider>
+          <button class="slider-btn prev" aria-label="Anterior">
+            &#10094;
+          </button>
+          <div class="slides">
+            <img src="img/Camaro_1.jpg" />
+            <img src="img/Camaro_2.avif" />
+            <img src="img/Camaro_3.jpg" />
           </div>
-          <img class="car-image" src="img/Camaro_2.avif" alt="Chevrolet Camaro - Vista trasera" />
-          <img class="car-image" src="img/Camaro_3.jpg" alt="Chevrolet Camaro - Interior" />
-        </article>
+          <button class="slider-btn next" aria-label="Siguiente">
+            &#10095;
+          </button>
+        </div>
 
-        <!-- ============================================
-             TARJETA 3: Volkswagen Beetle
-             ============================================ -->
-        <article id="escarabajo-65" class="car-card">
-          <h2 class="subtitulo">Volkswagen Beetle</h2>
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="img/Escarabajo_1.webp" alt="Volkswagen Beetle - Vista frontal" />
-            </div>
-            <div class="card-back">
-              <h2>Volkswagen Beetle</h2>
-              <p>Motor 1.3, 50 CV</p>
-              <p>Color: Verde</p>
-            </div>
+        <div class="car-text">
+          <h2>Chevrolet Camaro</h2>
+          <p>
+            Nació como rival directo del Mustang. Es un muscle car agresivo
+            diseñado para competir en potencia y estilo.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+       BEETLE
+  ========================= -->
+      <section class="car">
+        <div class="slider" data-slider>
+          <button class="slider-btn prev" aria-label="Anterior">
+            &#10094;
+          </button>
+          <div class="slides">
+            <img src="img/Escarabajo_1.webp" />
+            <img src="img/Escarabajo_2.jpg" />
+            <img src="img/Escarabajo_3.jpg" />
           </div>
-          <img class="car-image" src="img/Escarabajo_2.jpg" alt="Volkswagen Beetle - Vista trasera" />
-          <img class="car-image" src="img/Escarabajo_3.jpg" alt="Volkswagen Beetle - Interior" />
-        </article>
+          <button class="slider-btn next" aria-label="Siguiente">
+            &#10095;
+          </button>
+        </div>
 
-      </div>
+        <div class="car-text">
+          <h2>Volkswagen Beetle</h2>
+          <p>
+            El coche del pueblo. Simple, fiable y uno de los más vendidos de la
+            historia.
+          </p>
+        </div>
+      </section>
     </main>
-
-    <!-- Script JavaScript al final del body -->
-    <script src="../../Java_Script/script.js"></script>
+    <script src="/Java_Script/script.js"></script>
   </body>
 </html>
