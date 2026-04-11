@@ -103,7 +103,7 @@ document.querySelectorAll(".car-item").forEach((item) => {
     window.location.href = link;
   });
 });
- HEAD
+ 
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = localStorage.getItem("usuario");
 
