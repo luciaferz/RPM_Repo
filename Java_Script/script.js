@@ -100,3 +100,15 @@ document.querySelectorAll('.car-item').forEach(item => {
     window.location.href = link;
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const usuario = localStorage.getItem("usuario");
+
+  if (usuario) {
+    const boton = document.getElementById("btnCuenta");
+
+    if (boton) {
+      boton.textContent = "👤 " + usuario;
+      boton.href = "#"; // opcional
+    }
+  }
+});

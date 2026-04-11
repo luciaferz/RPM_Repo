@@ -27,9 +27,20 @@ nextBtn.addEventListener("click", () => {
   if (currentStep < steps.length - 1) {
     currentStep++;
     showStep();
-  } else {
-    alert("Registro completado 🚀");
-  }
+  
+  }else{
+  // Obtener el nombre de usuario (PASO 3)
+  const usuario = document.getElementById("usuario").value;
+
+  // Guardarlo
+  localStorage.setItem("usuario", usuario);
+
+  // Mensaje opcional
+  alert("Registro completado 🚀");
+
+  // Redirigir al Home
+  window.location.href = "../HTML/Home/Home.html";
+}
 });
 
 prevBtn.addEventListener("click", () => {
