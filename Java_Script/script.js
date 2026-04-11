@@ -80,26 +80,30 @@ document.addEventListener("DOMContentLoaded", highlightActivePage);
    desde el explorador (sin servidor).
    ============================================ */
 
-
+/*--------------SLIDER DE CARRUSEL-------------
+   ============================================
+   Propósito: Crear un slider automático para
+   mostrar los coches de manera continua*/
 const track = document.getElementById("sliderTrack");
 let speed = 0.3; // velocidad (ajustable)
 let pos = 0;
 
 function loopSlider() {
   pos += speed;
-  if(pos >= track.scrollWidth / 2) pos = 0; // reinicia suavemente
+  if (pos >= track.scrollWidth / 2) pos = 0; // reinicia suavemente
   track.style.transform = `translateX(-${pos}px)`;
   requestAnimationFrame(loopSlider);
 }
 
 loopSlider();
 
-document.querySelectorAll('.car-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const link = item.querySelector('a').getAttribute('href');
+document.querySelectorAll(".car-item").forEach((item) => {
+  item.addEventListener("click", () => {
+    const link = item.querySelector("a").getAttribute("href");
     window.location.href = link;
   });
 });
+ HEAD
 document.addEventListener("DOMContentLoaded", () => {
   const usuario = localStorage.getItem("usuario");
 
@@ -108,7 +112,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (boton) {
       boton.textContent = "👤 " + usuario;
-      boton.href = "#"; // opcional
+      boton.href = "#"; 
     }
   }
 });
+
+
+/*------------SECCIONES DE DÉCADAS: Animación al hacer scroll--------------*/
+// DecadeSection.jsx
+document.addEventListener("DOMContentLoaded", () => {
+  // =========================
+  // SLIDERS (manual simple)
+  // =========================
+  const sliders = document.querySelectorAll("[data-slider]");
+
+  sliders.forEach((slider) => {
+    const slides = slider.querySelectorAll(".slides img");
+    const text = slider.parentElement.querySelector(".car-text");
+    let current = 0;
+    let interval;
+
+    function showSlide(idx) {
+      slides.forEach((img, i) => img.classList.toggle("active", i === idx));
+      if (text) {
+        text.classList.remove("active");
+        setTimeout(() => text.classList.add("active"), 100);
+      }
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    slider.querySelector(".next").addEventListener("click", () => {
+      nextSlide();
+      resetInterval();
+    });
+    slider.querySelector(".prev").addEventListener("click", () => {
+      prevSlide();
+      resetInterval();
+    });
+
+    function startInterval() {
+      interval = setInterval(nextSlide, 3000);
+    }
+    function resetInterval() {
+      clearInterval(interval);
+      startInterval();
+    }
+
+    showSlide(current);
+    startInterval();
+  });
+});
+
