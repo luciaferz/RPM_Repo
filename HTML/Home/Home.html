@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <!-- Codificación de caracteres UTF-8 para admitir tildes y caracteres especiales -->
@@ -24,9 +24,10 @@
 
     <!-- Mis estilos personalizados después (sobrescriben Bootstrap) -->
     <link rel="stylesheet" href="../../CSS/styles.css" />
+    <link rel="stylesheet" href="../../CSS/footer.css" />
   </head>
 
-  <body>
+  <body class="home-page">
     <!-- ============================================
        ETIQUETA SEMÁNTICA <nav>
        Representa la barra de navegación principal
@@ -37,15 +38,14 @@
       <span id="usuarioNav" style="color:white; margin-left:20px;"></span>
 
       <!-- Lista de enlaces a cada sección -->
-      <!-- ruta relativa: ../../HTML/1960/60s.html - sube 2 niveles y entra en carpeta -->
+      <!-- ruta relativa: ../Decadas/secciones.html?decada=1960 - sube 2 niveles y entra en carpeta -->
       <ul>
-        <li><a href="../../HTML/1960/60s.html" class="nav-link">60s</a></li>
-        <li><a href="../../HTML/1970/70s.html" class="nav-link">70s</a></li>
-        <li><a href="../../HTML/1980/80s.html" class="nav-link">80s</a></li>
-        <li><a href="../../HTML/1990/90s.html" class="nav-link">90s</a></li>
-        <li><a href="../../HTML/2000/00s.html" class="nav-link">00s</a></li>
-        <li><a href="../../HTML/2010/10s.html" class="nav-link">10s</a></li>
-        <li><a href="../registro.html" id="btnCuenta">Crear cuenta</a></li> 
+        <li><a href="../Decadas/secciones.html?decada=1960" class="nav-link">60s</a></li>
+        <li><a href="../Decadas/secciones.html?decada=1970" class="nav-link">70s</a></li>
+        <li><a href="../Decadas/secciones.html?decada=1980" class="nav-link">80s</a></li>
+        <li><a href="../Decadas/secciones.html?decada=1990" class="nav-link">90s</a></li>
+        <li><a href="../Decadas/secciones.html?decada=2000" class="nav-link">00s</a></li>
+        <li><a href="../Decadas/secciones.html?decada=2010" class="nav-link">10s</a></li>
          
       </ul> 
     </nav>
@@ -63,81 +63,108 @@
         </div>
       </section>
 
+<section class="editorial-ribbon" data-expand-container>
+  <div class="ribbon-label">Visión RPM</div>
+  <div class="ribbon-main">
+    <h2>Un archivo vivo del automóvil</h2>
+    <p class="ribbon-summary">
+      Esta página muestra los coches más representativos de cada época para que puedas entender, de forma visual y rápida,
+      cómo evolucionaron el diseño, la ingeniería y la cultura del motor desde los 60 hasta la era moderna.
+      No es solo una galería: es una lectura histórica pensada para comparar estilos, tecnologías y personalidad por década.
+    </p>
+  </div>
+</section>
+
  <!-- ============================================
      MENU -  DÉCADAS
      ============================================ -->
+<section class="home-section-head">
+  <h2>Seis Décadas, Seis Estilos</h2>
+</section>
 <section class="car-slider position-relative">
   <div class="slider-track d-flex" id="sliderTrack">
 
     <!-- ORIGINAL -->
     <div class="car-item">
-      <a href="../1960/60s.html" class="panel-link"></a>
-      <img src="img/Corvette60s.jpg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1960" class="panel-link"></a>
+      <img src="img_Home/Corvette60s.jpg" class="car-img">
       <div class="overlay"><h3>60s</h3></div>
     </div>
 
     <div class="car-item">
-      <a href="../1970/70s.html" class="panel-link"></a>
-      <img src="img/70s.jpg"class="car-img">
+      <a href="../Decadas/secciones.html?decada=1970" class="panel-link"></a>
+      <img src="img_Home/70s.jpg"class="car-img">
       <div class="overlay"><h3>70s</h3></div>
     </div>
 
     <div class="car-item">
-      <a href="../1980/80s.html" class="panel-link"></a>
-      <img src="img/80s.jpg"class="car-img">
+      <a href="../Decadas/secciones.html?decada=1980" class="panel-link"></a>
+      <img src="img_Home/80s.jpg"class="car-img">
       <div class="overlay"><h3>80s</h3></div>
     </div>
 
     <div class="car-item">
-      <a href="../1990/90s.html" class="panel-link"></a>
-      <img src="img/90s.webp" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1990" class="panel-link"></a>
+      <img src="img_Home/90s.webp" class="car-img">
       <div class="overlay"><h3>90s</h3></div>
     </div>
 
     <div class="car-item">
-      <a href="../2000/00s.html" class="panel-link"></a>
-      <img src="img/00s.webp" class="car-img">
+      <a href="../Decadas/secciones.html?decada=2000" class="panel-link"></a>
+      <img src="img_Home/00s.webp" class="car-img">
       <div class="overlay"><h3>00s</h3></div>
     </div>
 
     <div class="car-item">
-      <a href="../2010/10s.html" class="panel-link"></a>
-      <img src="img/10s.jpg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=2010" class="panel-link"></a>
+      <img src="img_Home/10s.jpg" class="car-img">
       <div class="overlay"><h3>10s</h3></div>
     </div>
 
     <!-- DUPLICADO PARA LOOP INFINITO -->
     <div class="car-item">
-      <a href="../1960/60s.html" class="panel-link"></a>
-      <img src="img/Corvette60s.jpg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1960" class="panel-link"></a>
+      <img src="img_Home/Corvette60s.jpg" class="car-img">
       <div class="overlay"><h3>60s</h3></div>
     </div>
     <div class="car-item">
-      <a href="../1970/70s.html" class="panel-link"></a>
-      <img src="img/porsche-911.webp" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1970" class="panel-link"></a>
+      <img src="../Decadas/img_70s/Porsche_2.webp" class="car-img">
       <div class="overlay"><h3>70s</h3></div>
     </div>
     <div class="car-item">
-      <a href="../1980/80s.html" class="panel-link"></a>
-      <img src="../1980/img/Testarrosa_2.jpg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1980" class="panel-link"></a>
+      <img src="../Decadas/img_80s/Testarrosa_2.jpg" class="car-img">
       <div class="overlay"><h3>80s</h3></div>
     </div>
     <div class="car-item">
-      <a href="../1990/90s.html" class="panel-link"></a>
-      <img src="../1990/img/Skyline_2.jpg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=1990" class="panel-link"></a>
+      <img src="../Decadas/img_90s/Skyline_2.jpg" class="car-img">
       <div class="overlay"><h3>90s</h3></div>
     </div>
     <div class="car-item">
-      <a href="../2000/00s.html" class="panel-link"></a>
-      <img src="../2000/img/Gallardo_1.avif" class="car-img">
+      <a href="../Decadas/secciones.html?decada=2000" class="panel-link"></a>
+      <img src="../Decadas/img_00s/Gallardo_1.avif" class="car-img">
       <div class="overlay"><h3>00s</h3></div>
     </div>
     <div class="car-item">
-      <a href="../2010/10s.html" class="panel-link"></a>
-      <img src="img/Aventador.jpeg" class="car-img">
+      <a href="../Decadas/secciones.html?decada=2010" class="panel-link"></a>
+      <img src="../Decadas/img_10s/Aventador_1.webp" class="car-img">
       <div class="overlay"><h3>10s</h3></div>
     </div>
 
+  </div>
+</section>
+
+<section class="editorial-ribbon editorial-ribbon--alt" data-expand-container>
+  <div class="ribbon-label">Lectura rápida</div>
+  <div class="ribbon-main">
+    <h2>Menos ruido, más significado</h2>
+    <p class="ribbon-summary">
+      Seleccionamos piezas clave para que la navegación sea clara y memorable: menos elementos repetidos,
+      más contexto útil y acceso directo a cada década. El objetivo es que puedas pasar de la inspiración visual
+      a la exploración detallada de cada sección en un solo clic.
+    </p>
   </div>
 </section>
 
@@ -145,269 +172,97 @@
           LÍNEA DEL TIEMPO VERTICAL
           Timeline con línea central y puntos conectores
           ============================================ -->
-      <section class="timeline-section">
-        <h2 class="timeline-title">Explora la Evolución</h2>
-        <div class="timeline">
-          
-          <!-- 1965 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1965</time>
-              <img src="../1960/img/Escarabajo_1.webp" alt="VW Escarabajo">
-              <div class="text-overlay">
-                <h3>VW Escarabajo</h3>
-                <p>El icónico compacto alemán que revolucionó la industria.</p>
-                <a href="../1960/60s.html#escarabajo-65" class="timeline-link">Ver más</a>
-              </div>
+            <section class="decade-spotlight" aria-label="Selección destacada por décadas">
+        <div class="spotlight-head">
+          <h2 class="spotlight-title">Explora la Evolución</h2>
+          <p class="spotlight-lead">Seis décadas, seis iconos. Una selección directa de los coches que mejor representan cada era.</p>
+        </div>
+
+        <div class="spotlight-grid">
+          <article class="spotlight-panel" data-spotlight data-decade="1960">
+            <img src="../Decadas/img_60s/Mustang_1.jpg" alt="Ford Mustang 1969" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">1960s</p>
+              <h3>Ford Mustang</h3>
+              <p class="spotlight-dynamic">Nació para democratizar el deportivo americano con carácter y presencia.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=1960#mustang-69">Ver década 60s</a>
             </div>
           </article>
 
-          <!-- 1967 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1967</time>
-              <img src="../1960/img/Camaro_1.jpg" alt="Chevrolet Camaro">
-              <div class="text-overlay">
-                <h3>Chevrolet Camaro</h3>
-                <p>El muscle car americano que rivalizó con el Mustang.</p>
-                <a href="../1960/60s.html#camaro-67" class="timeline-link">Ver más</a>
-              </div>
+          <article class="spotlight-panel" data-spotlight data-decade="1970">
+            <img src="../Decadas/img_70s/Lamborghini_1.webp" alt="Lamborghini Countach 1974" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">1970s</p>
+              <h3>Lamborghini Countach</h3>
+              <p class="spotlight-dynamic">La década en la que el superdeportivo se volvió arte futurista.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=1970#countach-74">Entrar a los 70s</a>
             </div>
           </article>
 
-          <!-- 1969 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1969</time>
-              <img src="../1960/img/Mustang_1.jpg" alt="Ford Mustang">
-              <div class="text-overlay">
-                <h3>Ford Mustang</h3>
-                <p>El muscle car que definió toda una era automotriz.</p>
-                <a href="../1960/60s.html#mustang-69" class="timeline-link">Ver más</a>
-              </div>
+          <article class="spotlight-panel" data-spotlight data-decade="1980">
+            <img src="../Decadas/img_80s/Testarrosa_1.jpg" alt="Ferrari Testarossa 1984" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">1980s</p>
+              <h3>Ferrari Testarossa</h3>
+              <p class="spotlight-dynamic">Exceso visual, sonido inconfundible y cultura pop en estado puro.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=1980#testarrosa-84">Descubrir los 80s</a>
             </div>
           </article>
 
-          <!-- 1970 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1970</time>
-              <img src="../1970/img/Dodge_1.jfif" alt="Dodge Challenger">
-              <div class="text-overlay">
-                <h3>Dodge Challenger</h3>
-                <p>Pura potencia americana en su máxima expresión.</p>
-                <a href="../1970/70s.html#dodge-70" class="timeline-link">Ver más</a>
-              </div>
+          <article class="spotlight-panel" data-spotlight data-decade="1990">
+            <img src="../Decadas/img_90s/Skyline_1.webp" alt="Nissan Skyline R34 1999" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">1990s</p>
+              <h3>Nissan Skyline GT-R R34</h3>
+              <p class="spotlight-dynamic">Tecnología japonesa y mito callejero en su punto más alto.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=1990#skyline-r34-99">Ir a los 90s</a>
             </div>
           </article>
 
-          <!-- 1973 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1973</time>
-              <img src="../1970/img/Porsche_1.jfif" alt="Porsche 911">
-              <div class="text-overlay">
-                <h3>Porsche 911</h3>
-                <p>El símbolo del desempeño alemán en pista y calle.</p>
-                <a href="../1970/70s.html#porsche-73" class="timeline-link">Ver más</a>
-              </div>
+          <article class="spotlight-panel" data-spotlight data-decade="2000">
+            <img src="../Decadas/img_00s/PorscheGT_1.jpg" alt="Porsche Carrera GT 2004" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">2000s</p>
+              <h3>Porsche Carrera GT</h3>
+              <p class="spotlight-dynamic">Analogía perfecta entre ingeniería de competición y elegancia extrema.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=2000#carrera-gt-04">Explorar los 00s</a>
             </div>
           </article>
 
-          <!-- 1974 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1974</time>
-              <img src="../1970/img/Lamborghini_1.webp" alt="Lamborghini Countach">
-              <div class="text-overlay">
-                <h3>Lamborghini Countach</h3>
-                <p>El superdeportivo que abrió la era del diseño angular.</p>
-                <a href="../1970/70s.html#countach-74" class="timeline-link">Ver más</a>
-              </div>
+          <article class="spotlight-panel" data-spotlight data-decade="2010">
+            <img src="../Decadas/img_10s/McLaren_1.jpg" alt="McLaren P1 2012" loading="lazy" />
+            <div class="spotlight-overlay">
+              <p class="spotlight-era">2010s</p>
+              <h3>McLaren P1</h3>
+              <p class="spotlight-dynamic">La era híbrida redefinió lo que significa ser hiperdeportivo.</p>
+              <a class="spotlight-cta" href="../Decadas/secciones.html?decada=2010#mclaren-p1-12">Ver década 10s</a>
             </div>
           </article>
-
-          <!-- 1981 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1981</time>
-              <img src="../1980/img/DeLorean_1.webp" alt="DeLorean DMC-12">
-              <div class="text-overlay">
-                <h3>DeLorean DMC-12</h3>
-                <p>El icónico vehículo con puertas de alas de gaviota.</p>
-                <a href="../1980/80s.html#delorean-81" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1982 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1982</time>
-              <img src="../1980/img/E30_1.avif" alt="BMW M3 E30">
-              <div class="text-overlay">
-                <h3>BMW M3 E30</h3>
-                <p>El referente de los autos deportivos compactos.</p>
-                <a href="../1980/80s.html#bmw-e30-82" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1984 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1984</time>
-              <img src="../1980/img/Testarrosa_1.jpg" alt="Ferrari Testarrosa">
-              <div class="text-overlay">
-                <h3>Ferrari Testarrosa</h3>
-                <p>La esencia pura de Maranello en su máximo esplendor.</p>
-                <a href="../1980/80s.html#testarrosa-84" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1993 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1993</time>
-              <img src="../1990/img/Mazda_1.avif" alt="Mazda RX-7">
-              <div class="text-overlay">
-                <h3>Mazda RX-7 FD</h3>
-                <p>El deportivo rotativo más exitoso de la historia.</p>
-                <a href="../1990/90s.html#rx7-93" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1998 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1998</time>
-              <img src="../1990/img/Supra_1.webp" alt="Toyota Supra">
-              <div class="text-overlay">
-                <h3>Toyota Supra MK4</h3>
-                <p>Leyenda tuning con su motor 2JZ legendary.</p>
-                <a href="../1990/90s.html#supra-98" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1999 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>1999</time>
-              <img src="../1990/img/Skyline_1.webp" alt="Nissan Skyline R34">
-              <div class="text-overlay">
-                <h3>Nissan Skyline R34</h3>
-                <p>El icono japonés que marcó época en la cultura automotive.</p>
-                <a href="../1990/90s.html#skyline-r34-99" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2000 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2000</time>
-              <img src="../2000/img/M3_1.webp" alt="BMW M3 E46">
-              <div class="text-overlay">
-                <h3>BMW M3 E46</h3>
-                <p>Perfección dinámica en formato berlina deportiva.</p>
-                <a href="../2000/00s.html#m3-00" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2003 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2003</time>
-              <img src="../2000/img/Gallardo_1.avif" alt="Lamborghini Gallardo">
-              <div class="text-overlay">
-                <h3>Lamborghini Gallardo</h3>
-                <p>El superdeportivo más exitoso de la marca italiana.</p>
-                <a href="../2000/00s.html#gallardo-03" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2004 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2004</time>
-              <img src="../2000/img/PorscheGT_1.jpg" alt="Porsche Carrera GT">
-              <div class="text-overlay">
-                <h3>Porsche Carrera GT</h3>
-                <p>El hiperdeportivo alemán con motor V10 naturally aspirated.</p>
-                <a href="../2000/00s.html#carrera-gt-04" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2011 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2011</time>
-              <img src="../2010/img/Aventador_1.webp" alt="Lamborghini Aventador">
-              <div class="text-overlay">
-                <h3>Lamborghini Aventador</h3>
-                <p>El toro irrumpe en la era moderna con motor V12.</p>
-                <a href="../2010/10s.html#aventador-11" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2012 -->
-          <article class="timeline-item timeline-item--left">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2012</time>
-              <img src="../2010/img/McLaren_1.jpg" alt="McLaren MP4-12C">
-              <div class="text-overlay">
-                <h3>McLaren MP4-12C</h3>
-                <p>La vuelta de la legendaria marca a la producción.</p>
-                <a href="../2010/10s.html#mclaren-p1-12" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2015 -->
-          <article class="timeline-item timeline-item--right">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <time>2015</time>
-              <img src="../2010/img/MustangGT_1.webp" alt="Ford Mustang GT">
-              <div class="text-overlay">
-                <h3>Ford Mustang GT</h3>
-                <p>El ícono americano recibe potencia y tecnología moderna.</p>
-                <a href="../2010/10s.html#mustang-gt-15" class="timeline-link">Ver más</a>
-              </div>
-            </div>
-          </article>
-
         </div>
       </section>
     </main>
 
-  <!--FRASE FINAL-->
-  <section class="quote-section text-center">
-      <h2>"La velocidad no es solo un número, es una emoción."</h2>
+  <section class="rpm-footer rpm-footer--contact" aria-label="Contacto RPM">
+    <div class="rpm-footer-inner">
+      <div class="rpm-footer-brand">
+        <p class="footer-kicker">Contacto RPM</p>
+        <h3>¿Quieres colaborar, proponer ideas o mejorar el proyecto?</h3>
+        <p>Te respondemos desde una sección dedicada para centralizar propuestas y consultas.</p>
+        <a class="rpm-footer-contact" href="../contacto.html">Ir a Contacto</a>
+      </div>
+
+      <div class="rpm-footer-links">
+        <p>Explora Décadas</p>
+        <nav aria-label="Navegación de décadas">
+          <a href="../Decadas/secciones.html?decada=1960">60s</a>
+          <a href="../Decadas/secciones.html?decada=1970">70s</a>
+          <a href="../Decadas/secciones.html?decada=1980">80s</a>
+          <a href="../Decadas/secciones.html?decada=1990">90s</a>
+          <a href="../Decadas/secciones.html?decada=2000">00s</a>
+          <a href="../Decadas/secciones.html?decada=2010">10s</a>
+        </nav>
+      </div>
+    </div>
   </section>
     
     <!-- Enlace al script JavaScript (al final del body para mejor rendimiento) -->

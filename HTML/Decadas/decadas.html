@@ -1,0 +1,73 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RPM Décadas: coches icónicos por década." />
+    <title>RPM - Décadas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../CSS/styles.css" />
+    <link rel="stylesheet" href="../../CSS/decadas.css" />
+    <link rel="stylesheet" href="../../CSS/footer.css" />
+  </head>
+  <body class="decade-page" data-decade="1960">
+    <nav class="Menu">
+      <a href="../Home/Home.html" class="nav-link-home">RPM</a>
+      <ul>
+        <li><a href="secciones.html?decada=1960" class="nav-link decade-filter-link" data-decade-link="1960">60s</a></li>
+        <li><a href="secciones.html?decada=1970" class="nav-link decade-filter-link" data-decade-link="1970">70s</a></li>
+        <li><a href="secciones.html?decada=1980" class="nav-link decade-filter-link" data-decade-link="1980">80s</a></li>
+        <li><a href="secciones.html?decada=1990" class="nav-link decade-filter-link" data-decade-link="1990">90s</a></li>
+        <li><a href="secciones.html?decada=2000" class="nav-link decade-filter-link" data-decade-link="2000">00s</a></li>
+        <li><a href="secciones.html?decada=2010" class="nav-link decade-filter-link" data-decade-link="2010">10s</a></li>
+      </ul>
+    </nav>
+
+    <main class="garage-main">
+      <section class="garage-hero" aria-label="Cabecera de la década">
+        <h1 id="decadeHeading" class="Titulo_Seccion60s">1960 - Clásicos Eternos</h1>
+        <p id="garageLead" class="garage-lead">
+          Selecciona una década para ver coches icónicos con una presentación visual limpia.
+        </p>
+      </section>
+
+      <section class="decade-block" id="decadeContent" data-decade="1960">
+        <header class="decade-header">
+          <h2 id="decadeSubheading">Modelos icónicos</h2>
+          <p id="decadeNarrative" class="section-narrative"></p>
+        </header>
+        <div class="cars-grid" id="carsGrid"></div>
+      </section>
+    </main>    <footer class="rpm-footer" aria-label="Contacto RPM">
+      <div class="rpm-footer-inner">
+        <div class="rpm-footer-brand">
+          <p class="footer-kicker">Contacto RPM</p>
+          <h3>¿Hablamos sobre motor, diseño o colaboración?</h3>
+          <p>Si quieres proponer mejoras o compartir ideas, estaremos encantados de leerte.</p>
+          <a class="rpm-footer-contact" href="../contacto.html">Ir a Contacto</a>
+        </div>
+
+        <div class="rpm-footer-links">
+          <p>Explora Décadas</p>
+          <nav aria-label="Enlaces de décadas">
+            <a href="secciones.html?decada=1960">60s</a>
+            <a href="secciones.html?decada=1970">70s</a>
+            <a href="secciones.html?decada=1980">80s</a>
+            <a href="secciones.html?decada=1990">90s</a>
+            <a href="secciones.html?decada=2000">00s</a>
+            <a href="secciones.html?decada=2010">10s</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="rpm-footer-bottom">
+        <p>RPM Archive</p>
+      </div>
+    </footer>
+
+    <script src="../../Java_Script/script.js"></script>
+    <script src="../../Java_Script/decadas.js"></script>
+  </body>
+</html>
+
+

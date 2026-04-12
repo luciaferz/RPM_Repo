@@ -1,11 +1,11 @@
-/* ============================================
+﻿/* ============================================
    IMPORTAR FUENTES ANTES QUE NADA
    Google Fonts debe cargarse primero
    ============================================ */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap");
 
 /* ============================================
-   RESET BÁSICO
+   RESET BÃSICO
    El selector * aplica a TODOS los elementos
    box-sizing: incluye padding/border en el ancho
    ============================================ */
@@ -32,14 +32,14 @@ body {
   color: white !important;
 }
 
-/* p: párrafos - fuente secundaria */
+/* p: pÃ¡rrafos - fuente secundaria */
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
   color: white;
 }
 
 /* ============================================
-   MENÚ DE NAVEGACIÓN
+   MENÃš DE NAVEGACIÃ“N
    Estructura flexbox para distribuir elementos
    - display: flex = contenedor flexible
    - justify-content: espacio entre elementos
@@ -57,9 +57,9 @@ p {
 
 /* ============================================
    ENLACE RPM (LOGO)
-   position: relative necesario para la línea
+   position: relative necesario para la lÃ­nea
    animada con ::after
-   transition: permite animación suave del color
+   transition: permite animaciÃ³n suave del color
    ============================================ */
 .nav-link-home {
   color: white;
@@ -70,16 +70,16 @@ p {
   transition: color 0.2s;
 }
 
-/* Hover: cambia color al pasar el ratón */
+/* Hover: cambia color al pasar el ratÃ³n */
 .nav-link-home:hover {
   color: #f20a0a;
 }
 
 /* ============================================
-   LISTA DE ENLACES DEL MENÚ
-   - list-style: none = elimina viñetas
-   - display: flex = elementos en línea
-   - gap:  separación entre elementos
+   LISTA DE ENLACES DEL MENÃš
+   - list-style: none = elimina viÃ±etas
+   - display: flex = elementos en lÃ­nea
+   - gap:  separaciÃ³n entre elementos
    ============================================ */
 .Menu ul {
   list-style: none;
@@ -90,9 +90,9 @@ p {
 }
 
 /* ============================================
-   ENLACES SECUNDARIOS DEL MENÚ
+   ENLACES SECUNDARIOS DEL MENÃš
    position: relative necesario para ::after
-   transition: animación suave
+   transition: animaciÃ³n suave
    ============================================ */
 .Menu ul li a {
   color: white;
@@ -102,17 +102,17 @@ p {
   transition: color 0.2s;
 }
 
-/* Hover: color rojo al pasar ratón */
+/* Hover: color rojo al pasar ratÃ³n */
 .Menu ul li a:hover {
   color: #f20a0a;
 }
 
 /* ============================================
-   LÍNEA ANIMADA BAJO ENLACES
+   LÃNEA ANIMADA BAJO ENLACES
    ::after = pseudo-elemento que se genera
-   después del contenido del elemento
-   - width: 0% → 100% en hover
-   - transition: animación suave
+   despuÃ©s del contenido del elemento
+   - width: 0% â†’ 100% en hover
+   - transition: animaciÃ³n suave
    ============================================ */
 .Menu ul li a::after,
 .nav-link-home::after {
@@ -126,15 +126,15 @@ p {
   transition: width 0.3s ease;
 }
 
-/* Línea completa al hacer hover */
+/* LÃ­nea completa al hacer hover */
 .Menu ul li a:hover::after,
 .nav-link-home:hover::after {
   width: 100%;
 }
 
 /* ============================================
-   TÍTULOS DE PÁGINA
-   text-transform: uppercase = texto en mayúsculas
+   TÃTULOS DE PÃGINA
+   text-transform: uppercase = texto en mayÃºsculas
    font-weight:900 = texto muy grueso
    ============================================ */
 .Titulo_Home {
@@ -194,8 +194,8 @@ p {
 }
 
 /* ============================================
-   ESTILO PARA ENLACE ACTIVO EN MENÚ
-   Indica la página actual
+   ESTILO PARA ENLACE ACTIVO EN MENÃš
+   Indica la pÃ¡gina actual
    ============================================ */
 .nav-link.active,
 .nav-link-home.active {
@@ -212,8 +212,9 @@ p {
    ============================================ */
 .hero {
   height: 100vh;
-  background: url("../HTML/Home/img/hero.jpg") center/cover no-repeat;
+  background: url("../HTML/Home/img_Home/hero.jpg") center/cover no-repeat;
   position: relative;
+  isolation: isolate;
 }
 
 .hero::after {
@@ -221,9 +222,12 @@ p {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
 .hero div {
+  position: relative;
+  z-index: 1;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1.5s forwards;
@@ -232,7 +236,7 @@ p {
 
 @keyframes fadeInUp {
   to {
-    opacity: 1;
+    opacity: 15;
     transform: translateY(0);
   }
 }
@@ -252,7 +256,7 @@ p {
    ============================================ */
 .car-slider {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 34px 0 60px;
   position: relative;
   width: 100%;
   background: #0a0a0a;
@@ -272,7 +276,7 @@ p {
   height: 200px;
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .car-img {
@@ -313,8 +317,8 @@ p {
   pointer-events: auto; /* Muy importante */
 }
 /* ============================================
-   TIMELINE VERTICAL CON LÍNEA CENTRAL
-   Estilo línea del tiempo con puntos conectores
+   TIMELINE VERTICAL CON LÃNEA CENTRAL
+   Estilo lÃ­nea del tiempo con puntos conectores
    ============================================ */
 
 .timeline-section {
@@ -540,8 +544,8 @@ p {
 }
 
 /* ============================================
-   TIMELINE RESPONSIVE - MÓVIL
-   Línea a la izquierda, todo a la derecha
+   TIMELINE RESPONSIVE - MÃ“VIL
+   LÃ­nea a la izquierda, todo a la derecha
    ============================================ */
 @media (max-width: 768px) {
   .timeline::before {
@@ -585,6 +589,285 @@ p {
   background: linear-gradient(black, #111);
   color: white;
   font-style: italic;
+  font-family: "Bebas Neue", "Oswald", "Anton", "Arial", sans-serif;
+
+}
+
+/* ============================================
+   HOME - DECADE SPOTLIGHT (2x3)
+   ============================================ */
+.decade-spotlight {
+  padding: 56px 0 0;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(242, 10, 10, 0.12), transparent 35%),
+    linear-gradient(180deg, #0c0f14 0%, #090b10 100%);
+}
+
+.home-section-head {
+  width: 100%;
+  margin: 0;
+  padding: 38px 2.8vw 0;
+}
+
+.home-section-head h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+}
+
+.home-section-head p {
+  margin: 0.35rem 0 0;
+  color: #bac6d8;
+  max-width: 60ch;
+}
+
+.spotlight-head {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0 2.2vw;
+}
+
+.spotlight-title {
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  letter-spacing: 0.03em;
+  font-family: "Bebas Neue", "Oswald", "Anton", sans-serif;
+}
+
+.spotlight-lead {
+  margin: 0.5rem 0 0;
+  color: #afbccf;
+  max-width: 74ch;
+  line-height: 1.55;
+  font-family: "Cairo", "Manrope", "Segoe UI", sans-serif;
+}
+
+.spotlight-grid {
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.spotlight-panel {
+  position: relative;
+  min-height: clamp(260px, 34vw, 380px);
+  overflow: hidden;
+  border: 0;
+  background: #0b0d11;
+  border-radius: 0;
+}
+
+.spotlight-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 520ms ease, filter 520ms ease;
+  border-radius: 0;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem 1.35rem;
+  background: linear-gradient(to top, rgba(7, 8, 12, 0.93) 18%, rgba(7, 8, 12, 0.32) 62%, transparent 100%);
+}
+
+.spotlight-panel:nth-child(odd) .spotlight-overlay {
+  padding-left: 1.85rem;
+}
+
+.spotlight-era {
+  margin: 0;
+  color: #ff7070;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.spotlight-overlay h3 {
+  margin: 0.2rem 0 0;
+  color: #fff;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+  letter-spacing: 0.03em;
+}
+
+.spotlight-dynamic {
+  margin: 0.4rem 0 0;
+  color: #e6edf8;
+  max-width: 54ch;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.spotlight-cta {
+  align-self: flex-start;
+  margin-top: 0.72rem;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(10, 12, 16, 0.6);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 320ms ease, transform 320ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.spotlight-panel.is-hovered img,
+.spotlight-panel:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.74) saturate(1.06);
+}
+
+.spotlight-panel.is-hovered .spotlight-dynamic,
+.spotlight-panel:hover .spotlight-dynamic,
+.spotlight-panel.is-hovered .spotlight-cta,
+.spotlight-panel:hover .spotlight-cta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spotlight-cta:hover {
+  border-color: #ff6f5d;
+  background: rgba(15, 18, 23, 0.85);
+}
+
+@media (max-width: 980px) {
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight-head {
+    padding: 0 4vw;
+  }
+}
+
+/* ============================================
+   HOME - TIMELINE SHOWCASE COMPACTA
+   ============================================ */
+.timeline-showcase {
+  padding: 58px 0 42px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(242, 10, 10, 0.12), transparent 35%),
+    linear-gradient(180deg, #0b0d12 0%, #090b0f 100%);
+}
+
+.timeline-showcase .timeline-heading-wrap {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+}
+
+.timeline-showcase .timeline-title {
+  margin: 0;
+  text-align: left;
+}
+
+.timeline-intro {
+  margin: 0.45rem 0 0;
+  color: #aeb9c8;
+  max-width: 72ch;
+  line-height: 1.5;
+}
+
+.timeline-showcase .timeline {
+  width: min(1200px, 94%);
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-height: 670px;
+  overflow: auto;
+  padding-right: 0.45rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(242, 10, 10, 0.6) rgba(255, 255, 255, 0.08);
+}
+
+.timeline-showcase .timeline::-webkit-scrollbar {
+  width: 10px;
+}
+
+.timeline-showcase .timeline::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.timeline-showcase .timeline::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f20a0a, #ff6b4a);
+  border-radius: 999px;
+}
+
+.timeline-showcase .timeline::before,
+.timeline-showcase .timeline-dot {
+  display: none;
+}
+
+.timeline-showcase .timeline-item,
+.timeline-showcase .timeline-item--left,
+.timeline-showcase .timeline-item--right {
+  width: auto;
+  left: auto;
+  text-align: left;
+  padding: 0;
+}
+
+.timeline-showcase .timeline-item {
+  display: block;
+}
+
+.timeline-showcase .timeline-content {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.timeline-showcase .timeline-content img {
+  height: 190px;
+}
+
+.timeline-showcase .timeline-content .text-overlay {
+  padding: 55px 18px 16px;
+}
+
+.timeline-showcase .timeline-link {
+  float: none !important;
+}
+
+@media (max-width: 1024px) {
+  .timeline-showcase .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: 640px;
+  }
+}
+
+@media (max-width: 700px) {
+  .timeline-showcase .timeline {
+    grid-template-columns: 1fr;
+    max-height: 620px;
+  }
+
+  .timeline-showcase .timeline-content img {
+    height: 200px;
+  }
 }
 
 /* ------------ESTILO SECCIONES---------------*/
@@ -676,3 +959,309 @@ body {
     max-width: 100%;
   }
 }
+
+/* ============================================
+   HOME RESPONSIVE
+   ============================================ */
+@media (max-width: 1100px) {
+  .home-page .Menu {
+    padding: 10px 14px;
+  }
+
+  .home-page .Menu ul {
+    gap: 16px;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(2.1rem, 7vw, 3rem);
+  }
+
+  .home-page .hero p {
+    font-size: 1rem;
+  }
+
+  .home-page .home-section-head {
+    padding-left: 3.6vw;
+    padding-right: 3.6vw;
+  }
+
+  .home-page .car-slider {
+    padding: 20px 0 44px;
+  }
+
+  .home-page .car-item {
+    width: 270px;
+    height: 178px;
+  }
+
+  .home-page .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .spotlight-panel {
+    min-height: clamp(240px, 48vw, 340px);
+  }
+}
+
+@media (max-width: 780px) {
+  .home-page .Menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .home-page .Menu ul {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .home-page .Menu ul li a,
+  .home-page .nav-link-home {
+    font-size: 1.03rem;
+  }
+
+  .home-page .hero {
+    height: 76vh;
+    min-height: 520px;
+  }
+
+  .home-page .hero div {
+    width: min(92%, 680px);
+    margin: 0 auto;
+    padding: 0 0.4rem;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.65rem);
+    line-height: 1.03;
+  }
+
+  .home-page .hero p {
+    font-size: 0.95rem;
+  }
+
+  .home-page .editorial-ribbon {
+    grid-template-columns: 1fr;
+    gap: 0.52rem;
+    padding: 18px 4.2vw;
+  }
+
+  .home-page .ribbon-label {
+    padding-top: 0;
+  }
+
+  .home-page .home-section-head {
+    padding: 24px 4.2vw 0;
+  }
+
+  .home-page .home-section-head h2 {
+    font-size: clamp(1.5rem, 7.6vw, 2.2rem);
+  }
+
+  .home-page .home-section-head p {
+    font-size: 0.93rem;
+  }
+
+  .home-page .car-slider {
+    padding: 16px 0 34px;
+  }
+
+  .home-page .slider-track {
+    gap: 12px;
+  }
+
+  .home-page .car-item {
+    width: min(72vw, 250px);
+    height: 160px;
+  }
+
+  .home-page .overlay {
+    font-size: 1.6rem;
+  }
+
+  .home-page .spotlight-head {
+    padding: 0 4.2vw;
+    margin-bottom: 0.8rem;
+  }
+
+  .home-page .spotlight-title {
+    font-size: clamp(1.55rem, 7.2vw, 2.25rem);
+  }
+
+  .home-page .spotlight-lead {
+    font-size: 0.94rem;
+  }
+
+  .home-page .spotlight-panel {
+    min-height: clamp(220px, 58vw, 300px);
+  }
+
+  .home-page .spotlight-overlay {
+    padding: 0.95rem 1rem;
+  }
+
+  .home-page .spotlight-panel:nth-child(odd) .spotlight-overlay {
+    padding-left: 1.1rem;
+  }
+
+  .home-page .spotlight-overlay h3 {
+    font-size: clamp(1.35rem, 7vw, 1.9rem);
+  }
+
+  .home-page .spotlight-dynamic {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .home-page .spotlight-cta {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .Menu {
+    padding: 9px 10px;
+  }
+
+  .home-page .Menu ul li a,
+  .home-page .nav-link-home {
+    font-size: 0.96rem;
+  }
+
+  .home-page .hero {
+    min-height: 470px;
+    height: 68vh;
+  }
+
+  .home-page .hero h1 {
+    font-size: clamp(1.7rem, 10vw, 2.25rem);
+  }
+
+  .home-page .hero p {
+    font-size: 0.9rem;
+  }
+
+  .home-page .car-item {
+    width: min(78vw, 220px);
+    height: 144px;
+  }
+
+  .home-page .overlay {
+    font-size: 1.35rem;
+  }
+
+  .home-page .spotlight-panel {
+    min-height: 220px;
+  }
+}
+
+/* ============================================
+   HOME PAGE REFRESH (editorial + contacto)
+   ============================================ */
+.home-page {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
+}
+
+.home-page .hero::after {
+  background: linear-gradient(180deg, rgba(8, 10, 14, 0.42), rgba(8, 10, 14, 0.56));
+}
+
+.home-page .hero h1,
+.home-page .hero p {
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.editorial-ribbon {
+  width: 100%;
+  margin: 0;
+  padding: 22px 2.8vw;
+  display: grid;
+  grid-template-columns: minmax(140px, 240px) minmax(0, 1fr);
+  gap: 1rem 1.2rem;
+  align-items: start;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
+}
+
+.editorial-ribbon--alt {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ribbon-label {
+  color: #ff8383;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding-top: 0.42rem;
+}
+
+.ribbon-main h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+}
+
+.ribbon-summary {
+  margin: 0.38rem 0 0;
+  color: #c6d3e5;
+  max-width: 110ch;
+  line-height: 1.58;
+}
+
+.ribbon-more p {
+  margin: 0.44rem 0 0;
+  color: #b2c0d4;
+  max-width: 110ch;
+  line-height: 1.58;
+}
+
+.ribbon-toggle {
+  margin-top: 0.62rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  padding: 0.35rem 0.78rem;
+  cursor: pointer;
+}
+
+.ribbon-toggle:hover {
+  border-color: #ff8978;
+}
+
+.home-page .home-section-head,
+.home-page .decade-spotlight,
+.home-page .car-slider {
+  background:
+    linear-gradient(180deg, rgba(17, 23, 33, 0.94) 0%, rgba(13, 18, 26, 0.94) 100%);
+}
+
+.home-page .car-slider {
+  padding-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .editorial-ribbon {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 20px 4vw;
+  }
+}
+
