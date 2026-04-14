@@ -207,12 +207,10 @@ p {
 
 /* ------------ESTILO HOME------------------ */
 
-/* ============================================
-    HERO SECTION
-   ============================================ */
+/* ------------------ HERO SECTION---------------------- */
 .hero {
   height: 100vh;
-  background: url("../HTML/Home/img_Home/hero.jpg") center/cover no-repeat;
+  background: url("../HTML/Home/img_Home/hero.jpg") center/cover no-repeat; /*Url porque la imagen esta como fondo*/
   position: relative;
   isolation: isolate;
 }
