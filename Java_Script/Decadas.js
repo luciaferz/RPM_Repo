@@ -162,9 +162,9 @@
         name: "Nissan Skyline GT-R R34",
         description: "Tracción total, electrónica avanzada y alma de competición en formato de calle.",
         images: [
-          { src: "img_90s/Skyline_1.webp", alt: "Nissan Skyline R34 1999 frontal" },
-          { src: "img_90s/Skyline_2.jpg", alt: "Nissan Skyline R34 1999 lateral" },
+          { src: "img_90s/Skyline_2.jpg", alt: "Nissan Skyline R34 1999 frontal" },
           { src: "img_90s/Skyline_3.jpg", alt: "Nissan Skyline R34 1999 posterior" },
+          { src: "img_90s/Skyline_1.webp", alt: "Nissan Skyline R34 1999 interior" },
           { src: "img_90s/Skyline_F&F.jfif", alt: "Nissan Skyline R34 1999 cultura pop" }
         ]
       }
