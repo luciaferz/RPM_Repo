@@ -1,29 +1,28 @@
-﻿.contact-page {
+.contact-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(255, 87, 87, 0.16), transparent 35%),
-    radial-gradient(circle at 90% 0%, rgba(102, 173, 255, 0.14), transparent 30%),
-    linear-gradient(180deg, #111723 0%, #0c1017 100%);
+  background: #000;
 }
 
 .contact-main {
   width: 100%;
-  margin: 0;
-  padding: 1.2rem 2.8vw 2.2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.4rem 2.8vw 2.4rem;
 }
 
 .contact-hero {
-  padding: 1rem 0 1.2rem;
+  padding: 1rem 0 1.1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.contact-kicker {
+.contact-hero .contact-kicker {
   margin: 0;
-  color: #ff8080;
+  color: #f20a0a;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.74rem;
   font-weight: 700;
+  font-family: "Oswald", sans-serif;
 }
 
 .contact-hero h1 {
@@ -31,35 +30,30 @@
   color: #fff;
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
 
 .contact-hero p {
   margin: 0.5rem 0 0;
-  color: #c8d4e3;
-  max-width: 72ch;
+  color: #d0d0d0;
+  max-width: 54ch;
   line-height: 1.6;
 }
 
-.contact-layout {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 0.9rem;
-}
-
-.contact-card,
-.contact-aside {
+.contact-card {
+  margin-top: 1.15rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
-  border-radius: 10px;
+  background: #0a0a0a;
+  border-radius: 8px;
   padding: 1rem 1.1rem;
 }
 
-.contact-card h2,
-.contact-aside h3 {
+.contact-card h2 {
   margin: 0;
   color: #fff;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 
 .contact-form {
@@ -69,53 +63,56 @@
 }
 
 .contact-form label {
-  color: #d5dff0;
+  color: #ffffff;
   font-size: 0.9rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .contact-form input,
-.contact-form select,
 .contact-form textarea {
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  background: #121a26;
+  border-radius: 6px;
+  background: #050505;
   color: #fff;
   padding: 0.62rem 0.72rem;
+  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
 }
 
 .contact-form button {
-  margin-top: 0.3rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid #f20a0a;
   border-radius: 999px;
-  background: linear-gradient(120deg, #1a2230, #141b28);
+  background: transparent;
   color: #fff;
   padding: 0.58rem 0.95rem;
   cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 
-.contact-aside p,
-.contact-aside li {
-  color: #c4d0df;
-  line-height: 1.55;
+.contact-form button:hover {
+  background: #f20a0a;
 }
 
-.contact-aside ul {
-  margin: 0.6rem 0;
-  padding-left: 1rem;
+.contact-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.contact-aside a {
+.contact-actions a {
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+  border-bottom: 1px solid rgba(242, 10, 10, 0.7);
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 860px) { /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/
   .contact-main {
     padding: 1rem 4vw 1.8rem;
-  }
-
-  .contact-layout {
-    grid-template-columns: 1fr;
   }
 }

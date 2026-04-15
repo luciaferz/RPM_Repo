@@ -133,7 +133,8 @@ p {
 }
 
 /* ============================================
-   TÃTULOS DE PÃGINA
+   TITULOS DE SECIONES
+   color: define el color del texto
    text-transform: uppercase = texto en mayÃºsculas
    font-weight:900 = texto muy grueso
    ============================================ */
@@ -146,9 +147,9 @@ p {
 
 .Titulo_Seccion60s {
   color: #e63946;
-  text-transform: uppercase;
+  text-transform: uppercase; /* Transforma el texto a mayúsculas */
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 900; /
 }
 
 .Titulo_Seccion70s {
@@ -193,10 +194,8 @@ p {
   font-weight: 650;
 }
 
-/* ============================================
-   ESTILO PARA ENLACE ACTIVO EN MENÃš
-   Indica la pÃ¡gina actual
-   ============================================ */
+/* ---------------- ENLACE ACTIVO EN MENU --------------------------
+                   Indica la página actual*/
 .nav-link.active,
 .nav-link-home.active {
   color: #f20a0a;
@@ -316,115 +315,6 @@ p {
 }
 
 
-/* ============================================
-   HOME - TIMELINE SHOWCASE COMPACTA
-   ============================================ */
-.timeline-showcase {
-  padding: 58px 0 42px;
-  background:
-    radial-gradient(circle at 8% 0%, rgba(242, 10, 10, 0.12), transparent 35%),
-    linear-gradient(180deg, #0b0d12 0%, #090b0f 100%);
-}
-
-.timeline-showcase .timeline-heading-wrap {
-  width: min(1200px, 94%);
-  margin: 0 auto;
-}
-
-.timeline-showcase .timeline-title {
-  margin: 0;
-  text-align: left;
-}
-
-.timeline-intro {
-  margin: 0.45rem 0 0;
-  color: #aeb9c8;
-  max-width: 72ch;
-  line-height: 1.5;
-}
-
-.timeline-showcase .timeline {
-  width: min(1200px, 94%);
-  margin: 1rem auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  max-height: 670px;
-  overflow: auto;
-  padding-right: 0.45rem;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(242, 10, 10, 0.6) rgba(255, 255, 255, 0.08);
-}
-
-.timeline-showcase .timeline::-webkit-scrollbar {
-  width: 10px;
-}
-
-.timeline-showcase .timeline::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-}
-
-.timeline-showcase .timeline::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f20a0a, #ff6b4a);
-  border-radius: 999px;
-}
-
-.timeline-showcase .timeline::before,
-.timeline-showcase .timeline-dot {
-  display: none;
-}
-
-.timeline-showcase .timeline-item,
-.timeline-showcase .timeline-item--left,
-.timeline-showcase .timeline-item--right {
-  width: auto;
-  left: auto;
-  text-align: left;
-  padding: 0;
-}
-
-.timeline-showcase .timeline-item {
-  display: block;
-}
-
-.timeline-showcase .timeline-content {
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 14px;
-  overflow: hidden;
-  min-height: 320px;
-}
-
-.timeline-showcase .timeline-content img {
-  height: 190px;
-}
-
-.timeline-showcase .timeline-content .text-overlay {
-  padding: 55px 18px 16px;
-}
-
-.timeline-showcase .timeline-link {
-  float: none !important;
-}
-
-@media (max-width: 1024px) {
-  .timeline-showcase .timeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-height: 640px;
-  }
-}
-
-@media (max-width: 700px) {
-  .timeline-showcase .timeline {
-    grid-template-columns: 1fr;
-    max-height: 620px;
-  }
-
-  .timeline-showcase .timeline-content img {
-    height: 200px;
-  }
-}
-
 /* ------------ESTILO SECCIONES---------------*/
 body {
   margin: 0;
@@ -509,7 +399,7 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
   .slider {
     max-width: 100%;
   }

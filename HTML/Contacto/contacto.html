@@ -25,51 +25,27 @@
     <main class="contact-main">
       <section class="contact-hero">
         <p class="contact-kicker">Contacto RPM</p>
-        <h1>Hablemos</h1>
-        <p>
-          Si quieres proponer mejoras, colaborar en contenido o compartir ideas para futuras secciones,
-          puedes escribirnos desde este formulario.
-        </p>
+        <h1>Escríbenos</h1>
+        <p>Si quieres proponer mejoras o compartir una idea, usa este formulario.</p>
       </section>
 
-      <section class="contact-layout">
-        <article class="contact-card">
-          <h2>Envíanos un mensaje</h2>
-          <form class="contact-form" action="#" method="post">
-            <label for="nombre">Nombre</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+      <section class="contact-card">
+        <h2>Mensaje</h2>
+        <form class="contact-form" action="#" method="post">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tu@email.com" required />
 
-            <label for="motivo">Motivo</label>
-            <select id="motivo" name="motivo" required>
-              <option value="">Selecciona una opción</option>
-              <option>Colaboración de contenido</option>
-              <option>Sugerencia de diseño</option>
-              <option>Consulta general</option>
-            </select>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje" required></textarea>
 
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos tu idea..." required></textarea>
-
-            <button type="submit">Enviar mensaje</button>
-          </form>
-        </article>
-
-        <article class="contact-aside">
-          <h3>Información</h3>
-          <p>
-            RPM es un proyecto centrado en historia automotriz, dirección de arte digital y experiencia frontend.
-            Estamos abiertos a colaboraciones educativas y creativas.
-          </p>
-          <ul>
-            <li>Tiempo de respuesta estimado: 24-72h</li>
-            <li>Canal principal: formulario web</li>
-            <li>Idioma: Español</li>
-          </ul>
-          <a href="../Home/Home.html">Volver a Home</a>
-        </article>
+          <div class="contact-actions">
+            <button type="submit">Enviar</button>
+            <a href="../Home/Home.html">Volver a Home</a>
+          </div>
+        </form>
       </section>
     </main>
 

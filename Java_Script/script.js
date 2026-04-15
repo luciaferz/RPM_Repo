@@ -1,14 +1,7 @@
-﻿/* ============================================
-   SCRIPT.JS - Funcionalidades JavaScript
-   del proyecto RPM (Proyecto Educativo)
-   
-   Contenido:
-   1. Resaltar pÃ¡gina activa en el menÃº
-   2. Detectar la URL actual y comparar con enlaces
-   ============================================ */
+﻿
 
 /* ============================================
-   FUNCIÃ“N: highlightActivePage()
+   FUNCIÓN: highlightActivePage()
    ============================================
    PropÃ³sito: Resaltar el enlace del menÃº que
    corresponde a la pÃ¡gina actual.
@@ -26,6 +19,7 @@
    - getAttribute(): obtener valor de atributo
    - classList.add/remove(): modificar clases CSS
    ============================================ */
+   
 function highlightActivePage() {
   // window.location.pathname devuelve la ruta actual
   // Ejemplo: "/HTML/1960/60s.html"
