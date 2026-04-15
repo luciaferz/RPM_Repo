@@ -42,6 +42,7 @@ const DECADES = {
       }
     ]
   },
+  
   "1970": {
     title: "1970 - Muscle y Estilo",
     intro: "Los 70 mezclaron potencia, diseno llamativo y superdeportivos inolvidables.",
@@ -395,3 +396,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupGalleryChange();
   setupInfoToggle();
 });
+//prueba
