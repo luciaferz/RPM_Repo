@@ -164,4 +164,79 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector(".contact-form");
+
+  if (!contactForm) return;
+
+  const requiredFields = contactForm.querySelectorAll("input[required], textarea[required]");
+  const emailField = contactForm.querySelector("#email");
+  const nameField = contactForm.querySelector("#nombre");
+  const messageField = contactForm.querySelector("#mensaje");
+
+  /*----------MENSAJE ERRROR Y VALIDACIÓN DE CAMPOS (CONTACTO)---------------- */
+  function getFieldMessage(field) {
+    if (field.id === "nombre" && !field.value.trim()) {
+      return "Necesita rellenar este campo.";
+    }
+
+    if (field.id === "email") {
+      const emailValue = field.value.trim();
+
+      if (!emailValue) {
+        return "Necesita rellenar este campo."; /*Primero verifica si el campo está vacío*/
+      }
+
+      if (!emailValue.includes("@") || !field.checkValidity()) {
+        return "El formato es incorrecto y necesita poner @."; /*Luego verifica si el formato es incorrecto*/
+      }
+    }
+
+    if (field.id === "mensaje" && !field.value.trim()) {
+      return "Necesita rellenar este campo.";
+    }
+
+    return "";
+  }
+
+  function getFieldMessageElement(field) {
+    return contactForm.querySelector(`[data-field-message="${field.id}"]`);
+  }
+
+  function updateFieldMessage(field) {
+    const messageElement = getFieldMessageElement(field);
+    if (!messageElement) return;
+
+    const message = getFieldMessage(field);
+    messageElement.textContent = message;
+    messageElement.classList.toggle("is-visible", Boolean(message));
+  }
+
+  function updateFieldState(field) {
+    const hasError = Boolean(getFieldMessage(field));
+    field.classList.toggle("is-invalid", hasError);
+    updateFieldMessage(field);
+  }
+
+  requiredFields.forEach((field) => {
+    field.addEventListener("input", () => {
+      updateFieldState(field);
+    });
+  });
+
+  contactForm.addEventListener("submit", (event) => {
+    const invalidFields = Array.from(requiredFields).filter((field) =>
+      Boolean(getFieldMessage(field)),
+    );
+
+    requiredFields.forEach((field) => updateFieldState(field));
+
+    if (invalidFields.length > 0) {
+      event.preventDefault();
+      invalidFields[0].focus();
+      return;
+    }
+  });
+});
+
 

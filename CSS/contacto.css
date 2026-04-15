@@ -62,6 +62,19 @@
   gap: 0.45rem;
 }
 
+.field-message {
+  display: none;
+  margin: -0.1rem 0 0.2rem;
+  color: #f20a0a;
+  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.field-message.is-visible {
+  display: block;
+}
+
 .contact-form label {
   color: #ffffff;
   font-size: 0.9rem;
@@ -78,6 +91,11 @@
   color: #fff;
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+}
+
+.contact-form input.is-invalid,
+.contact-form textarea.is-invalid {
+  border-color: #f20a0a;
 }
 
 .contact-form button {

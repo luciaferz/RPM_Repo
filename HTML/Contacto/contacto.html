@@ -31,15 +31,18 @@
 
       <section class="contact-card">
         <h2>Mensaje</h2>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="#" method="post" novalidate>
           <label for="nombre">Nombre</label>
           <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+          <p class="field-message" data-field-message="nombre" aria-live="polite"></p>
 
           <label for="email">Email</label>
           <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+          <p class="field-message" data-field-message="email" aria-live="polite"></p>
 
           <label for="mensaje">Mensaje</label>
           <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje" required></textarea>
+          <p class="field-message" data-field-message="mensaje" aria-live="polite"></p>
 
           <div class="contact-actions">
             <button type="submit">Enviar</button>
@@ -50,5 +53,6 @@
     </main>
 
     <script src="../../Java_Script/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>
