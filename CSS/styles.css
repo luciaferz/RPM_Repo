@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    IMPORTAR FUENTES ANTES QUE NADA
    Google Fonts debe cargarse primero
    ============================================ */
@@ -10,6 +10,8 @@
    box-sizing: incluye padding/border en el ancho
    ============================================ */
 * {
+  /* box-sizing: border-box es un truco muy común para que, si le pones un borde 
+     o un relleno a un cuadro, este no se haga más grande de lo que le has dicho. */
   box-sizing: border-box;
 }
 
@@ -24,6 +26,68 @@ body {
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
   color: white;
+}
+
+/* ============================================
+   BOTONES GLOBALES
+   ============================================ */
+/* Esta clase se usa para que todos los botones importantes tengan el mismo aspecto */
+.btn-rpm {
+  display: inline-block;
+  padding: 0.65rem 1.6rem;
+  /* border-radius: 999px hace que el botón sea totalmente redondeado (forma de cápsula) */
+  border-radius: 999px;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  /* var(--btn-color, #f20a0a) es una "variable". Si no le decimos un color, 
+     usará el rojo (#f20a0a) por defecto. */
+  border: 2px solid var(--btn-color, #f20a0a);
+  color: var(--btn-color, #f20a0a);
+  /* position: relative y overflow: hidden son necesarios para que la animación 
+     de "llenado" no se salga del botón. */
+  position: relative;
+  overflow: hidden;
+  /* transition nos permite que los cambios de color sean suaves (en 0.4 segundos) 
+     en lugar de instantáneos. */
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease;
+  z-index: 1;
+  text-align: center;
+  line-height: 1;
+}
+
+/* ::before es un "pseudo-elemento". Es como una capa invisible que creamos 
+   dentro del botón para hacer el efecto de llenado de color. */
+.btn-rpm::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; /* Empezamos con ancho 0 para que no se vea el color */
+  height: 100%;
+  background: var(--btn-color, #f20a0a);
+  /* Esta transición hace que el color aparezca progresivamente de izquierda a derecha */
+  transition: width 0.4s ease;
+  z-index: -1; /* Lo ponemos detrás del texto para no taparlo */
+}
+
+/* Cuando pasamos el ratón (:hover) el ancho pasa de 0 a 100% */
+.btn-rpm:hover::before,
+.btn-rpm:active::before {
+  width: 100%;
+}
+
+/* Cambiamos el color del texto a blanco al pasar el ratón para que se lea bien 
+   sobre el fondo que se está llenando de color. */
+.btn-rpm:hover,
+.btn-rpm:active {
+  color: #fff !important;
 }
 
 /* ============================================
@@ -114,9 +178,9 @@ p {
   transition: width 0.3s ease;
 }
 
-/* LÃ­nea completa al hacer hover */
-.Menu ul li a:hover::after,
-.nav-link-home:hover::after {
+/* LÃ­nea completa al hacer hover (solo si no es la página actual) */
+.Menu ul li a:not(.active):hover::after,
+.nav-link-home:not(.active):hover::after {
   width: 100%;
 }
 
@@ -164,10 +228,12 @@ p {
   animation-delay: 0.5s;
 }
 
+/* @keyframes define los pasos de una animación. Aquí la llamamos "fadeInUp" 
+   porque hace que algo aparezca suavemente y suba un poco. */
 @keyframes fadeInUp {
   to {
-    opacity: 15;
-    transform: translateY(0);
+    opacity: 1; /* Al final de la animación es totalmente visible */
+    transform: translateY(0); /* Vuelve a su sitio original */
   }
 }
 
@@ -247,7 +313,6 @@ p {
   pointer-events: auto; /* Muy importante */
 }
 
-
 /* ------------ESTILO SECCIONES---------------*/
 body {
   margin: 0;
@@ -257,7 +322,6 @@ body {
 }
 
 .Titulo_Seccion60s {
-  text-align: center;
   margin: 40px 0;
 }
 
@@ -332,7 +396,8 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 600px) { /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
+@media (max-width: 600px) {
+  /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
   .slider {
     max-width: 100%;
   }
@@ -371,7 +436,6 @@ body {
     width: 270px;
     height: 178px;
   }
-
 }
 
 @media (max-width: 780px) {
@@ -450,7 +514,6 @@ body {
   .home-page .overlay {
     font-size: 1.6rem;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -484,7 +547,6 @@ body {
   .home-page .overlay {
     font-size: 1.35rem;
   }
-
 }
 
 /* ============================================
@@ -498,7 +560,11 @@ body {
 }
 
 .home-page .hero::after {
-  background: linear-gradient(180deg, rgba(8, 10, 14, 0.42), rgba(8, 10, 14, 0.56));
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 14, 0.42),
+    rgba(8, 10, 14, 0.56)
+  );
 }
 
 .home-page .hero h1,
@@ -539,6 +605,8 @@ body {
   color: #fff;
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
+  /* clamp(mínimo, preferido, máximo) es una forma de decirle al navegador que 
+     ajuste el tamaño de la letra según la pantalla de forma automática. */
   font-size: clamp(1.45rem, 2.8vw, 2.2rem);
 }
 
@@ -551,8 +619,11 @@ body {
 
 .home-page .home-section-head,
 .home-page .car-slider {
-  background:
-    linear-gradient(180deg, rgba(17, 23, 33, 0.94) 0%, rgba(13, 18, 26, 0.94) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(17, 23, 33, 0.94) 0%,
+    rgba(13, 18, 26, 0.94) 100%
+  );
 }
 
 .home-page .car-slider {
@@ -566,5 +637,3 @@ body {
     padding: 20px 4vw;
   }
 }
-
-

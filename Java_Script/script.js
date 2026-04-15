@@ -1,16 +1,17 @@
 function highlightActivePage() {
-  const currentPath = window.location.pathname;
+  // Obtenemos la ruta y el query string actual (p. ej. /secciones.html?decada=1960)
+  const currentFullRoute = window.location.pathname + window.location.search;
 
-  // jQuery: selecciona todos los enlaces del menu y los recorre con .each()
-  // Se usa para detectar cual coincide con la ruta actual y marcarlo como activo.
   $(".Menu a").each(function () {
-    // jQuery: $(this) convierte el elemento actual en objeto jQuery
-    // para poder usar .attr() y .toggleClass() de forma mas simple.
     const $link = $(this);
     const href = $link.attr("href") || "";
+
+    // Un enlace es activo si:
+    // 1. La ruta completa actual incluye el href del enlace
+    // 2. Es el Home (caso especial por estructura de carpetas)
     const isActive =
-      currentPath.includes(href) ||
-      (currentPath.includes("Home") && href.includes("Home.html"));
+      currentFullRoute.includes(href) ||
+      (currentFullRoute.includes("Home") && href.includes("Home.html"));
 
     $link.toggleClass("active", isActive);
   });
@@ -39,6 +40,8 @@ $(function () {
     }
 
     $track.css("transform", `translateX(-${pos}px)`);
+    // requestAnimationFrame es una función avanzada del navegador que llama a 'loopSlider'
+    // unas 60 veces por segundo, creando una animación muy suave para el carrusel.
     requestAnimationFrame(loopSlider);
   }
 
@@ -78,7 +81,11 @@ $(function () {
 
       if ($text.length) {
         $text.removeClass("active");
-        setTimeout(() => $text.addClass("active"), 100);
+        // setTimeout espera un tiempo (100 milisegundos) antes de ejecutar la función de dentro.
+        // Lo usamos para hacer un pequeño efecto de retardo al cambiar el texto.
+        setTimeout(function () {
+          $text.addClass("active");
+        }, 100);
       }
     }
 
@@ -117,40 +124,36 @@ $(function () {
     startInterval();
   });
 
-<<<<<<< Updated upstream
-
-=======
   // jQuery: selecciona el formulario de contacto para validar los campos.
   const $contactForm = $(".contact-form");
 
   if (!$contactForm.length) return;
 
-  // jQuery: recoge todos los campos obligatorios del formulario.
-  const $requiredFields = $contactForm.find("input[required], textarea[required]");
+  // jQuery: recoge todos los campos a validar del formulario.
+  const $requiredFields = $contactForm.find("#nombre, #email, #mensaje");
 
   function getFieldMessage($field) {
     const fieldId = $field.attr("id");
     const value = ($field.val() || "").trim();
 
     if (fieldId === "nombre" && !value) {
-      return "Necesita rellenar este campo.";
+      return "Es obligatorio rellenar el campo";
     }
 
     if (fieldId === "email") {
       if (!value) {
-        return "Necesita rellenar este campo.";
+        return "Es obligatorio rellenar el campo";
       }
 
       const hasAt = value.includes("@");
-      const isValid = $field[0].checkValidity();
 
-      if (!hasAt || !isValid) {
-        return "El formato es incorrecto y necesita poner @.";
+      if (!hasAt) {
+        return "Formato incorrecto necesario incluir @";
       }
     }
 
     if (fieldId === "mensaje" && !value) {
-      return "Necesita rellenar este campo.";
+      return "Es obligatorio rellenar el campo";
     }
 
     return "";
@@ -160,11 +163,18 @@ $(function () {
     const message = getFieldMessage($field);
 
     // jQuery: busca el <p> de error asociado a cada campo mediante data-field-message.
-    const $message = $contactForm.find(`[data-field-message="${$field.attr("id")}"]`);
+    const $message = $contactForm.find(
+      `[data-field-message="${$field.attr("id")}"]`,
+    );
 
-    // jQuery: .toggleClass() y .text() actualizan el estado visual y el mensaje mostrado.
+    // jQuery: actualiza el estado visual y el mensaje mostrado.
     $field.toggleClass("is-invalid", Boolean(message));
-    $message.text(message).toggleClass("is-visible", Boolean(message));
+    $message.text(message);
+    if (message) {
+      $message.show();
+    } else {
+      $message.hide();
+    }
   }
 
   // jQuery: valida mientras el usuario escribe o sale del campo.
@@ -192,4 +202,3 @@ $(function () {
     }
   });
 });
->>>>>>> Stashed changes
