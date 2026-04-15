@@ -20,18 +20,6 @@ body {
   padding: 0;
 }
 
-/* ============================================
-   OVERRIDES PARA BOOTSTRAP
-   Asegurar que Bootstrap no sobrescriba estilos
-   ============================================ */
-.bg-dark {
-  background-color: black !important;
-}
-
-.text-white {
-  color: white !important;
-}
-
 /* p: pÃ¡rrafos - fuente secundaria */
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
@@ -130,61 +118,6 @@ p {
 .Menu ul li a:hover::after,
 .nav-link-home:hover::after {
   width: 100%;
-}
-
-/* ============================================
-   TITULOS DE SECIONES
-   color: define el color del texto
-   text-transform: uppercase = texto en mayÃºsculas
-   font-weight:900 = texto muy grueso
-   ============================================ */
-.Titulo_Home {
-  color: white;
-  font-weight: bold;
-  text-align: start;
-  font-size: 70px;
-}
-
-.Titulo_Seccion60s {
-  color: #e63946;
-  text-transform: uppercase; /* Transforma el texto a mayúsculas */
-  font-size: 60px;
-  font-weight: 900; /
-}
-
-.Titulo_Seccion70s {
-  color: #d97706;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-}
-
-.Titulo_Seccion80s {
-  color: #fd24a6;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-}
-
-.Titulo_Seccion90s {
-  color: #2563eb;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-}
-
-.Titulo_Seccion00s {
-  color: #8fa3b8;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
-}
-
-.Titulo_Seccion10s {
-  color: #9cd93a;
-  text-transform: uppercase;
-  font-size: 60px;
-  font-weight: 900;
 }
 
 .subtitulo {
@@ -614,27 +547,6 @@ body {
   color: #c6d3e5;
   max-width: 110ch;
   line-height: 1.58;
-}
-
-.ribbon-more p {
-  margin: 0.44rem 0 0;
-  color: #b2c0d4;
-  max-width: 110ch;
-  line-height: 1.58;
-}
-
-.ribbon-toggle {
-  margin-top: 0.62rem;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff;
-  padding: 0.35rem 0.78rem;
-  cursor: pointer;
-}
-
-.ribbon-toggle:hover {
-  border-color: #ff8978;
 }
 
 .home-page .home-section-head,
