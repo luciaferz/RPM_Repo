@@ -30,6 +30,7 @@
   color: #fff;
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
+  /* clamp: ajusta el tamaño automáticamente según el ancho de la pantalla */
   font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
 
@@ -58,8 +59,22 @@
 
 .contact-form {
   margin-top: 0.8rem;
+  /* display: grid organiza los campos de texto uno debajo de otro automáticamente */
   display: grid;
   gap: 0.45rem;
+}
+
+.field-message {
+  display: none;
+  margin: -0.1rem 0 0.2rem;
+  color: #f20a0a;
+  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.field-message.is-visible {
+  display: block;
 }
 
 .contact-form label {
@@ -78,37 +93,56 @@
   color: #fff;
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+  transition: border-color 0.2s ease;
+}
+
+.contact-form input.is-invalid,
+.contact-form textarea.is-invalid {
+  border-color: #f20a0a;
+}
+
+.contact-form input.is-invalid,
+.contact-form textarea.is-invalid {
+  border-color: #f20a0a;
 }
 
 .contact-form button {
-  border: 1px solid #f20a0a;
-  border-radius: 999px;
-  background: transparent;
-  color: #fff;
-  padding: 0.58rem 0.95rem;
-  cursor: pointer;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-}
-
-.contact-form button:hover {
-  background: #f20a0a;
+  /* Inherits from .btn-rpm */
 }
 
 .contact-actions {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
+  /* display: flex organiza el botón y el enlace en la misma fila */
   display: flex;
-  gap: 0.75rem;
+  gap: 1.25rem;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Si no caben, el segundo elemento bajará a la siguiente fila */
 }
 
-.contact-actions a {
+.contact-back-link {
   color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(242, 10, 10, 0.7);
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* ::after crea un elemento "fantasma" que usamos para hacer la línea roja animada */
+.contact-back-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%; /* Empezamos con ancho 0 (invisible) */
+  height: 2px;
+  background-color: #f20a0a;
+  transition: width 0.3s ease; /* Hace que la línea crezca suavemente en 0.3 segundos */
+}
+
+.contact-back-link:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 860px) { /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/

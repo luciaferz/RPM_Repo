@@ -1,6 +1,8 @@
 body.decade-page {
   background-color: #0b0b0b;
   color: white;
+  /* Estas son "variables" de CSS. Funcionan como etiquetas donde guardamos un color 
+     para usarlo en muchas partes del archivo sin tener que escribir el código de color mil veces. */
   --decade-color: #e63946;
   --decade-color-soft: rgba(230, 57, 70, 0.18);
 }
@@ -36,6 +38,8 @@ body.decade-page[data-decade="2010"] {
 }
 
 .garage-main {
+  /* min(1500px, 96%) le dice al cuadro que como máximo mida 1500px, 
+     pero que si la pantalla es pequeña se ajuste al 96% de la misma. */
   width: min(1500px, 96%);
   margin: 0 auto;
   padding: 30px 0 50px;
@@ -50,6 +54,10 @@ body.decade-page[data-decade="2010"] {
 #decadeHeading {
   margin: 0 0 10px;
   text-align: left;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 700;
+  /* clamp: ajusta el tamaño del título automáticamente entre un mínimo (2.5rem) y un máximo (4rem). */
+  font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
 .garage-lead {
@@ -79,7 +87,9 @@ body.decade-page[data-decade="2010"] {
 }
 
 .cars-grid {
+  /* El sistema 'grid' nos permite organizar elementos en una cuadrícula (filas y columnas) */
   display: grid;
+  /* repeat(3, minmax(0, 1fr)) crea 3 columnas iguales que se reparten el espacio disponible. */
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
@@ -90,6 +100,8 @@ body.decade-page[data-decade="2010"] {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  /* display: flex permite organizar el contenido del cuadro de forma flexible. 
+     Con 'column' hacemos que el contenido esté uno debajo de otro. */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -163,21 +175,8 @@ body.decade-page[data-decade="2010"] {
 }
 
 .info-toggle {
+  --btn-color: var(--decade-color);
   width: 100%;
-  display: block;
-  border: 1px solid var(--decade-color);
-  background-color: var(--decade-color);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-}
-
-.info-toggle:hover {
-  filter: brightness(1.08);
 }
 
 .car-extra-info {
@@ -210,6 +209,16 @@ body.decade-page[data-decade="2010"] {
   color: #d7d7d7;
   line-height: 1.6;
   font-size: 0.95rem;
+}
+
+.Titulo_Seccion60s,
+.Titulo_Seccion70s,
+.Titulo_Seccion80s,
+.Titulo_Seccion90s,
+.Titulo_Seccion00s,
+.Titulo_Seccion10s {
+  text-align: left;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .Titulo_Seccion60s {
