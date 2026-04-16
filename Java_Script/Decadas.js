@@ -1,4 +1,4 @@
-const DECADES = {
+﻿const DECADES = {
   1960: {
     title: "1960 - Clasicos Eternos",
     intro:
@@ -131,18 +131,9 @@ const DECADES = {
         features:
           "Carroceria de acero inoxidable, puertas de ala de gaviota y un estilo unico muy propio de los 80.",
         images: [
-          {
-            src: "img_80s/DeLorean_1.webp",
-            alt: "DeLorean DMC-12 1981 frontal",
-          },
-          {
-            src: "img_80s/DeLorean_2.webp",
-            alt: "DeLorean DMC-12 1981 lateral",
-          },
-          {
-            src: "img_80s/Delorean_3.jfif",
-            alt: "DeLorean DMC-12 1981 interior",
-          },
+          { src: "img_80s/DeLorean_1.webp", alt: "DeLorean DMC-12 1981 frontal" },
+          { src: "img_80s/DeLorean_2.webp", alt: "DeLorean DMC-12 1981 lateral" },
+          { src: "img_80s/Delorean_3.jfif", alt: "DeLorean DMC-12 1981 interior" },
         ],
       },
       {
@@ -166,22 +157,10 @@ const DECADES = {
         features:
           "Motor potente, entradas laterales, carroceria baja y una silueta muy llamativa en carretera.",
         images: [
-          {
-            src: "img_80s/Testarrosa_1.jpg",
-            alt: "Ferrari Testarossa 1984 frontal",
-          },
-          {
-            src: "img_80s/Testarrosa_2.jpg",
-            alt: "Ferrari Testarossa 1984 lateral",
-          },
-          {
-            src: "img_80s/Testarrosa_3.jpg",
-            alt: "Ferrari Testarossa 1984 detalle",
-          },
-          {
-            src: "img_80s/Testarrosa_4.webp",
-            alt: "Ferrari Testarossa 1984 interior",
-          },
+          { src: "img_80s/Testarrosa_1.jpg", alt: "Ferrari Testarossa 1984 frontal" },
+          { src: "img_80s/Testarrosa_2.jpg", alt: "Ferrari Testarossa 1984 lateral" },
+          { src: "img_80s/Testarrosa_3.jpg", alt: "Ferrari Testarossa 1984 detalle" },
+          { src: "img_80s/Testarrosa_4.webp", alt: "Ferrari Testarossa 1984 interior" },
         ],
       },
     ],
@@ -216,10 +195,7 @@ const DECADES = {
         images: [
           { src: "img_90s/Supra_1.webp", alt: "Toyota Supra MK4 1998 frontal" },
           { src: "img_90s/Supra_2.webp", alt: "Toyota Supra MK4 1998 lateral" },
-          {
-            src: "img_90s/Supra_3.webp",
-            alt: "Toyota Supra MK4 1998 interior",
-          },
+          { src: "img_90s/Supra_3.webp", alt: "Toyota Supra MK4 1998 interior"},
         ],
       },
       {
@@ -230,22 +206,10 @@ const DECADES = {
         features:
           "Traccion total, motor biturbo, cuadro muy completo y tecnologia avanzada para su epoca.",
         images: [
-          {
-            src: "img_90s/Skyline_2.jpg",
-            alt: "Nissan Skyline R34 1999 frontal",
-          },
-          {
-            src: "img_90s/Skyline_3.jpg",
-            alt: "Nissan Skyline R34 1999 posterior",
-          },
-          {
-            src: "img_90s/Skyline_1.webp",
-            alt: "Nissan Skyline R34 1999 interior",
-          },
-          {
-            src: "img_90s/Skyline_F&F.jfif",
-            alt: "Nissan Skyline R34 1999 cultura pop",
-          },
+          { src: "img_90s/Skyline_2.jpg", alt: "Nissan Skyline R34 1999 frontal" },
+          { src: "img_90s/Skyline_3.jpg", alt: "Nissan Skyline R34 1999 posterior" },
+          { src: "img_90s/Skyline_1.webp", alt: "Nissan Skyline R34 1999 interior" },
+          { src: "img_90s/Skyline_F&F.jfif", alt: "Nissan Skyline R34 1999 cultura pop" },
         ],
       },
     ],
@@ -276,18 +240,9 @@ const DECADES = {
         features:
           "Motor V10, carroceria baja, traccion muy efectiva y comportamiento muy rapido en recta y curva.",
         images: [
-          {
-            src: "img_00s/Gallardo_1.avif",
-            alt: "Lamborghini Gallardo 2003 frontal",
-          },
-          {
-            src: "img_00s/Gallardo_2.jpg",
-            alt: "Lamborghini Gallardo 2003 lateral",
-          },
-          {
-            src: "img_00s/Gallardo_3.webp",
-            alt: "Lamborghini Gallardo 2003 interior",
-          },
+          { src: "img_00s/Gallardo_1.avif", alt: "Lamborghini Gallardo 2003 frontal" },
+          { src: "img_00s/Gallardo_2.jpg", alt: "Lamborghini Gallardo 2003 lateral" },
+          { src: "img_00s/Gallardo_3.webp", alt: "Lamborghini Gallardo 2003 interior" },
         ],
       },
       {
@@ -298,18 +253,9 @@ const DECADES = {
         features:
           "Motor V10, caja manual, materiales ligeros y chasis pensado para altas prestaciones.",
         images: [
-          {
-            src: "img_00s/PorscheGT_1.jpg",
-            alt: "Porsche Carrera GT 2004 frontal",
-          },
-          {
-            src: "img_00s/PorscheGT_2.jpeg",
-            alt: "Porsche Carrera GT 2004 lateral",
-          },
-          {
-            src: "img_00s/PorscheGT_3.avif",
-            alt: "Porsche Carrera GT 2004 interior",
-          },
+          { src: "img_00s/PorscheGT_1.jpg", alt: "Porsche Carrera GT 2004 frontal" },
+          { src: "img_00s/PorscheGT_2.jpeg", alt: "Porsche Carrera GT 2004 lateral" },
+          { src: "img_00s/PorscheGT_3.avif", alt: "Porsche Carrera GT 2004 interior" },
         ],
       },
     ],
@@ -328,18 +274,9 @@ const DECADES = {
         features:
           "Motor V12, diseno angular, puertas de tijera y gran sensacion de potencia en todo momento.",
         images: [
-          {
-            src: "img_10s/Aventador_1.webp",
-            alt: "Lamborghini Aventador 2011 frontal",
-          },
-          {
-            src: "img_10s/Aventador_2.jpg",
-            alt: "Lamborghini Aventador 2011 lateral",
-          },
-          {
-            src: "img_10s/Aventador_3.webp",
-            alt: "Lamborghini Aventador 2011 interior",
-          },
+          { src: "img_10s/Aventador_1.webp", alt: "Lamborghini Aventador 2011 frontal" },
+          { src: "img_10s/Aventador_2.jpg", alt: "Lamborghini Aventador 2011 lateral" },
+          { src: "img_10s/Aventador_3.webp", alt: "Lamborghini Aventador 2011 interior" },
         ],
       },
       {
@@ -351,10 +288,7 @@ const DECADES = {
           "Sistema hibrido, aerodinamica avanzada, chasis de carbono y enfoque claro en altas prestaciones.",
         images: [
           { src: "img_10s/McLaren_1.jpg", alt: "McLaren P1 2012 frontal" },
-          {
-            src: "img_10s/MaLaren_2.webp",
-            alt: "McLaren P1 2012 puertas abiertas",
-          },
+          { src: "img_10s/McLaren_2.webp", alt: "McLaren P1 2012 puertas abiertas" },
           { src: "img_10s/McLaren_3.jpg", alt: "McLaren P1 2012 lateral" },
           { src: "img_10s/McLaren_4.jpg", alt: "McLaren P1 2012 interior" },
         ],
@@ -367,18 +301,9 @@ const DECADES = {
         features:
           "Motor V8, imagen muscle, mejores ayudas electronicas y un uso mas comodo en el dia a dia.",
         images: [
-          {
-            src: "img_10s/MustangGT_1.webp",
-            alt: "Ford Mustang GT 2015 frontal",
-          },
-          {
-            src: "img_10s/MustangGT_2.webp",
-            alt: "Ford Mustang GT 2015 lateral",
-          },
-          {
-            src: "img_10s/MustangGT_3.webp",
-            alt: "Ford Mustang GT 2015 interior",
-          },
+          { src: "img_10s/MustangGT_1.webp", alt: "Ford Mustang GT 2015 frontal" },
+          { src: "img_10s/MustangGT_2.webp", alt: "Ford Mustang GT 2015 lateral" },
+          { src: "img_10s/MustangGT_3.webp", alt: "Ford Mustang GT 2015 interior" },
         ],
       },
     ],

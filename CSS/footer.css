@@ -31,8 +31,45 @@
   max-width: 56ch;
 }
 
-.rpm-footer-contact {
-  margin-top: 0.75rem;
+/* Usamos el nombre del footer delante para asegurar prioridad máxima */
+.rpm-footer .rpm-footer-contact {
+  /* 1. ELIMINAR EL MARCO (RESET) */
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 0 2px 0 !important; /* Espacio justo para la línea */
+  box-shadow: none !important;
+  
+  /* 2. ESTILO DEL TEXTO */
+  display: inline-block !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-family: "Oswald", sans-serif !important;
+  text-transform: uppercase !important;
+  font-size: 0.95rem !important;
+  position: relative !important; /* Vital para el efecto */
+}
+
+/* 3. LA LÍNEA ROJA (EL AFTER) */
+.rpm-footer .rpm-footer-contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;           /* Pegada al final del texto */
+  width: 0%;           /* Invisible al principio */
+  height: 2px;         /* Grosor de la línea */
+  background-color: #f20a0a;
+  transition: width 0.3s ease;
+}
+
+/* 4. EFECTO HOVER */
+.rpm-footer .rpm-footer-contact:hover::after {
+  width: 100%;         /* La línea se desplaza */
+}
+
+.rpm-footer .rpm-footer-contact:hover {
+  background: transparent !important; /* Evita que Bootstrap lo ponga rojo */
+  color: #fff !important;
 }
 
 @media (max-width: 900px) {
