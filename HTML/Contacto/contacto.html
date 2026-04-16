@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contacto RPM - Propuestas, colaboración y consultas sobre el proyecto." />
     <title>RPM - Contacto</title>
+    <!-- Uso de Bootstrap--> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../CSS/styles.css" />
     <link rel="stylesheet" href="../../CSS/contacto.css" />
   </head>
+  <!--menu de navegacion-->
   <body class="contact-page">
     <nav class="Menu">
+      <!--enlace a la página principal-->
       <a href="../Home/Home.html" class="nav-link-home">RPM</a>
+      <!--lista a las decadas-->
       <ul>
         <li><a href="../Decadas/secciones.html?decada=1960" class="nav-link">60s</a></li>
         <li><a href="../Decadas/secciones.html?decada=1970" class="nav-link">70s</a></li>
@@ -21,27 +25,31 @@
         <li><a href="../Decadas/secciones.html?decada=2010" class="nav-link">10s</a></li>
       </ul>
     </nav>
-
+<!--principal-->
     <main class="contact-main">
       <section class="contact-hero">
+        <!--subtitulo-->
         <p class="contact-kicker">Contacto RPM</p>
+        <!--titulo principal-->
         <h1>Hablemos</h1>
+        <!--texto de introducción-->
         <p>
           Si quieres proponer mejoras, colaborar en contenido o compartir ideas para futuras secciones,
           puedes escribirnos desde este formulario.
         </p>
       </section>
-
+<!-- formulario-->
       <section class="contact-layout">
         <article class="contact-card">
           <h2>Envíanos un mensaje</h2>
           <form class="contact-form" action="#" method="post">
+            <!--campo nombre-->
             <label for="nombre">Nombre</label>
             <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
-
+            <!--campo email-->
             <label for="email">Email</label>
             <input id="email" name="email" type="email" placeholder="tu@email.com" required />
-
+            <!--campo motivo-->
             <label for="motivo">Motivo</label>
             <select id="motivo" name="motivo" required>
               <option value="">Selecciona una opción</option>
@@ -49,14 +57,14 @@
               <option>Sugerencia de diseño</option>
               <option>Consulta general</option>
             </select>
-
+            <!--campo mensaje-->
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos tu idea..." required></textarea>
-
+            <!--boton de enviar-->
             <button type="submit">Enviar mensaje</button>
           </form>
         </article>
-
+        <!-- bloque lateral informativo-->
         <article class="contact-aside">
           <h3>Información</h3>
           <p>
@@ -68,6 +76,7 @@
             <li>Canal principal: formulario web</li>
             <li>Idioma: Español</li>
           </ul>
+          <!--enlace vuelta al inicio-->
           <a href="../Home/Home.html">Volver a Home</a>
         </article>
       </section>
