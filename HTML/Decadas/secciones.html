@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -17,7 +17,7 @@
   <body class="decade-page" data-decade="1960">
     <nav class="Menu">
       <a href="../Home/Home.html" class="nav-link-home">RPM</a>
-      <ul>
+      <ul> <!-- Enlaces a las decadas-->
         <li><a href="secciones.html?decada=1960" class="nav-link decade-filter-link" data-decade-link="1960">60s</a></li>
         <li><a href="secciones.html?decada=1970" class="nav-link decade-filter-link" data-decade-link="1970">70s</a></li>
         <li><a href="secciones.html?decada=1980" class="nav-link decade-filter-link" data-decade-link="1980">80s</a></li>
@@ -27,7 +27,7 @@
       </ul>
     </nav>
 
-    <main class="garage-main">
+    <main class="garage-main"><!-- contenido principal-->
       <section class="garage-hero" aria-label="Cabecera de la década">
         <!-- El <h1> es el título principal. id="decadeHeading" nos permite controlarlo con JavaScript. -->
         <h1 id="decadeHeading" class="Titulo_Seccion60s">1960 - Clásicos Eternos</h1>
@@ -42,7 +42,7 @@
           <!-- Este párrafo está vacío porque el texto se escribe solo desde JavaScript según la década -->
           <p id="decadeNarrative" class="section-narrative"></p>
         </header>
-        <div class="cars-grid" id="carsGrid"></div>
+        <div class="cars-grid" id="carsGrid"></div><!--inserción dinámica de coches-->
       </section>
     </main>
     <footer class="rpm-footer" aria-label="Contacto RPM">

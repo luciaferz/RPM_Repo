@@ -11,6 +11,7 @@
     />
     <title>RPM - Contacto</title>
 
+
     <!-- Bootstrap CSS: Es un framework (librería) de diseño que nos permite usar 
          clases CSS ya creadas. Aquí lo usamos para el diseño general y clases de utilidad. -->
     <link
@@ -20,9 +21,12 @@
     <link rel="stylesheet" href="../../CSS/styles.css" />
     <link rel="stylesheet" href="../../CSS/contacto.css" />
   </head>
+  <!--menu de navegacion-->
   <body class="contact-page">
     <nav class="Menu">
+      <!--enlace a la página principal-->
       <a href="../Home/Home.html" class="nav-link-home">RPM</a>
+      <!--lista a las decadas-->
       <ul>
         <li><a href="../Decadas/secciones.html?decada=1960" class="nav-link">60s</a></li>
         <li><a href="../Decadas/secciones.html?decada=1970" class="nav-link">70s</a></li>
@@ -32,11 +36,14 @@
         <li><a href="../Decadas/secciones.html?decada=2010" class="nav-link">10s</a></li>
       </ul>
     </nav>
-
+<!--principal-->
     <main class="contact-main">
       <section class="contact-hero">
+        <!--subtitulo-->
         <p class="contact-kicker">Contacto RPM</p>
+        <!--titulo principal-->
         <h1>Escríbenos</h1>
+        <!--texto de introducción-->
         <p>Si quieres proponer mejoras o compartir una idea, usa este formulario.</p>
       </section>
 
@@ -64,9 +71,50 @@
             <a href="../Home/Home.html" class="contact-back-link">Volver a Home</a>
           </div>
         </form>
+<!-- formulario-->
+      <section class="contact-layout">
+        <article class="contact-card">
+          <h2>Envíanos un mensaje</h2>
+          <form class="contact-form" action="#" method="post">
+            <!--campo nombre-->
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+            <!--campo email-->
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+            <!--campo motivo-->
+            <label for="motivo">Motivo</label>
+            <select id="motivo" name="motivo" required>
+              <option value="">Selecciona una opción</option>
+              <option>Colaboración de contenido</option>
+              <option>Sugerencia de diseño</option>
+              <option>Consulta general</option>
+            </select>
+            <!--campo mensaje-->
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos tu idea..." required></textarea>
+            <!--boton de enviar-->
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </article>
+        <!-- bloque lateral informativo-->
+        <article class="contact-aside">
+          <h3>Información</h3>
+          <p>
+            RPM es un proyecto centrado en historia automotriz, dirección de arte digital y experiencia frontend.
+            Estamos abiertos a colaboraciones educativas y creativas.
+          </p>
+          <ul>
+            <li>Tiempo de respuesta estimado: 24-72h</li>
+            <li>Canal principal: formulario web</li>
+            <li>Idioma: Español</li>
+          </ul>
+          <!--enlace vuelta al inicio-->
+          <a href="../Home/Home.html">Volver a Home</a>
+        </article>
       </section>
     </main>
-
+               
     <!-- Cargamos los archivos de JavaScript al final para no ralentizar la web.
          Primero jQuery (3.7.1) y luego nuestro script.js principal. -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
