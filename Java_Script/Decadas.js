@@ -1,3 +1,5 @@
+// Esta es nuestra "Base de Datos" de coches.
+// Aquí guardamos toda la información (nombres, fotos y textos) de cada década.
 const DECADES = {
   1960: {
     title: "1960 - Clasicos Eternos",
@@ -25,6 +27,10 @@ const DECADES = {
             src: "img_60s/Escarabajo_3.jpg",
             alt: "VW Escarabajo 1965 interior",
           },
+          {
+            src: "img_60s/Escarabajo_4.jpg",
+            alt: "VW Escarabajo 1965 detalle",
+          },
         ],
       },
       {
@@ -44,6 +50,7 @@ const DECADES = {
             src: "img_60s/Camaro_3.jpg",
             alt: "Chevrolet Camaro 1967 posterior",
           },
+          { src: "img_60s/Camaro_4.jpg", alt: "Chevrolet Camaro 1967 detalle" },
         ],
       },
       {
@@ -112,6 +119,10 @@ const DECADES = {
           {
             src: "img_70s/Lamborghini_3.jpg",
             alt: "Lamborghini Countach 1974 detalle",
+          },
+          {
+            src: "img_70s/Lamborghini_4.jpg",
+            alt: "Lamborghini Countach 1974 interior",
           },
         ],
       },
@@ -352,7 +363,7 @@ const DECADES = {
         images: [
           { src: "img_10s/McLaren_1.jpg", alt: "McLaren P1 2012 frontal" },
           {
-            src: "img_10s/MaLaren_2.webp",
+            src: "img_10s/McLaren_2.webp",
             alt: "McLaren P1 2012 puertas abiertas",
           },
           { src: "img_10s/McLaren_3.jpg", alt: "McLaren P1 2012 lateral" },
@@ -428,6 +439,8 @@ function createGallery(images, carName) {
   return htmlResult;
 }
 
+// Función que genera toda la estructura (el molde) de la tarjeta de cada coche
+// Su función es recibir los datos de un coche y devolver el código HTML listo para mostrarlo
 function createCard(car) {
   const mainImage = car.images[0];
 

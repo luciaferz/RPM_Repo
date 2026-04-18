@@ -91,7 +91,7 @@ p {
 }
 
 /* ============================================
-   MENÃš DE NAVEGACIÃ“N
+   MENU DE NAVEGACION
    Estructura flexbox para distribuir elementos
    - display: flex = contenedor flexible
    - justify-content: espacio entre elementos
@@ -128,7 +128,7 @@ p {
 }
 
 /* ============================================
-   LISTA DE ENLACES DEL MENÃš
+   LISTA DE ENLACES DEL MENU
    - list-style: none = elimina viÃ±etas
    - display: flex = elementos en lÃ­nea
    - gap:  separaciÃ³n entre elementos
@@ -142,9 +142,9 @@ p {
 }
 
 /* ============================================
-   ENLACES SECUNDARIOS DEL MENÃš
+   ENLACES SECUNDARIOS DEL MENU
    position: relative necesario para ::after
-   transition: animaciÃ³n suave
+   transition: animacion suave
    ============================================ */
 .Menu ul li a {
   color: white;
@@ -160,11 +160,11 @@ p {
 }
 
 /* ============================================
-   LÃNEA ANIMADA BAJO ENLACES
+   LINEA ANIMADA BAJO ENLACES
    ::after = pseudo-elemento que se genera
-   despuÃ©s del contenido del elemento
+   despues del contenido del elemento
    - width: 0% â†’ 100% en hover
-   - transition: animaciÃ³n suave
+   - transition: animacion suave
    ============================================ */
 .Menu ul li a::after,
 .nav-link-home::after {
@@ -178,7 +178,7 @@ p {
   transition: width 0.3s ease;
 }
 
-/* LÃ­nea completa al hacer hover (solo si no es la página actual) */
+/* Linea completa al hacer hover (solo si no es la página actual) */
 .Menu ul li a:not(.active):hover::after,
 .nav-link-home:not(.active):hover::after {
   width: 100%;
