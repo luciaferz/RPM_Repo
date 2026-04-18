@@ -64,12 +64,13 @@
   gap: 0.45rem;
 }
 
-.field-message {
+.field-message,
+.contact-form .text-danger {
   display: none;
-  margin: -0.1rem 0 0.2rem;
-  color: #f20a0a;
+  margin: 0.2rem 0 0.5rem;
+  color: #f20a0a; /* Rojo para el mensaje de error de abajo */
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.45;
 }
 
@@ -90,21 +91,37 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   background: #050505;
-  color: #fff;
+  color: #ffffff !important; /* Fuerza las letras que escribe el usuario a blanco */
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f20a0a;
+  background: #050505; /* Asegura que el fondo siga siendo oscuro */
+}
+
+/* Evita que el navegador ponga el fondo blanco al autocompletar */
+.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill,
+.contact-form textarea:-webkit-autofill:hover,
+.contact-form textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #050505 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact-form input.is-invalid,
-.contact-form textarea.is-invalid {
-  border-color: #f20a0a;
+.contact-form textarea.is-invalid,
+.contact-form input:invalid:not(:placeholder-shown) {
+  border-color: #f20a0a !important;
 }
 
-.contact-form input.is-invalid,
-.contact-form textarea.is-invalid {
-  border-color: #f20a0a;
-}
 
 .contact-form button {
   /* Inherits from .btn-rpm */
