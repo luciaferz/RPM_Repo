@@ -40,6 +40,25 @@
   font-size: 0.95rem;
   position: relative;
   padding-bottom: 2px;
+<<<<<<< HEAD
+=======
+}
+
+/* ::after crea la línea roja animada que aparece al pasar el ratón */
+.rpm-footer-contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f20a0a;
+  transition: width 0.3s ease;
+}
+
+.rpm-footer-contact:hover::after {
+  width: 100%;
+>>>>>>> 0516345c424481972d25039c2343b215b9bb24d7
 }
 
 .rpm-footer-contact::after { /* ::after crea la línea roja animada que aparece al pasar el ratón */

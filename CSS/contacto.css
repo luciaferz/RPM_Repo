@@ -93,7 +93,11 @@
   color: #ffffff !important; /* Fuerza las letras que escribe el usuario a blanco */
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+<<<<<<< HEAD
   transition: border-color 0.2s ease, background-color 0.2s ease; /*Transicion suave*/
+=======
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+>>>>>>> 0516345c424481972d25039c2343b215b9bb24d7
 }
 
 .contact-form input:focus,
@@ -117,8 +121,13 @@
 
 .contact-form input.is-invalid,
 .contact-form textarea.is-invalid,
+<<<<<<< HEAD
 .contact-form input:invalid:not(:placeholder-shown) { /*is-invalid es una clase de Bootstrap - Indicar que un campo tiene errores de validación poniendo automaticamente border rojo (solo funcion si se añade js).*/
   border-color: #f20a0a !important; /*Sobrescribe el color por defecto de Bootstrap*/
+=======
+.contact-form input:invalid:not(:placeholder-shown) {
+  border-color: #f20a0a !important;
+>>>>>>> 0516345c424481972d25039c2343b215b9bb24d7
 }
 
 
