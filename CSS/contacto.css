@@ -93,11 +93,7 @@
   color: #ffffff !important; /* Fuerza las letras que escribe el usuario a blanco */
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-<<<<<<< HEAD
   transition: border-color 0.2s ease, background-color 0.2s ease; /*Transicion suave*/
-=======
-  transition: border-color 0.2s ease, background-color 0.2s ease;
->>>>>>> 0516345c424481972d25039c2343b215b9bb24d7
 }
 
 .contact-form input:focus,
@@ -108,26 +104,21 @@
 }
 
 /* Evita que el navegador ponga el fondo blanco al autocompletar */
-.contact-form input:-webkit-autofill,
+.contact-form input:-webkit-autofill, /*input autofill → mantiene el diseño oscuro ✔*/
 .contact-form input:-webkit-autofill:hover,
 .contact-form input:-webkit-autofill:focus,
 .contact-form textarea:-webkit-autofill,
 .contact-form textarea:-webkit-autofill:hover,
 .contact-form textarea:-webkit-autofill:focus {
-  -webkit-text-fill-color: #fff;
-  -webkit-box-shadow: 0 0 0px 1000px #050505 inset;
-  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff; /*Fuerza texto blanco*/
+  -webkit-box-shadow: 0 0 0px 1000px #050505 inset; /*Reemplaza fondo del navegador*/
+  transition: background-color 5000s ease-in-out 0s; /*bloquear estilos automáticos del navegador*/
 }
 
 .contact-form input.is-invalid,
 .contact-form textarea.is-invalid,
-<<<<<<< HEAD
 .contact-form input:invalid:not(:placeholder-shown) { /*is-invalid es una clase de Bootstrap - Indicar que un campo tiene errores de validación poniendo automaticamente border rojo (solo funcion si se añade js).*/
   border-color: #f20a0a !important; /*Sobrescribe el color por defecto de Bootstrap*/
-=======
-.contact-form input:invalid:not(:placeholder-shown) {
-  border-color: #f20a0a !important;
->>>>>>> 0516345c424481972d25039c2343b215b9bb24d7
 }
 
 
@@ -165,7 +156,7 @@
   transition: width 0.3s ease; /* Hace que la línea crezca suavemente en 0.3 segundos */
 }
 
-.contact-back-link:hover::after {
+.contact-back-link:hover::after { /*Hace que una línea se expanda completamente cuando pasas el ratón por un enlace.*/
   width: 100%;
 }
 

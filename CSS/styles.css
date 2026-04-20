@@ -19,6 +19,13 @@ p {
   color: white;
 }
 
+/*Forzar que el color sea blanco para que los titulares del home sean blancos*/
+.home-section-head h2,
+.home-section-head p,
+.home-section-head {
+  color: #fff;
+}
+
 /*------------------------- BOTONES GLOBALES------------------------- */
 
 /* Esta clase se usa para que todos los botones importantes tengan el mismo aspecto */
@@ -117,27 +124,21 @@ p {
   color: #f20a0a;
 }
 
-/* ============================================
-   LÍNEA ANIMADA BAJO ENLACES
-   ::after = pseudo-elemento que se genera
-   después del contenido del elemento
-   - width: 0% → 100% en hover
-   - transition: animación suave
-   ============================================ */
+/* -------------LÍNEA ANIMADA BAJO ENLACES----------------- */
 .Menu ul li a::after,
-.nav-link-home::after {
-  content: "";
+.nav-link-home::after { /*::after = pseudo-elemento que se genera después del contenido del elemento*/
+  content: ""; /*pseudo-elemento sin contenido que se genera un elemento extra después del texto*/
   position: absolute;
   left: 0;
   bottom: 0;
   width: 0%;
   height: 2px;
   background-color: #f20a0a;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease; /*animacion suave*/
 }
 
-/* LÃ­nea completa al hacer hover (solo si no es la página actual) */
-.Menu ul li a:not(.active):hover::after,
+/* Linea animada se expande a la línea completa al hacer hover (solo si no es la página actual) */
+.Menu ul li a:not(.active):hover::after, /*Excluye los enlaces que tienen la clase active*/
 .nav-link-home:not(.active):hover::after {
   width: 100%;
 }
@@ -181,13 +182,12 @@ p {
   position: relative;
   z-index: 1;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s forwards;
-  animation-delay: 0.5s;
+  transform: translateY(20px); /*El contenido empieza 20px más abajo*/
+  animation: fadeInUp 1.5s forwards; /*fadeInUp: animacion definida en @keyframes)*/
+  animation-delay: 0.5s; /*Espera medio segundo antes de empezar*/
 }
 
-/* @keyframes define los pasos de una animación. Aquí la llamamos "fadeInUp" 
-   porque hace que algo aparezca suavemente y suba un poco. */
+/* @keyframes define los pasos de una animación. - Forma parte del sistema de animaciones de CSS Animations (Define cómo cambia un elemento con el tiempo). */
 @keyframes fadeInUp {
   to {
     opacity: 1; /* Al final de la animación es totalmente visible */
@@ -205,9 +205,7 @@ p {
   color: #ccc;
 }
 
-/* ============================================
-   MENU                  
-   ============================================ */
+/* ----------------- MENU CARRUSEL (LOOP) ----------------- */
 .car-slider {
   overflow: hidden;
   padding: 34px 0 60px;
@@ -220,30 +218,30 @@ p {
   display: flex;
   gap: 20px;
   width: max-content;
-  transform: translateX(0);
-  transition: transform 0.1s linear; /* suave */
+  transform: translateX(0); /*mueve todo el carrusel*/
+  transition: transform 0.1s linear; /* Moviemiento suave - linear: La animación va a la misma velocidad todo el tiempo*/
 }
 
 .car-item {
   position: relative;
   width: 300px;
   height: 200px;
-  flex-shrink: 0;
-  overflow: hidden;
+  flex-shrink: 0; /*Evita que el elemento se encoja dentro del flex container.(CSS Flexbox)*/
+  overflow: hidden; /*Oculta todo lo que se salga del contenedor.*/
   border-radius: 16px;
 }
 
 .car-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /*La imagen llena el contenedor sin deformarse, recortando lo que sobra*/
   transition: 0.5s ease;
-  pointer-events: none;
+  pointer-events: none; /*La imagen no interfiere con clicks*/
 }
 
 .car-item:hover .car-img {
-  transform: scale(1.1);
-  filter: blur(3px) brightness(0.7);
+  transform: scale(1.1); /*Amplía la imagen un 10%*/
+  filter: blur(3px) brightness(0.7); /*blur: Aplica desenfoque (CSS filter property) | brightness: Reduce el brillo al 70%*/
 }
 
 .overlay {
@@ -264,28 +262,16 @@ p {
   opacity: 1;
 }
 
+/*Convierte toda la tarjeta (car-item) en un botón clicable completo.*/
 .panel-link {
   position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: auto; /* Muy importante */
+  inset: 0; /*Ocupa toda la tarjeta (CSS Logical Properties inset -  Distancias lógicas entre un elemento posicionado y los bordes de su contenedor de referencia)*/
+  z-index: 2; /*Lo pone por encima de otros elementos*/
+  pointer-events: auto; /*Permite que este elemento reciba clics */
 }
 
-/* ------------ESTILO SECCIONES---------------*/
-body {
-  margin: 0;
-  background: black;
-  color: white;
-  font-family: Arial;
-}
 
-.Titulo_Seccion60s {
-  margin: 40px 0;
-}
-
-/* =========================
-   SLIDER
-========================= */
+/* -------------- SLIDER ---------------*/
 .slider {
   position: relative;
   width: 100%;
@@ -312,15 +298,15 @@ body {
 }
 
 .slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute; /*Saca el botón del flujo normal y lo coloca encima del slider.*/
+  top: 50%; /*Lo coloca a la mitad vertical del contenedor.*/
+  transform: translateY(-50%); /*Ajuste  para centrarlo perfectamente (porque top: 50% por sí solo no lo centra exacto).*/
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
   font-size: 2rem;
   padding: 0.2em 0.6em;
-  cursor: pointer;
+  cursor: pointer; /*Cambia el cursor a “mano” al pasar el ratón.*/
   z-index: 2;
   border-radius: 50%;
   transition: background 0.2s;
@@ -354,16 +340,13 @@ body {
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
-  /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
+@media (max-width: 600px) { /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
   .slider {
     max-width: 100%;
   }
 }
 
-/* ============================================
-   HOME RESPONSIVE
-   ============================================ */
+/* -------------HOME RESPONSIVE------------- */
 @media (max-width: 1100px) {
   .home-page .Menu {
     padding: 10px 14px;
@@ -398,14 +381,14 @@ body {
 
 @media (max-width: 780px) {
   .home-page .Menu {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: column; /*Cambia el menú de horizontal a vertical:*/
+    align-items: stretch; /*Elementos ocupen todo el ancho disponible y no queden centrados ni comprimidos*/
     gap: 0.55rem;
   }
 
   .home-page .Menu ul {
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-between; /*Reparte los elementos horizontalmente:*/
+    flex-wrap: wrap; /*Permite que los elementos salten a otra línea si no caben (CSS Flexbox wrap)*/
     gap: 0.45rem;
   }
 
@@ -508,7 +491,7 @@ body {
 }
 
 /* ============================================
-   HOME PAGE REFRESH (editorial + contacto)
+   HOME PAGE REFRESH ( estilo editorial + contacto)
    ============================================ */
 .home-page {
   background:
