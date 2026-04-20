@@ -1,0 +1,321 @@
+================================================================================
+                     RPM - COCHES POR DÉCADAS
+                     Documentación del Proyecto
+================================================================================
+
+DESCRIPCIÓN GENERAL
+--------------------------------------------------------------------------------
+RPM es un sitio web tipo museo virtual que muestra automóviles icónicos
+organizados por décadas, desde los años 1960 hasta 2010. El sitio ofrece
+una experiencia visual atractiva con carruseles, galerías de imágenes y
+carga dinámica de contenido.
+
+
+ARQUITECTURA DE PÁGINAS HTML
+--------------------------------------------------------------------------------
+为什么会 separated into different HTML files?
+
+Decisión de diseño: mantener 3 archivos HTML separados en lugar de uno solo.
+
+  - Home.html: Página de inicio (portada)
+  - secciones.html: Template dinámico para las 6 décadas
+  - contacto.html: Página de contacto
+
+Por qué NO todo en un solo archivo (SPA):
+  - Un solo HTML requeriría JavaScript más complejo (router, estado)
+  - SEO más difícil (contenido renderizado dinámicamente)
+  - URLs menos intuitivas sin configuración adicional
+
+Por qué SÍ funciona bien la estructura actual:
+  - Simplicidad: cada página es independiente y fácil de mantener
+  - SEO: cada década tiene URL propia (?decada=1990) - indexable
+  - Separation of concerns: lógica clara entre tipos de contenido
+  - Mantenimiento: puedes editar Home sin afecta Décadas
+
+Lo que SÍ habría sido redundante: tener 6 archivos HTML separados
+(uno por década), lo cual NO ocurre - secciones.html sirve de template.
+
+VEREDICTO: La estructura actual es un buen balance entre simplicidad
+y mantenibilidad para este proyecto.
+
+
+ESTRUCTURA DE ARCHIVOS
+--------------------------------------------------------------------------------
+
+/RPM_Repo/
+├── HTML/
+│   ├── Home/
+│   │   └── Home.html          <- Página principal (punto de entrada)
+│   ├── Decadas/
+│   │   └── secciones.html     <- Página dinámica de décadas. Template dinámico para las 6 décadas
+│   ├── Contacto/
+│   │   └── contacto.html     <- Página de contacto con formulario
+│   └── (imágenes por sección)
+│
+├── CSS/
+│   ├── styles.css            <- Estilos globales y del Home
+│   ├── Decadas.css           <- Estilos específicos de décadas
+│   ├── contacto.css          <- Estilos del formulario
+│   └── footer.css            <- Estilos del pie de página
+│
+├── Java_Script/
+│   ├── script.js             <- Funciones globales (slider, validación)
+│   └── Decadas.js            <- Base de datos y renderizado de coches
+│
+└── documentacion.txt         <- Este archivo
+
+
+PÁGINAS HTML
+--------------------------------------------------------------------------------
+
+1. HOME (HTML/Home/Home.html)
+   - Punto de entrada principal del sitio
+   - Barra de navegación fija en la parte superior
+   - Hero section con imagen de fondo y título animado
+   - Ribbon editorial "Visión RPM" con descripción del sitio
+   - Carrusel infinito de décadas (60s-10s)
+   - Segundo ribbon editorial
+   - Footer con enlace a contacto
+
+2. SECCIONES/DÉCADAS (HTML/Decadas/secciones.html)
+   - Página dinámica que carga contenido según parámetro URL
+   - Parámetro: ?decada=AAAA (donde AAAA = 1960, 1970, 1980, 1990, 2000, 2010)
+   - Muestra título, introducción y grid de tarjetas de coches
+   - Cada tarjeta incluye:
+     * Imagen principal
+     * Año y nombre del coche
+     * Descripción breve
+     * Galería de miniaturas
+     * Botón para ver información extendida
+
+3. CONTACTO (HTML/Contacto/contacto.html)
+   - Formulario de contacto con validación
+   - Campos: nombre, email, mensaje
+   - Validación en tiempo real y al enviar
+
+
+HOJAS DE ESTILO (CSS)
+--------------------------------------------------------------------------------
+
+styles.css - Estilos principales
+   - Importación de fuentes (Bebas Neue, Cairo, Oswald)
+   - Reset básico y estilos globales
+   - Estilos del menú de navegación
+   - Estilos del hero(sección principal de la página) y carrusel infinito
+   - Botones con efecto de llenado (.btn-rpm / .btn-rpm::before / with:0 --> width: 100% en hover: transición de izquierda a derecha
+   - Media queries para responsive (móvil, tablet, desktop) [@media (max-width: ... px ]
+   - Gradientes (.home-page / .home-page .hero::after / .home-page .car-slider)
+   - Efectos visuales sombras y transiciones ( .hero h1 / .hero p / .btn-rpm / car -item ) 	
+
+Decadas.css
+   - Estilos específicos para las tarjetas de coches:
+     .cars-grid (contenedor grid de 3 columnas)
+     .car-card (tarjeta individual: fondo, borde, sombra)
+     .car-main-image (imagen principal, 300px altura)
+     .car-info (contenedor de información)
+     .car-year (año del coche, color variable por década)
+     .subtitulo (nombre del coche)
+     .car-description (descripción breve)
+     .car-gallery-thumbs (grid de miniaturas, 3 columnas)
+     .car-thumb-button (botón de miniatura)
+     .car-thumb-button.active (miniatura seleccionada)
+     .car-thumb (imagen miniatura)
+     .info-toggle (botón "Ver información")
+     .car-extra-info (panel expandible)
+     .Titulo_SeccionAAAA (Títulos con colores por década ()
+     @media (max-width: 992px) - Grid 3→2 columnas
+     @media (max-width: 768px) - Grid 2→1 columna
+
+   Colores por década (variables CSS - líneas 6-38):
+     * 1960s: #e63946 (rojo) / rgba(230, 57, 70, 0.18)
+     * 1970s: #d97706 (naranja) / rgba(217, 119, 6, 0.18)
+     * 1980s: #fd24a6 (rosa) / rgba(253, 36, 166, 0.18)
+     * 1990s: #2563eb (azul) / rgba(37, 99, 235, 0.18)
+     * 2000s: #8fa3b8 (gris) / rgba(143, 163, 184, 0.2)
+     * 2010s: #9cd93a (verde) / rgba(156, 217, 58, 0.2)
+
+contacto.css
+
+   1. Estilos del formulario de contacto:
+      .contact-page (fondo negro, min-height 100vh)
+      .contact-main (max-width 720px)
+      .contact-hero (cabecera con borde inferior)
+      .contact-hero .contact-kicker (etiqueta CONTACTO RPM)
+      .contact-hero h1 (título Escríbenos)
+      .contact-hero p (párrafo descriptivo)
+      .contact-card (tarjeta del formulario)
+      .contact-card h2 (título Formulario de contacto)
+      .contact-form (display grid)
+      @media (max-width: 860px) - Responsive
+
+   2. Campos de entrada:
+      .contact-form label (etiquetas de campos)
+      .contact-form input (campos de texto)
+      .contact-form input:focus (campo activo, borde rojo)
+      .contact-form input:-webkit-autofill (autocompletado)
+      .contact-form input.is-invalid (campo inválido, borde rojo)
+
+   3. Mensajes de validación:
+      .field-message, .text-danger (mensajes de error rojo)
+      .field-message.is-visible (mensaje visible)
+
+   4. Botones:
+      .contact-form button (hereda de .btn-rpm)
+      .contact-actions (contenedor acciones flex)
+      .contact-back-link (enlace Volver al inicio)
+      .contact-back-link::after (línea roja animada)
+
+footer.css - Estilos compartidos del pie de página
+   .rpm-footer (contenedor principal)
+   .rpm-footer .footer-kicker (etiqueta CONTACTO RPM)
+   .rpm-footer h3 (título)
+   .rpm-footer p (párrafo)
+   .rpm-footer-contact (enlace)
+   .rpm-footer-contact::after (línea animada)
+   .rpm-footer-contact:hover::after (hover)
+   @media (max-width: 900px) - Responsive
+
+
+JAVASCRIPT
+--------------------------------------------------------------------------------
+
+script.js - Funciones globales
+
+   highlightActivePage()
+      Detecta la página actual y marca el enlace correspondiente
+      en el menú de navegación con la clase 'active'.
+
+   Slider del Home (loopSlider)
+      - Carrusel infinito que se desplaza automáticamente
+      - Pausa al pasar el ratón por encima
+      - Usa requestAnimationFrame para animación suave
+      - Se reinicia cuando llega a la mitad del contenido (duplicado)
+
+   Sliders manuales de coches
+      - Encontrados en las tarjetas de cada década
+      - Navegación con botones prev/next
+      - Cambio automático cada 3 segundos
+      - Texto descriptivo animado
+
+   Validación de formulario
+      - Valida campos: nombre, email, mensaje
+      - Email debe contener @
+      - Validación en tiempo real (input) y al perder foco (blur)
+      - Evita envío si hay errores
+
+
+Decadas.js - Lógica de décadas
+
+   DECADES (constante)
+      Base de datos con la información de cada década:
+      - 1960: VW Escarabajo, Chevrolet Camaro, Ford Mustang
+      - 1970: Dodge Challenger, Porsche 911, Lamborghini Countach
+      - 1980: DeLorean, BMW M3 E30, Ferrari Testarossa
+      - 1990: Mazda RX-7, Toyota Supra, Nissan Skyline R34
+      - 2000: BMW M3 E46, Lamborghini Gallardo, Porsche Carrera GT
+      - 2010: Lamborghini Aventador, McLaren P1, Ford Mustang GT
+
+      Cada coche contiene:
+      - id: identificador único
+      - year: año del modelo
+      - name: nombre del coche
+      - text: descripción breve
+      - features: características detalladas
+      - images: array de imágenes (src, alt)
+
+   getDecadeFromUrl()
+      Extrae el parámetro 'decada' de la URL actual.
+      Ejemplo: secciones.html?decada=1990 → retorna "1990"
+      Valor por defecto: "1960"
+
+   createGallery(images, carName)
+      Genera el HTML de las miniaturas para la galería de fotos.
+      Crea botones con las imágenes pequeñas que permiten
+      cambiar la imagen principal al hacer clic.
+
+   createCard(car)
+      Genera el HTML completo de una tarjeta de coche:
+      - Imagen principal
+      - Información (año, nombre, descripción)
+      - Galería de miniaturas
+      - Botón para expandir información
+      - Panel de información adicional (oculto inicialmente)
+
+   renderDecade()
+      Función principal que:
+      1. Obtiene la década de la URL
+      2. Actualiza el título y subtítulo de la página
+      3. Genera el HTML de todas las tarjetas de coches
+      4. Marca la década activa en el menú
+
+   setupGalleryChange()
+      Configura los eventos click en las miniaturas
+      para cambiar la imagen principal de cada tarjeta.
+
+   setupInfoToggle()
+      Controla el botón "Ver información" / "Ocultar información"
+      para mostrar/ocultar los detalles adicionales de cada coche.
+
+
+CÓMO FUNCIONA LA NAVEGACIÓN
+--------------------------------------------------------------------------------
+
+1. Desde el Home:
+   - Click en cualquier tarjeta del carrusel → dirige a secciones.html?decada=XXXX
+   - Click en enlace del menú → dirige a la década correspondiente
+
+2. En páginas de décadas:
+   - Click en década del menú → cambia a esa década sin recargar página
+   - Click en miniaturas → cambia imagen grande
+   - Click en "Ver información" → despliega panel con detalles
+
+
+PARÁMETROS DE URL
+--------------------------------------------------------------------------------
+
+secciones.html?decada=AAAA
+
+   Valores posibles:
+   - decada=1960 → Años 60
+   - decada=1970 → Años 70
+   - decada=1980 → Años 80
+   - decada=1990 → Años 90
+   - decada=2000 → Años 00
+   - decada=2010 → Años 10
+
+   Si no se especifica o valor inválido → muestra 1960 por defecto
+
+
+EXTERNALIDADES Y RECURSOS
+--------------------------------------------------------------------------------
+
+Frameworks y librerías externas (cargadas vía CDN):
+   - Bootstrap 5.3.2: Framework CSS para layout responsivo
+   - jQuery 3.7.1: Librería JavaScript para manipulación del DOM
+   - Google Fonts: Bebas Neue, Cairo, Oswald
+
+Imágenes:
+   - Ubicadas en carpetas según su uso:
+     * img_Home/: Imágenes del carrusel principal
+     * img_60s/, img_70s/, etc.: Imágenes de cada década
+   - Formatos: jpg, webp, avif, jfif, jpeg
+
+
+CONSIDERACIONES TÉCNICAS
+--------------------------------------------------------------------------------
+
+- El sitio usa un único archivo HTML para las décadas (secciones.html)
+  que se personaliza dinámicamente con JavaScript según el parámetro URL.
+
+- Las imágenes de las décadas en el Home están duplicadas en el carrusel
+  para crear el efecto de loop infinito sin salto visual.
+
+- La validación del formulario es CLIENT-SIDE ONLY (no envía datos a ningún servidor).
+
+- El atributo data-decade en el body permite aplicar estilos específicos
+  según la década seleccionada (colores, temas).
+
+
+================================================================================
+                             Fin del documento
+================================================================================
