@@ -1,18 +1,9 @@
-/* ============================================
-   IMPORTAR FUENTES ANTES QUE NADA
-   Google Fonts debe cargarse primero
-   ============================================ */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap");
+/* IMPORTAR FUENTES - Google Fonts debe cargarse primero */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap"); /*display=swap: muestra primero una fuente alternativa y luego cambia a la fuente real cuando carga - evita “pantalla en blanco” de texto invisible*/
 
-/* ============================================
-   RESET BÃSICO
-   El selector * aplica a TODOS los elementos
-   box-sizing: incluye padding/border en el ancho
-   ============================================ */
 * {
-  /* box-sizing: border-box es un truco muy común para que, si le pones un borde 
-     o un relleno a un cuadro, este no se haga más grande de lo que le has dicho. */
-  box-sizing: border-box;
+ 
+  box-sizing: border-box; /* Evita que el tamañito de un cuadro se aumente si le pone un borde  o un relleno a un cuadro */
 }
 
 body {
@@ -22,21 +13,19 @@ body {
   padding: 0;
 }
 
-/* p: pÃ¡rrafos - fuente secundaria */
+/* p: párrafos - fuente secundaria */
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
   color: white;
 }
 
-/* ============================================
-   BOTONES GLOBALES
-   ============================================ */
+/*------------------------- BOTONES GLOBALES------------------------- */
+
 /* Esta clase se usa para que todos los botones importantes tengan el mismo aspecto */
 .btn-rpm {
   display: inline-block;
   padding: 0.65rem 1.6rem;
-  /* border-radius: 999px hace que el botón sea totalmente redondeado (forma de cápsula) */
-  border-radius: 999px;
+  border-radius: 999px; /* border-radius: 999px hace que el botón sea totalmente redondeado (forma de cápsula) */
   font-family: "Oswald", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
@@ -44,17 +33,12 @@ p {
   text-decoration: none;
   cursor: pointer;
   background: transparent;
-  /* var(--btn-color, #f20a0a) es una "variable". Si no le decimos un color, 
-     usará el rojo (#f20a0a) por defecto. */
-  border: 2px solid var(--btn-color, #f20a0a);
+  border: 2px solid var(--btn-color, #f20a0a); /* var(--btn-color, #f20a0a) es una "variable". Si no le decimos un color, usará el rojo (#f20a0a) por defecto. */
   color: var(--btn-color, #f20a0a);
-  /* position: relative y overflow: hidden son necesarios para que la animación 
-     de "llenado" no se salga del botón. */
+  /* position: relative y overflow: hidden son necesarios para que la animación de "llenado" no se salga del botón. */
   position: relative;
   overflow: hidden;
-  /* transition nos permite que los cambios de color sean suaves (en 0.4 segundos) 
-     en lugar de instantáneos. */
-  transition:
+  transition:/* transition  permite que los cambios de color sean suaves (en 0.4 segundos) en lugar de instantáneos. */
     color 0.4s ease,
     border-color 0.4s ease;
   z-index: 1;
@@ -62,19 +46,16 @@ p {
   line-height: 1;
 }
 
-/* ::before es un "pseudo-elemento". Es como una capa invisible que creamos 
-   dentro del botón para hacer el efecto de llenado de color. */
-.btn-rpm::before {
-  content: "";
+.btn-rpm::before {/* ::before es un "pseudo-elemento". Es como una capa invisible que creamos dentro del botón para hacer el efecto de llenado de color. */
+  content: ""; /*Sin content, el pseudo-elemento no aparece en pantalla, aunque tenga estilos.*/
   position: absolute;
   top: 0;
   left: 0;
   width: 0; /* Empezamos con ancho 0 para que no se vea el color */
   height: 100%;
   background: var(--btn-color, #f20a0a);
-  /* Esta transición hace que el color aparezca progresivamente de izquierda a derecha */
-  transition: width 0.4s ease;
-  z-index: -1; /* Lo ponemos detrás del texto para no taparlo */
+  transition: width 0.4s ease;  /* Esta transición hace que el color aparezca progresivamente de izquierda a derecha */
+  z-index: -1; /* Mueve la capa detrás del texto del botón - el color queda abajo y el texto siempre visible arriba */
 }
 
 /* Cuando pasamos el ratón (:hover) el ancho pasa de 0 a 100% */
@@ -83,23 +64,16 @@ p {
   width: 100%;
 }
 
-/* Cambiamos el color del texto a blanco al pasar el ratón para que se lea bien 
-   sobre el fondo que se está llenando de color. */
+/* Cambiamos el color del texto a blanco al pasar el ratón para que se lea bien sobre el fondo que se está llenando de color. */
 .btn-rpm:hover,
 .btn-rpm:active {
   color: #fff !important;
 }
 
-/* ============================================
-   MENÃš DE NAVEGACIÃ“N
-   Estructura flexbox para distribuir elementos
-   - display: flex = contenedor flexible
-   - justify-content: espacio entre elementos
-   - align-items: centrado vertical
-   ============================================ */
+/*------------------------- MENU NAVEGACIÓN------------------------- */
 .Menu {
-  display: flex;
-  justify-content: space-between; /* RPM a la izquierda, lista a la derecha */
+  display: flex; /*contenedor flexible*/
+  justify-content: space-between; /* Distribuye los elementos así: RPM a la izquierda, lista a la derecha */
   align-items: center;
   font-weight: bold;
   font-size: 1.3em;
@@ -107,64 +81,48 @@ p {
   font-family: "Oswald", sans-serif;
 }
 
-/* ============================================
-   ENLACE RPM (LOGO)
-   position: relative necesario para la lÃ­nea
-   animada con ::after
-   transition: permite animaciÃ³n suave del color
-   ============================================ */
+/*---------------ENLACE RPM (LOGO)-------------------*/
 .nav-link-home {
   color: white;
   font-weight: bold;
   font-size: 1.3em;
   text-decoration: none;
   position: relative;
-  transition: color 0.2s;
+  transition: color 0.2s; /*permite animacion suave del color*/
 }
 
-/* Hover: cambia color al pasar el ratÃ³n */
-.nav-link-home:hover {
+.nav-link-home:hover { /* Hover: cambia color al pasar el ratón */
   color: #f20a0a;
 }
 
-/* ============================================
-   LISTA DE ENLACES DEL MENÃš
-   - list-style: none = elimina viÃ±etas
-   - display: flex = elementos en lÃ­nea
-   - gap:  separaciÃ³n entre elementos
-   ============================================ */
+/* -----------LISTA DE ENLACES DEL MENÚ -------------- */
 .Menu ul {
-  list-style: none;
-  display: flex;
+  list-style: none; /* Elimina las viñetas de la lista */
+  display: flex; /* elementos en línea */
   margin: 0;
   padding: 0;
-  gap: 30px;
+  gap: 30px; /* separación entre elementos */
 }
 
-/* ============================================
-   ENLACES SECUNDARIOS DEL MENÃš
-   position: relative necesario para ::after
-   transition: animaciÃ³n suave
-   ============================================ */
+/* ---------------ENLACES SECUNDARIOS DEL MENÚ--------------- */
 .Menu ul li a {
   color: white;
   text-decoration: none;
   padding: 5px 8px;
   position: relative;
-  transition: color 0.2s;
+  transition: color 0.2s; /* Permite que el cambio de color sea suave al pasar el ratón */
 }
 
-/* Hover: color rojo al pasar ratÃ³n */
-.Menu ul li a:hover {
+.Menu ul li a:hover {/* Hover: color rojo al pasar ratón */
   color: #f20a0a;
 }
 
 /* ============================================
-   LÃNEA ANIMADA BAJO ENLACES
+   LÍNEA ANIMADA BAJO ENLACES
    ::after = pseudo-elemento que se genera
-   despuÃ©s del contenido del elemento
-   - width: 0% â†’ 100% en hover
-   - transition: animaciÃ³n suave
+   después del contenido del elemento
+   - width: 0% → 100% en hover
+   - transition: animación suave
    ============================================ */
 .Menu ul li a::after,
 .nav-link-home::after {
