@@ -211,39 +211,12 @@ body.decade-page[data-decade="2010"] {
   font-size: 0.95rem;
 }
 
-.Titulo_Seccion60s,
-.Titulo_Seccion70s,
-.Titulo_Seccion80s,
-.Titulo_Seccion90s,
-.Titulo_Seccion00s,
-.Titulo_Seccion10s {
-  text-align: left;
-  font-family: "Bebas Neue", sans-serif;
-}
-
-.Titulo_Seccion60s {
-  color: #e63946;
-}
-
-.Titulo_Seccion70s {
-  color: #d97706;
-}
-
-.Titulo_Seccion80s {
-  color: #fd24a6;
-}
-
-.Titulo_Seccion90s {
-  color: #2563eb;
-}
-
-.Titulo_Seccion00s {
-  color: #8fa3b8;
-}
-
-.Titulo_Seccion10s {
-  color: #9cd93a;
-}
+.Titulo_Seccion60s { color: #e63946; }
+.Titulo_Seccion70s { color: #d97706; }
+.Titulo_Seccion80s { color: #fd24a6; }
+.Titulo_Seccion90s { color: #2563eb; }
+.Titulo_Seccion00s { color: #8fa3b8; }
+.Titulo_Seccion10s { color: #9cd93a; }
 
 @media (max-width: 992px) {
   .cars-grid {

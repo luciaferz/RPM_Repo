@@ -1,4 +1,6 @@
-﻿const DECADES = {
+// Esta es nuestra "Base de Datos" de coches. 
+// Aquí guardamos toda la información (nombres, fotos y textos) de cada década.
+const DECADES = {
   1960: {
     title: "1960 - Clasicos Eternos",
     intro:
@@ -13,18 +15,10 @@
         features:
           "Motor trasero refrigerado por aire, tamano compacto, consumo moderado y un diseno muy reconocible en ciudad y carretera.",
         images: [
-          {
-            src: "img_60s/Escarabajo_1.jpg",
-            alt: "VW Escarabajo 1965 frontal",
-          },
-          {
-            src: "img_60s/Escarabajo_2.jpg",
-            alt: "VW Escarabajo 1965 lateral",
-          },
-          {
-            src: "img_60s/Escarabajo_3.jpg",
-            alt: "VW Escarabajo 1965 interior",
-          },
+          { src: "img_60s/Escarabajo_1.jpg", alt: "VW Escarabajo 1965 frontal" },
+          { src: "img_60s/Escarabajo_2.jpg", alt: "VW Escarabajo 1965 lateral" },
+          { src: "img_60s/Escarabajo_3.jpg", alt: "VW Escarabajo 1965 interior" },
+          { src: "img_60s/Escarabajo_4.jpg", alt: "VW Escarabajo 1965 detalle" },
         ],
       },
       {
@@ -36,21 +30,16 @@
           "Motor potente, carroceria coupe, traccion trasera y un estilo clasico americano con imagen agresiva.",
         images: [
           { src: "img_60s/Camaro_1.jpg", alt: "Chevrolet Camaro 1967 frontal" },
-          {
-            src: "img_60s/Camaro_2.avif",
-            alt: "Chevrolet Camaro 1967 lateral",
-          },
-          {
-            src: "img_60s/Camaro_3.jpg",
-            alt: "Chevrolet Camaro 1967 posterior",
-          },
+          { src: "img_60s/Camaro_2.avif", alt: "Chevrolet Camaro 1967 lateral" },
+          { src: "img_60s/Camaro_3.jpg", alt: "Chevrolet Camaro 1967 posterior" },
+          { src: "img_60s/Camaro_4.jpg", alt: "Chevrolet Camaro 1967 detalle" },
         ],
       },
       {
         id: "mustang-69",
         year: "1969",
         name: "Ford Mustang",
-        text: "Un icono americano que sigue siendo muy reconocible hoy. El Mustang ayudo a popularizar el concepto de deportivo accesible con una imagen juvenil y mucha personalidad.",
+        text: "Un icono americano que sigue siendo muy recognoscible hoy. El Mustang ayudo a popularizar el concepto de deportivo accesible con una imagen juvenil y mucha personalidad.",
         features:
           "Capo largo, version deportiva, gran variedad de motores y una presencia visual muy marcada.",
         images: [
@@ -101,18 +90,10 @@
         features:
           "Lineas rectas, puertas de tijera, motor central y un aspecto futurista muy adelantado a su tiempo.",
         images: [
-          {
-            src: "img_70s/Lamborghini_1.webp",
-            alt: "Lamborghini Countach 1974 frontal",
-          },
-          {
-            src: "img_70s/Lamborghini_2.jpg",
-            alt: "Lamborghini Countach 1974 lateral",
-          },
-          {
-            src: "img_70s/Lamborghini_3.jpg",
-            alt: "Lamborghini Countach 1974 detalle",
-          },
+          { src: "img_70s/Lamborghini_1.webp", alt: "Lamborghini Countach 1974 frontal" },
+          { src: "img_70s/Lamborghini_2.jpg", alt: "Lamborghini Countach 1974 lateral" },
+          { src: "img_70s/Lamborghini_3.jpg", alt: "Lamborghini Countach 1974 detalle" },
+          { src: "img_70s/Lamborghini_4.jpg", alt: "Lamborghini Countach 1974 interior" },
         ],
       },
     ],
@@ -195,14 +176,14 @@
         images: [
           { src: "img_90s/Supra_1.webp", alt: "Toyota Supra MK4 1998 frontal" },
           { src: "img_90s/Supra_2.webp", alt: "Toyota Supra MK4 1998 lateral" },
-          { src: "img_90s/Supra_3.webp", alt: "Toyota Supra MK4 1998 interior"},
+          { src: "img_90s/Supra_3.webp", alt: "Toyota Supra MK4 1998 interior" },
         ],
       },
       {
         id: "skyline-r34-99",
         year: "1999",
         name: "Nissan Skyline GT-R R34",
-        text: "Uno de los deportivos japoneses mas famosos y admirados. El R34 es recordado por su mezcla de tecnologia, rendimiento y gran presencia dentro del mundo JDM.",
+        text: "Uno de los deportivos japoneses mas famosos y admirados. El R34 es recordado por su mezcla de tecnologia, rendimiento y gran presence dentro del mundo JDM.",
         features:
           "Traccion total, motor biturbo, cuadro muy completo y tecnologia avanzada para su epoca.",
         images: [
@@ -353,6 +334,8 @@ function createGallery(images, carName) {
   return htmlResult;
 }
 
+// Función que genera toda la estructura (el molde) de la tarjeta de cada coche
+// Su función es recibir los datos de un coche y devolver el código HTML listo para mostrarlo
 function createCard(car) {
   const mainImage = car.images[0];
 
