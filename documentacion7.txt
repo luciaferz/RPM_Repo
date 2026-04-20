@@ -13,7 +13,6 @@ carga dinámica de contenido.
 
 ARQUITECTURA DE PÁGINAS HTML
 --------------------------------------------------------------------------------
-为什么会 separated into different HTML files?
 
 Decisión de diseño: mantener 3 archivos HTML separados en lugar de uno solo.
 
@@ -28,16 +27,9 @@ Por qué NO todo en un solo archivo (SPA):
 
 Por qué SÍ funciona bien la estructura actual:
   - Simplicidad: cada página es independiente y fácil de mantener
-  - SEO: cada década tiene URL propia (?decada=1990) - indexable
+  - SEO: cada década tiene URL propia (decada=1990) - indexable
   - Separation of concerns: lógica clara entre tipos de contenido
   - Mantenimiento: puedes editar Home sin afecta Décadas
-
-Lo que SÍ habría sido redundante: tener 6 archivos HTML separados
-(uno por década), lo cual NO ocurre - secciones.html sirve de template.
-
-VEREDICTO: La estructura actual es un buen balance entre simplicidad
-y mantenibilidad para este proyecto.
-
 
 ESTRUCTURA DE ARCHIVOS
 --------------------------------------------------------------------------------
