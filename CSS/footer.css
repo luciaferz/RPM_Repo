@@ -18,8 +18,7 @@
 
 .rpm-footer h3 {
   margin: 0.42rem 0 0;
-  /* clamp: ajusta el tamaño del texto según el ancho de la pantalla */
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: clamp(1.45rem, 2.6vw, 2rem);  /* clamp: ajusta el tamaño del texto según el ancho de la pantalla */
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
 }
@@ -45,6 +44,21 @@
 
 /* ::after crea la línea roja animada que aparece al pasar el ratón */
 .rpm-footer-contact::after {
+  content: ""; /*Crea el pseudo-elemento, pero sin texto dentro*/
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f20a0a;
+  transition: width 0.3s ease;
+}
+
+.rpm-footer-contact:hover::after { /*Transcion al pasar el raton - linea roja se desplaza (sin ello se queda fija)*/
+  width: 100%;
+}
+
+.rpm-footer-contact::after { /* ::after crea la línea roja animada que aparece al pasar el ratón */
   content: "";
   position: absolute;
   left: 0;
@@ -55,11 +69,7 @@
   transition: width 0.3s ease;
 }
 
-.rpm-footer-contact:hover::after {
-  width: 100%;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 900px) { /*Diseño responsive @media - Aplica estos estilos SOLO si la pantalla mide 900px o menos (CSS Media Queries)*/
   .rpm-footer {
     padding: 1rem 4vw;
   }

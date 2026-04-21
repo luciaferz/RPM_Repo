@@ -1,6 +1,10 @@
-// Esta es nuestra "Base de Datos" de coches. 
-// Aquí guardamos toda la información (nombres, fotos y textos) de cada década.
+/*Gestion visual dinámica de los coches según la década seleccionada. Usa el framework JQUERY para facilitar la 
+  selección de elementos, el manejo de eventos y la manipulación del DOM.
+*/
+
+// Objeto principal con toda la información de los coches organizada por décadas.
 const DECADES = {
+  // Objeto que almacena los datos de los coches por décadas.
   1960: {
     title: "1960 - Clasicos Eternos",
     intro:
@@ -15,10 +19,18 @@ const DECADES = {
         features:
           "Motor trasero refrigerado por aire, tamano compacto, consumo moderado y un diseno muy reconocible en ciudad y carretera.",
         images: [
-          { src: "img_60s/Escarabajo_1.jpg", alt: "VW Escarabajo 1965 frontal" },
-          { src: "img_60s/Escarabajo_2.jpg", alt: "VW Escarabajo 1965 lateral" },
-          { src: "img_60s/Escarabajo_3.jpg", alt: "VW Escarabajo 1965 interior" },
-          { src: "img_60s/Escarabajo_4.jpg", alt: "VW Escarabajo 1965 detalle" },
+          {
+            src: "img_60s/Escarabajo_1.jpg",
+            alt: "VW Escarabajo 1965 frontal",
+          },
+          {
+            src: "img_60s/Escarabajo_2.jpg",
+            alt: "VW Escarabajo 1965 lateral",
+          },
+          {
+            src: "img_60s/Escarabajo_3.jpg",
+            alt: "VW Escarabajo 1965 interior",
+          },
         ],
       },
       {
@@ -30,9 +42,14 @@ const DECADES = {
           "Motor potente, carroceria coupe, traccion trasera y un estilo clasico americano con imagen agresiva.",
         images: [
           { src: "img_60s/Camaro_1.jpg", alt: "Chevrolet Camaro 1967 frontal" },
-          { src: "img_60s/Camaro_2.avif", alt: "Chevrolet Camaro 1967 lateral" },
-          { src: "img_60s/Camaro_3.jpg", alt: "Chevrolet Camaro 1967 posterior" },
-          { src: "img_60s/Camaro_4.jpg", alt: "Chevrolet Camaro 1967 detalle" },
+          {
+            src: "img_60s/Camaro_2.avif",
+            alt: "Chevrolet Camaro 1967 lateral",
+          },
+          {
+            src: "img_60s/Camaro_3.jpg",
+            alt: "Chevrolet Camaro 1967 posterior",
+          },
         ],
       },
       {
@@ -90,10 +107,18 @@ const DECADES = {
         features:
           "Lineas rectas, puertas de tijera, motor central y un aspecto futurista muy adelantado a su tiempo.",
         images: [
-          { src: "img_70s/Lamborghini_1.webp", alt: "Lamborghini Countach 1974 frontal" },
-          { src: "img_70s/Lamborghini_2.jpg", alt: "Lamborghini Countach 1974 lateral" },
-          { src: "img_70s/Lamborghini_3.jpg", alt: "Lamborghini Countach 1974 detalle" },
-          { src: "img_70s/Lamborghini_4.jpg", alt: "Lamborghini Countach 1974 interior" },
+          {
+            src: "img_70s/Lamborghini_1.webp",
+            alt: "Lamborghini Countach 1974 frontal",
+          },
+          {
+            src: "img_70s/Lamborghini_2.jpg",
+            alt: "Lamborghini Countach 1974 lateral",
+          },
+          {
+            src: "img_70s/Lamborghini_3.jpg",
+            alt: "Lamborghini Countach 1974 detalle",
+          },
         ],
       },
     ],
@@ -112,9 +137,18 @@ const DECADES = {
         features:
           "Carroceria de acero inoxidable, puertas de ala de gaviota y un estilo unico muy propio de los 80.",
         images: [
-          { src: "img_80s/DeLorean_1.webp", alt: "DeLorean DMC-12 1981 frontal" },
-          { src: "img_80s/DeLorean_2.webp", alt: "DeLorean DMC-12 1981 lateral" },
-          { src: "img_80s/Delorean_3.jfif", alt: "DeLorean DMC-12 1981 interior" },
+          {
+            src: "img_80s/DeLorean_1.webp",
+            alt: "DeLorean DMC-12 1981 frontal",
+          },
+          {
+            src: "img_80s/DeLorean_2.webp",
+            alt: "DeLorean DMC-12 1981 lateral",
+          },
+          {
+            src: "img_80s/Delorean_3.jfif",
+            alt: "DeLorean DMC-12 1981 interior",
+          },
         ],
       },
       {
@@ -138,10 +172,22 @@ const DECADES = {
         features:
           "Motor potente, entradas laterales, carroceria baja y una silueta muy llamativa en carretera.",
         images: [
-          { src: "img_80s/Testarrosa_1.jpg", alt: "Ferrari Testarossa 1984 frontal" },
-          { src: "img_80s/Testarrosa_2.jpg", alt: "Ferrari Testarossa 1984 lateral" },
-          { src: "img_80s/Testarrosa_3.jpg", alt: "Ferrari Testarossa 1984 detalle" },
-          { src: "img_80s/Testarrosa_4.webp", alt: "Ferrari Testarossa 1984 interior" },
+          {
+            src: "img_80s/Testarrosa_1.jpg",
+            alt: "Ferrari Testarossa 1984 frontal",
+          },
+          {
+            src: "img_80s/Testarrosa_2.jpg",
+            alt: "Ferrari Testarossa 1984 lateral",
+          },
+          {
+            src: "img_80s/Testarrosa_3.jpg",
+            alt: "Ferrari Testarossa 1984 detalle",
+          },
+          {
+            src: "img_80s/Testarrosa_4.webp",
+            alt: "Ferrari Testarossa 1984 interior",
+          },
         ],
       },
     ],
@@ -176,7 +222,10 @@ const DECADES = {
         images: [
           { src: "img_90s/Supra_1.webp", alt: "Toyota Supra MK4 1998 frontal" },
           { src: "img_90s/Supra_2.webp", alt: "Toyota Supra MK4 1998 lateral" },
-          { src: "img_90s/Supra_3.webp", alt: "Toyota Supra MK4 1998 interior" },
+          {
+            src: "img_90s/Supra_3.webp",
+            alt: "Toyota Supra MK4 1998 interior",
+          },
         ],
       },
       {
@@ -187,10 +236,22 @@ const DECADES = {
         features:
           "Traccion total, motor biturbo, cuadro muy completo y tecnologia avanzada para su epoca.",
         images: [
-          { src: "img_90s/Skyline_2.jpg", alt: "Nissan Skyline R34 1999 frontal" },
-          { src: "img_90s/Skyline_3.jpg", alt: "Nissan Skyline R34 1999 posterior" },
-          { src: "img_90s/Skyline_1.webp", alt: "Nissan Skyline R34 1999 interior" },
-          { src: "img_90s/Skyline_F&F.jfif", alt: "Nissan Skyline R34 1999 cultura pop" },
+          {
+            src: "img_90s/Skyline_2.jpg",
+            alt: "Nissan Skyline R34 1999 frontal",
+          },
+          {
+            src: "img_90s/Skyline_3.jpg",
+            alt: "Nissan Skyline R34 1999 posterior",
+          },
+          {
+            src: "img_90s/Skyline_1.webp",
+            alt: "Nissan Skyline R34 1999 interior",
+          },
+          {
+            src: "img_90s/Skyline_F&F.jfif",
+            alt: "Nissan Skyline R34 1999 cultura pop",
+          },
         ],
       },
     ],
@@ -221,9 +282,18 @@ const DECADES = {
         features:
           "Motor V10, carroceria baja, traccion muy efectiva y comportamiento muy rapido en recta y curva.",
         images: [
-          { src: "img_00s/Gallardo_1.avif", alt: "Lamborghini Gallardo 2003 frontal" },
-          { src: "img_00s/Gallardo_2.jpg", alt: "Lamborghini Gallardo 2003 lateral" },
-          { src: "img_00s/Gallardo_3.webp", alt: "Lamborghini Gallardo 2003 interior" },
+          {
+            src: "img_00s/Gallardo_1.avif",
+            alt: "Lamborghini Gallardo 2003 frontal",
+          },
+          {
+            src: "img_00s/Gallardo_2.jpg",
+            alt: "Lamborghini Gallardo 2003 lateral",
+          },
+          {
+            src: "img_00s/Gallardo_3.webp",
+            alt: "Lamborghini Gallardo 2003 interior",
+          },
         ],
       },
       {
@@ -234,9 +304,18 @@ const DECADES = {
         features:
           "Motor V10, caja manual, materiales ligeros y chasis pensado para altas prestaciones.",
         images: [
-          { src: "img_00s/PorscheGT_1.jpg", alt: "Porsche Carrera GT 2004 frontal" },
-          { src: "img_00s/PorscheGT_2.jpeg", alt: "Porsche Carrera GT 2004 lateral" },
-          { src: "img_00s/PorscheGT_3.avif", alt: "Porsche Carrera GT 2004 interior" },
+          {
+            src: "img_00s/PorscheGT_1.jpg",
+            alt: "Porsche Carrera GT 2004 frontal",
+          },
+          {
+            src: "img_00s/PorscheGT_2.jpeg",
+            alt: "Porsche Carrera GT 2004 lateral",
+          },
+          {
+            src: "img_00s/PorscheGT_3.avif",
+            alt: "Porsche Carrera GT 2004 interior",
+          },
         ],
       },
     ],
@@ -255,9 +334,18 @@ const DECADES = {
         features:
           "Motor V12, diseno angular, puertas de tijera y gran sensacion de potencia en todo momento.",
         images: [
-          { src: "img_10s/Aventador_1.webp", alt: "Lamborghini Aventador 2011 frontal" },
-          { src: "img_10s/Aventador_2.jpg", alt: "Lamborghini Aventador 2011 lateral" },
-          { src: "img_10s/Aventador_3.webp", alt: "Lamborghini Aventador 2011 interior" },
+          {
+            src: "img_10s/Aventador_1.webp",
+            alt: "Lamborghini Aventador 2011 frontal",
+          },
+          {
+            src: "img_10s/Aventador_2.jpg",
+            alt: "Lamborghini Aventador 2011 lateral",
+          },
+          {
+            src: "img_10s/Aventador_3.webp",
+            alt: "Lamborghini Aventador 2011 interior",
+          },
         ],
       },
       {
@@ -269,7 +357,10 @@ const DECADES = {
           "Sistema hibrido, aerodinamica avanzada, chasis de carbono y enfoque claro en altas prestaciones.",
         images: [
           { src: "img_10s/McLaren_1.jpg", alt: "McLaren P1 2012 frontal" },
-          { src: "img_10s/McLaren_2.webp", alt: "McLaren P1 2012 puertas abiertas" },
+          {
+            src: "img_10s/McLaren_2.webp",
+            alt: "McLaren P1 2012 puertas abiertas",
+          },
           { src: "img_10s/McLaren_3.jpg", alt: "McLaren P1 2012 lateral" },
           { src: "img_10s/McLaren_4.jpg", alt: "McLaren P1 2012 interior" },
         ],
@@ -282,63 +373,64 @@ const DECADES = {
         features:
           "Motor V8, imagen muscle, mejores ayudas electronicas y un uso mas comodo en el dia a dia.",
         images: [
-          { src: "img_10s/MustangGT_1.webp", alt: "Ford Mustang GT 2015 frontal" },
-          { src: "img_10s/MustangGT_2.webp", alt: "Ford Mustang GT 2015 lateral" },
-          { src: "img_10s/MustangGT_3.webp", alt: "Ford Mustang GT 2015 interior" },
+          {
+            src: "img_10s/MustangGT_1.webp",
+            alt: "Ford Mustang GT 2015 frontal",
+          },
+          {
+            src: "img_10s/MustangGT_2.webp",
+            alt: "Ford Mustang GT 2015 lateral",
+          },
+          {
+            src: "img_10s/MustangGT_3.webp",
+            alt: "Ford Mustang GT 2015 interior",
+          },
         ],
       },
     ],
   },
 };
 
-// Función para averiguar en qué década estamos mirando la dirección web (URL)
-// Por ejemplo, de "secciones.html?decada=1960", sacará "1960".
+//-----------------FUNCIONES DE LÓGICA---------------------------
+
+//Obtiene la década de la dirección web (URL).
 function getDecadeFromUrl() {
-  // URLSearchParams es una herramienta de JavaScript que nos deja leer datos concretos de la URL.
-  const params = new URLSearchParams(window.location.search);
-  const decade = params.get("decada");
-  // Si encontramos la década en nuestra configuración (DECADES), se devuelve. Si no, usamos "1960" por defecto.
-  return DECADES[decade] ? decade : "1960";
+  const params = new URLSearchParams(window.location.search); //Lee el query string de la URL
+  const decade = params.get("decada"); //Obtiene el valor del query string
+  return DECADES[decade] ? decade : "1960"; //Si no encuentra la década, devuelve "1960"
 }
 
-// Función que construye el HTML de las miniaturas de fotos de los coches
-function createGallery(images, carName) {
-  let htmlResult = "";
-  // Recorremos la lista de imágenes usando .forEach, que es una forma común de leer listas.
+//Crea el HTML para la galería de miniaturas de un coche.
+function createGalleryHtml(images, carName) {
+  let htmlResult = ""; //Inicializa una variable para almacenar el HTML de la galería
   images.forEach(function (image, index) {
-    // Si es la primera imagen (posición 0), le ponemos la clase "active" para que salga marcada.
-    let activeClass = "";
-    if (index === 0) {
-      activeClass = " active";
-    }
-
-    // Vamos sumando el código HTML de cada botón-miniatura a nuestro resultado final.
-    htmlResult += `
+    //Recorre cada imagen del coche
+    const activeClass = index === 0 ? " active" : ""; //Determina si la miniatura es la primera y esta activa
+    //Crea una imagen con boton dentro
+    htmlResult += ` 
       <button
         type="button"
-        class="car-thumb-button${activeClass}"
+        class="car-thumb-button${activeClass}" 
         data-thumb-button
-        data-image-src="${image.src}"
+        data-image-src="${image.src}" 
         data-image-alt="${image.alt || carName}"
         aria-label="Ver imagen de ${carName}"
       >
-        <img
-          src="${image.src}"
-          alt="${image.alt || carName}"
-          class="car-thumb"
-          loading="lazy"
-        />
+        <img src="${image.src}" alt="${image.alt || carName}" class="car-thumb" loading="lazy" />
       </button>
     `;
   });
   return htmlResult;
 }
 
-// Función que genera toda la estructura (el molde) de la tarjeta de cada coche
-// Su función es recibir los datos de un coche y devolver el código HTML listo para mostrarlo
-function createCard(car) {
-  const mainImage = car.images[0];
-
+//Crea el HTML de la tarjeta (card) de un coche.
+function createCardHtml(car) {
+  const mainImage = car.images[0]; //Usa la primera imagen como portada
+  //Card principal cada una tiene un id (car.id)
+  //Info basica se muestran los datos de const DECADAS (car.year, car.name, car.text)
+  //Galeria de miniaturas (createGalleryHtml(car.images, car.name))
+  //Boton de informacion (data-info-toggle)
+  //Panel de informacion (data-info-panel)
   return `
     <article class="car-card" id="${car.id}">
       <img
@@ -353,7 +445,7 @@ function createCard(car) {
         <h3 class="subtitulo">${car.name}</h3>
         <p class="car-description">${car.text}</p>
         <div class="car-gallery-thumbs">
-          ${createGallery(car.images, car.name)}
+          ${createGalleryHtml(car.images, car.name)}
         </div>
         <button type="button" class="info-toggle btn-rpm" data-info-toggle>
           Ver informacion
@@ -365,7 +457,7 @@ function createCard(car) {
           </div>
           <div class="info-block">
             <h4>Caracteristicas</h4>
-            <p>${car.features || "Modelo representativo de su decada por diseno, motor y personalidad."}</p>
+            <p>${car.features || "Modelo representativo de su decada."}</p>
           </div>
         </div>
       </div>
@@ -373,105 +465,89 @@ function createCard(car) {
   `;
 }
 
-// Función principal que pinta en pantalla los datos de la década elegida
+//Pinta toda la información de la década seleccionada en el HTML.
 function renderDecade() {
   const decadeKey = getDecadeFromUrl();
   const decade = DECADES[decadeKey];
 
-  // Guardamos en variables los sitios (etiquetas HTML) donde vamos a escribir
-  const title = document.getElementById("decadeHeading");
-  const lead = document.getElementById("garageLead");
-  const subheading = document.getElementById("decadeSubheading");
-  const narrative = document.getElementById("decadeNarrative");
-  const grid = document.getElementById("carsGrid");
+  if (!decade) return; //Si no encuentra la década, devuelve "1960"
 
-  // Si nos falta alguno de estos elementos en la página, paramos el programa aquí para no dar error.
-  if (!decade || !title || !lead || !subheading || !narrative || !grid) {
-    return;
-  }
+  // jQUERY: Seleccionamos elementos por ID usando $("#id") guardando la referencia del DOM
+  const $title = $("#decadeHeading");
+  const $lead = $("#garageLead");
+  const $grid = $("#carsGrid");
 
-  // Modificamos atributos y el texto desde JS para actualizar la vista
-  document.body.setAttribute("data-decade", decadeKey);
-  title.textContent = decade.title;
-  title.className = decade.headingClass;
-  lead.textContent = decade.intro;
-  subheading.textContent = "";
-  narrative.textContent = "";
+  // jQUERY: Modificamos atributos del BODY usando .attr() guardadno asi la decada
+  $("body").attr("data-decade", decadeKey);
 
-  // Usamos .forEach para crear el HTML de todos los coches seguidos
+  // jQUERY: Cambiamos el texto con .text() y las clases con .attr("class", ...)
+  $title.text(decade.title).attr("class", decade.headingClass);
+  $lead.text(decade.intro);
+
   let htmlCoches = "";
-  decade.cars.forEach(function (car) {
-    htmlCoches += createCard(car);
+  decade.cars.forEach((car) => {
+    htmlCoches += createCardHtml(car);
   });
-  grid.innerHTML = htmlCoches;
 
-  // Actualizamos el menú para resaltar en rojo la década activa
-  const links = document.querySelectorAll(".decade-filter-link");
-  links.forEach(function (link) {
-    const isActive = link.dataset.decadeLink === decadeKey;
-    // .classList.toggle() añade o quita la clase "active" (en este caso la clase que da el color rojo)
-    link.classList.toggle("active", isActive);
+  // jQUERY: Insertamos todo el HTML de una vez usando .html()
+  $grid.html(htmlCoches);
+
+  // jQUERY: Recorremos los enlaces usando .each()
+  $(".decade-filter-link").each(function () {
+    // jQUERY: Convertimos el elemento actual en objeto jQuery con $(this)
+    const $link = $(this);
+    // jQUERY: Leemos datos personalizados con .data()
+    const isActive = $link.data("decade-link") == decadeKey;
+    // jQUERY: Alternamos la clase 'active' con .toggleClass()
+    $link.toggleClass("active", isActive);
   });
 }
 
-// Función que hace que al clicar las miniaturas cambie la foto grande
-function setupGalleryChange() {
-  // Buscamos todas las tarjetas de los coches
-  const cards = document.querySelectorAll(".car-card");
+//Configura el cambio de imagen principal al hacer clic en las miniaturas.
+function setupGalleryEvents() {
+  // jQUERY: Usamos .on() para crear un evento delegado en el contenedor principal
+  $("#carsGrid").on("click", "[data-thumb-button]", function () {
+    // jQUERY: Capturamos el botón pulsado
+    const $button = $(this);
+    // jQUERY: Buscamos el ancestro común más cercano con .closest()
+    const $card = $button.closest(".car-card");
+    // jQUERY: Buscamos un elemento específico dentro de esa tarjeta con .find()
+    const $mainImg = $card.find("[data-main-image]");
 
-  cards.forEach(function (card) {
-    const mainImage = card.querySelector("[data-main-image]");
-    const buttons = card.querySelectorAll("[data-thumb-button]");
-
-    // Para cada botón (miniatura), preparamos qué debe pasar al hacer "click"
-    buttons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        if (!mainImage) return;
-
-        // Cambiamos la ruta (src) de la foto grande por la de la pequeña
-        mainImage.src = button.dataset.imageSrc;
-        mainImage.alt = button.dataset.imageAlt;
-
-        // Quitamos la clase 'active' de todos los botones para despintar el borde rojo de las miniaturas
-        buttons.forEach(function (item) {
-          item.classList.remove("active");
-        });
-        // Se la ponemos solo a la miniatura en la que acabamos de hacer click
-        button.classList.add("active");
-      });
+    // jQUERY: Actualizamos múltiples atributos a la vez pasando un objeto a .attr()
+    $mainImg.attr({
+      src: $button.data("image-src"),
+      alt: $button.data("image-alt"),
     });
+
+    // jQUERY: Quitamos la clase 'active' de todos los botones de la tarjeta
+    $card.find("[data-thumb-button]").removeClass("active");
+    // jQUERY: Se la añadimos solo al botón actual
+    $button.addClass("active");
   });
 }
 
-// Función para ocultar y mostrar la información adicional de cada coche
-function setupInfoToggle() {
-  const cards = document.querySelectorAll(".car-card");
+//Configura el desplegable de "Ver información" de cada coche.
+function setupInfoToggleEvents() {
+  // jQUERY: Evento click delegado para los botones de información
+  $("#carsGrid").on("click", "[data-info-toggle]", function () {
+    const $button = $(this);
+    // jQUERY: Buscamos el elemento hermano con .siblings()
+    const $panel = $button.siblings("[data-info-panel]");
 
-  cards.forEach(function (card) {
-    const button = card.querySelector("[data-info-toggle]");
-    const panel = card.querySelector("[data-info-panel]");
+    // jQUERY: Alternamos la clase 'open' y comprobamos si ahora la tiene con .hasClass()
+    const isOpen = $panel.toggleClass("open").hasClass("open");
 
-    if (!button || !panel) return;
-
-    // Al pulsar en "Ver Información"...
-    button.addEventListener("click", function () {
-      // toggle("open") añade la clase 'open' si no la tiene (mostrar) o se la quita si la tiene (ocultar)
-      const isOpen = panel.classList.toggle("open");
-
-      // Actualizamos el texto según la situación
-      if (isOpen) {
-        button.textContent = "Ocultar informacion";
-      } else {
-        button.textContent = "Ver informacion";
-      }
-    });
+    // jQUERY: Cambiamos el texto del botón dinámicamente
+    $button.text(isOpen ? "Ocultar informacion" : "Ver informacion");
   });
 }
 
-// Este evento "DOMContentLoaded" espera pacientemente a que todo de la página HTML
-// se haya cargado antes de encender nuestros guiones de JavaScript.
-document.addEventListener("DOMContentLoaded", function () {
-  renderDecade();
-  setupGalleryChange();
-  setupInfoToggle();
+//-------------INICIALIZACIÓN (DOM READY con jQuery)-----------------
+
+// jQUERY: Esta función $(function() { ... }) asegura que el código corre tras cargar el HTML
+$(function () {
+  renderDecade(); // Ejecuta la función inicial de pintado
+  setupGalleryEvents(); // Activa los clics de las fotos
+  setupInfoToggleEvents(); // Activa los botones de información
 });

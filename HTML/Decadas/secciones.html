@@ -3,37 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RPM Décadas: coches icónicos por década." />
+    <meta
+      name="description"
+      content="RPM Décadas: coches icónicos por década."
+    />
     <title>RPM - Décadas</title>
-    <!-- Bootstrap CSS: Librería externa (framework) que nos da herramientas de diseño 
-         y clases de utilidad (como d-flex, text-center, etc.) para que la web sea 
-         responsive y fácil de maquetar sin escribir todo el CSS a mano. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS: Librería externa (framework) que nos da herramientas de diseño y clases de utilidad para que la web sea responsive y fácil de maquetar. -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="../../CSS/styles.css" />
     <link rel="stylesheet" href="../../CSS/decadas.css" />
     <link rel="stylesheet" href="../../CSS/footer.css" />
   </head>
-  <!-- data-decade="1960" es un "atributo de datos". Lo usamos desde JavaScript 
-       para saber qué colores y qué coches cargar según el año. -->
+  <!-- data-decade="1960" es un "atributo de datos". Lo usamos desde JavaScript para saber qué colores y qué coches cargar según el año. -->
   <body class="decade-page" data-decade="1960">
     <nav class="Menu">
       <a href="../Home/Home.html" class="nav-link-home">RPM</a>
       <ul>
-        <li><a href="secciones.html?decada=1960" class="nav-link decade-filter-link" data-decade-link="1960">60s</a></li>
-        <li><a href="secciones.html?decada=1970" class="nav-link decade-filter-link" data-decade-link="1970">70s</a></li>
-        <li><a href="secciones.html?decada=1980" class="nav-link decade-filter-link" data-decade-link="1980">80s</a></li>
-        <li><a href="secciones.html?decada=1990" class="nav-link decade-filter-link" data-decade-link="1990">90s</a></li>
-        <li><a href="secciones.html?decada=2000" class="nav-link decade-filter-link" data-decade-link="2000">00s</a></li>
-        <li><a href="secciones.html?decada=2010" class="nav-link decade-filter-link" data-decade-link="2010">10s</a></li>
+        <li>
+          <a
+            href="secciones.html?decada=1960"
+            class="nav-link decade-filter-link"
+            data-decade-link="1960"
+            >60s</a
+          >
+        </li>
+        <li>
+          <a
+            href="secciones.html?decada=1970"
+            class="nav-link decade-filter-link"
+            data-decade-link="1970"
+            >70s</a
+          >
+        </li>
+        <li>
+          <a
+            href="secciones.html?decada=1980"
+            class="nav-link decade-filter-link"
+            data-decade-link="1980"
+            >80s</a
+          >
+        </li>
+        <li>
+          <a
+            href="secciones.html?decada=1990"
+            class="nav-link decade-filter-link"
+            data-decade-link="1990"
+            >90s</a
+          >
+        </li>
+        <li>
+          <a
+            href="secciones.html?decada=2000"
+            class="nav-link decade-filter-link"
+            data-decade-link="2000"
+            >00s</a
+          >
+        </li>
+        <li>
+          <a
+            href="secciones.html?decada=2010"
+            class="nav-link decade-filter-link"
+            data-decade-link="2010"
+            >10s</a
+          >
+        </li>
       </ul>
     </nav>
 
     <main class="garage-main">
       <section class="garage-hero" aria-label="Cabecera de la década">
         <!-- El <h1> es el título principal. id="decadeHeading" nos permite controlarlo con JavaScript. -->
-        <h1 id="decadeHeading" class="Titulo_Seccion60s">1960 - Clásicos Eternos</h1>
+        <h1 id="decadeHeading" class="Titulo_Seccion60s">
+          1960 - Clásicos Eternos
+        </h1>
         <p id="garageLead" class="garage-lead">
-          Selecciona una década para ver coches icónicos con una presentación visual limpia.
+          Selecciona una década para ver coches icónicos con una presentación
+          visual limpia.
         </p>
       </section>
 
@@ -46,11 +96,15 @@
         <div class="cars-grid" id="carsGrid"></div>
       </section>
     </main>
+
+    <!-- -------------------- FOOTER - CONTACTO------------------------------ -->
     <footer class="rpm-footer" aria-label="Contacto RPM">
       <p class="footer-kicker">Contacto RPM</p>
       <h3>¿Tienes una idea para RPM?</h3>
       <p>Escríbenos desde la página de contacto.</p>
-      <a class="rpm-footer-contact" href="../Contacto/contacto.html">Ir a contacto</a>
+      <a class="rpm-footer-contact" href="../Contacto/contacto.html"
+        >Ir a contacto</a
+      >
     </footer>
 
     <!-- Cargamos jQuery primero, luego nuestro archivo de funciones generales (script.js) 
@@ -60,5 +114,3 @@
     <script src="../../Java_Script/decadas.js"></script>
   </body>
 </html>
-
-
