@@ -13,7 +13,8 @@ function highlightActivePage() {
     // 2. Es el Home (caso especial por estructura de carpetas)
     const isActive =
       currentFullRoute.includes(href) ||
-      (currentFullRoute.includes("home") && href.includes("home.html"));
+      ((currentFullRoute === "/" || currentFullRoute.includes("index")) &&
+        href.includes("index.html"));
 
     $link.toggleClass("active", isActive); //Activa o desctiva la clase 'active' si es la página actual añade .active si no la quita
   });

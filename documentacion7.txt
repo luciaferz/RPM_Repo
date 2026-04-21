@@ -16,7 +16,7 @@ ARQUITECTURA DE PÁGINAS HTML
 
 Decisión de diseño: mantener 3 archivos HTML separados en lugar de uno solo.
 
-  - Home.html: Página de inicio (portada)
+  - index.html: Página de inicio (portada)
   - secciones.html: Template dinámico para las 6 décadas
   - contacto.html: Página de contacto
 
@@ -37,7 +37,7 @@ ESTRUCTURA DE ARCHIVOS
 /RPM_Repo/
 ├── HTML/
 │   ├── Home/
-│   │   └── Home.html          <- Página principal (punto de entrada)
+│   │   └── index.html          <- Página principal (punto de entrada)
 │   ├── Decadas/
 │   │   └── secciones.html     <- Página dinámica de décadas. Template dinámico para las 6 décadas
 │   ├── Contacto/
@@ -60,7 +60,7 @@ ESTRUCTURA DE ARCHIVOS
 PÁGINAS HTML
 --------------------------------------------------------------------------------
 
-1. HOME (HTML/Home/Home.html)
+1. HOME (HTML/Home/index.html)
    - Punto de entrada principal del sitio
    - Barra de navegación fija en la parte superior
    - Hero section con imagen de fondo y título animado
