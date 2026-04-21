@@ -30,8 +30,11 @@
   color: #fff;
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
-  font-size: clamp(2.1rem, 4vw, 3.2rem);  /* clamp: ajusta el tamaño automáticamente según el ancho de la pantalla */
-
+  font-size: clamp(
+    2.1rem,
+    4vw,
+    3.2rem
+  ); /* clamp: ajusta el tamaño automáticamente según el ancho de la pantalla */
 }
 
 .contact-hero p {
@@ -63,18 +66,13 @@
   gap: 0.45rem;
 }
 
-.field-message,
 .contact-form .text-danger {
   display: none;
   margin: 0.2rem 0 0.5rem;
-  color: #f20a0a; /* Rojo para el mensaje de error de abajo */
-  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
+  color: #f20a0a;
+  font-family: "Cairo", sans-serif;
   font-size: 0.85rem;
   line-height: 1.45;
-}
-
-.field-message.is-visible {
-  display: block;
 }
 
 .contact-form label {
@@ -86,14 +84,17 @@
 }
 
 .contact-form input,
-.contact-form textarea { /*todos los <input> y <textarea> dentro de .contact-form*/
+.contact-form textarea {
+  /*todos los <input> y <textarea> dentro de .contact-form*/
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   background: #050505;
   color: #ffffff !important; /* Fuerza las letras que escribe el usuario a blanco */
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-  transition: border-color 0.2s ease, background-color 0.2s ease; /*Transicion suave*/
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease; /*Transicion suave*/
 }
 
 .contact-form input:focus,
@@ -104,8 +105,8 @@
 }
 
 /* Evita que el navegador ponga el fondo blanco al autocompletar */
-.contact-form input:-webkit-autofill, /*input autofill → mantiene el diseño oscuro ✔*/
-.contact-form input:-webkit-autofill:hover,
+.contact-form input:-webkit-autofill, /*input autofill: mantiene el diseño oscuro ✔*/
+.contact-form input:-webkit-autofill:hover, /*webkit-autofill rellenar automaticamente el campo*/
 .contact-form input:-webkit-autofill:focus,
 .contact-form textarea:-webkit-autofill,
 .contact-form textarea:-webkit-autofill:hover,
@@ -117,10 +118,10 @@
 
 .contact-form input.is-invalid,
 .contact-form textarea.is-invalid,
-.contact-form input:invalid:not(:placeholder-shown) { /*is-invalid es una clase de Bootstrap - Indicar que un campo tiene errores de validación poniendo automaticamente border rojo (solo funcion si se añade js).*/
+.contact-form input:invalid:not(:placeholder-shown) {
+  /*is-invalid es una clase de Bootstrap - Indicar que un campo tiene errores de validación poniendo automaticamente border rojo (solo funcion si se añade js).*/
   border-color: #f20a0a !important; /*Sobrescribe el color por defecto de Bootstrap*/
 }
-
 
 .contact-form button {
   /* Inherits from .btn-rpm -  boton del formulario */
@@ -156,11 +157,13 @@
   transition: width 0.3s ease; /* Hace que la línea crezca suavemente en 0.3 segundos */
 }
 
-.contact-back-link:hover::after { /*Hace que una línea se expanda completamente cuando pasas el ratón por un enlace.*/
+.contact-back-link:hover::after {
+  /*Hace que una línea se expanda completamente cuando pasas el ratón por un enlace.*/
   width: 100%;
 }
 
-@media (max-width: 860px) { /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/
+@media (max-width: 860px) {
+  /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/
   .contact-main {
     padding: 1rem 4vw 1.8rem;
   }

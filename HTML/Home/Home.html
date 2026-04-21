@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <!-- Codificación de caracteres UTF-8 para admitir tildes y caracteres especiales --> 
@@ -45,6 +45,8 @@
     </nav>
   
 <!------------------------------ HERO SECTION----------------------- -->
+<!-- Bootstrap: d-flex (hace que el contenedor sea flexible), align-items-center (centra verticalmente), 
+               justify-content-center (centra horizontalmente) y text-center (centra el texto). -->
 <section
   class="hero d-flex align-items-center justify-content-center text-center"
 >
@@ -54,11 +56,10 @@
   </div>
 </section>
 
-<section class="editorial-ribbon">
-  <div class="ribbon-label">Visión RPM</div>
-  <div class="ribbon-main">
+<section class="franja-editorial">
+  <div class="bloque-texto">
     <h2>Un archivo vivo del automóvil</h2>
-    <p class="ribbon-summary">
+    <p class="descripcion-texto">
      Explora una selección cuidadosamente elegida de los coches más icónicos de cada época y descubre cómo han cambiado el diseño,
      la ingeniería y la cultura del motor a lo largo del tiempo. Más que una simple galería, esta sección es un recorrido visual que te permite 
      comparar estilos, innovaciones y carácter entre décadas, desde los clásicos de los años 60 hasta los modelos más avanzados de la actualidad.
@@ -70,7 +71,9 @@
 <section class="home-section-head">
   <h2>Seis Décadas, Seis Estilos</h2>
 </section>
+<!-- Bootstrap: position-relative permite que otros elementos se posicionen respecto a esta sección. -->
 <section class="car-slider position-relative">
+  <!-- Bootstrap: d-flex para alinear los elementos del carrusel en una fila. -->
   <div class="slider-track d-flex" id="sliderTrack">
 
     <!-- ORIGINAL -->
@@ -110,7 +113,7 @@
       <div class="overlay"><h3>10s</h3></div>
     </div>
 
-    <!-- DUPLICADO PARA LOOP INFINITO -->
+    <!--------------- DUPLICADO PARA LOOP INFINITO ---------------------->
     <div class="car-item">
       <a href="../Decadas/secciones.html?decada=1960" class="panel-link"></a>
       <img src="img_Home/Corvette60s.jpg" class="car-img">
@@ -145,11 +148,10 @@
   </div>
 </section>
 
-<section class="editorial-ribbon editorial-ribbon--alt">
-  <div class="ribbon-label">Lectura rápida</div>
-  <div class="ribbon-main">
+<section class="franja-editorial franja-editorial-alt">
+  <div class="bloque-texto">
     <h2>Menos ruido, más significado</h2>
-    <p class="ribbon-summary">
+    <p class="descripcion-texto">
       Seleccionamos piezas clave para que la navegación sea clara y memorable: menos elementos repetidos,
       más contexto útil y acceso directo a cada década. El objetivo es que puedas pasar de la inspiración visual
       a la exploración detallada de cada sección en un solo clic.

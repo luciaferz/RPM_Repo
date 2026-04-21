@@ -24,12 +24,36 @@
     <nav class="Menu">
       <a href="../Home/Home.html" class="nav-link-home">RPM</a>
       <ul>
-        <li><a href="../Decadas/secciones.html?decada=1960" class="nav-link">60s</a></li>
-        <li><a href="../Decadas/secciones.html?decada=1970" class="nav-link">70s</a></li>
-        <li><a href="../Decadas/secciones.html?decada=1980" class="nav-link">80s</a></li>
-        <li><a href="../Decadas/secciones.html?decada=1990" class="nav-link">90s</a></li>
-        <li><a href="../Decadas/secciones.html?decada=2000" class="nav-link">00s</a></li>
-        <li><a href="../Decadas/secciones.html?decada=2010" class="nav-link">10s</a></li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=1960" class="nav-link"
+            >60s</a
+          >
+        </li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=1970" class="nav-link"
+            >70s</a
+          >
+        </li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=1980" class="nav-link"
+            >80s</a
+          >
+        </li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=1990" class="nav-link"
+            >90s</a
+          >
+        </li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=2000" class="nav-link"
+            >00s</a
+          >
+        </li>
+        <li>
+          <a href="../Decadas/secciones.html?decada=2010" class="nav-link"
+            >10s</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -37,7 +61,9 @@
       <section class="contact-hero">
         <p class="contact-kicker">Contacto RPM</p>
         <h1>Escríbenos</h1>
-        <p>Si quieres proponer mejoras o compartir una idea, usa este formulario.</p>
+        <p>
+          Si quieres proponer mejoras o compartir una idea, usa este formulario.
+        </p>
       </section>
 
       <section class="contact-card">
@@ -46,29 +72,45 @@
              porque vamos a usar la nuestra personalizada con JavaScript en script.js. -->
         <form class="contact-form" action="#" method="post" novalidate>
           <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
-          <!-- text-danger es una clase de utilidad de Bootstrap que pone el texto en color rojo 
-               y se suele usar para indicar errores o mensajes de advertencia. -->
-          <p data-field-message="nombre" class="text-danger" style="display: none; font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;"></p>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Tu nombre"
+          />
+          <!-- .text-danger es una clase de Bootstrap que pone el texto en color rojo y se usa para errores. -->
+          <p data-field-message="nombre" class="text-danger"></p>
 
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@email.com" />
-          <p data-field-message="email" class="text-danger" style="display: none; font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;"></p>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="tu@email.com"
+          />
+          <p data-field-message="email" class="text-danger"></p>
 
           <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe tu mensaje"></textarea>
-          <p data-field-message="mensaje" class="text-danger" style="display: none; font-size: 0.85rem; margin-top: 0.2rem; margin-bottom: 0;"></p>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="6"
+            placeholder="Escribe tu mensaje"
+          ></textarea>
+          <p data-field-message="mensaje" class="text-danger"></p>
 
           <div class="contact-actions">
             <button type="submit" class="btn-rpm">Enviar</button>
-            <a href="../Home/Home.html" class="contact-back-link">Volver a Home</a>
+            <a href="../Home/Home.html" class="contact-back-link"
+              >Volver a Home</a
+            >
           </div>
         </form>
       </section>
     </main>
 
     <!-- Cargamos los archivos de JavaScript al final para no ralentizar la web.
-         Primero jQuery (3.7.1) y luego nuestro script.js principal. -->
+         Primero jQuery y luego nuestro script.js principal. -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../../Java_Script/script.js"></script>
   </body>

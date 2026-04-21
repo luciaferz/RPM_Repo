@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700&family=Oswald:wght@400;700&display=swap"); /*display=swap: muestra primero una fuente alternativa y luego cambia a la fuente real cuando carga - evita “pantalla en blanco” de texto invisible*/
 
 * {
- 
   box-sizing: border-box; /* Evita que el tamañito de un cuadro se aumente si le pone un borde  o un relleno a un cuadro */
 }
 
@@ -17,13 +16,6 @@ body {
 p {
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
   color: white;
-}
-
-/*Forzar que el color sea blanco para que los titulares del home sean blancos*/
-.home-section-head h2,
-.home-section-head p,
-.home-section-head {
-  color: #fff;
 }
 
 /*------------------------- BOTONES GLOBALES------------------------- */
@@ -53,7 +45,8 @@ p {
   line-height: 1;
 }
 
-.btn-rpm::before {/* ::before es un "pseudo-elemento". Es como una capa invisible que creamos dentro del botón para hacer el efecto de llenado de color. */
+.btn-rpm::before {
+  /* ::before es un "pseudo-elemento". Es como una capa invisible que creamos dentro del botón para hacer el efecto de llenado de color. */
   content: ""; /*Sin content, el pseudo-elemento no aparece en pantalla, aunque tenga estilos.*/
   position: absolute;
   top: 0;
@@ -61,7 +54,7 @@ p {
   width: 0; /* Empezamos con ancho 0 para que no se vea el color */
   height: 100%;
   background: var(--btn-color, #f20a0a);
-  transition: width 0.4s ease;  /* Esta transición hace que el color aparezca progresivamente de izquierda a derecha */
+  transition: width 0.4s ease; /* Esta transición hace que el color aparezca progresivamente de izquierda a derecha */
   z-index: -1; /* Mueve la capa detrás del texto del botón - el color queda abajo y el texto siempre visible arriba */
 }
 
@@ -98,7 +91,8 @@ p {
   transition: color 0.2s; /*permite animacion suave del color*/
 }
 
-.nav-link-home:hover { /* Hover: cambia color al pasar el ratón */
+.nav-link-home:hover {
+  /* Hover: cambia color al pasar el ratón */
   color: #f20a0a;
 }
 
@@ -120,13 +114,15 @@ p {
   transition: color 0.2s; /* Permite que el cambio de color sea suave al pasar el ratón */
 }
 
-.Menu ul li a:hover {/* Hover: color rojo al pasar ratón */
+.Menu ul li a:hover {
+  /* Hover: color rojo al pasar ratón */
   color: #f20a0a;
 }
 
 /* -------------LÍNEA ANIMADA BAJO ENLACES----------------- */
 .Menu ul li a::after,
-.nav-link-home::after { /*::after = pseudo-elemento que se genera después del contenido del elemento*/
+.nav-link-home::after {
+  /*::after = pseudo-elemento que se genera después del contenido del elemento*/
   content: ""; /*pseudo-elemento sin contenido que se genera un elemento extra después del texto*/
   position: absolute;
   left: 0;
@@ -146,8 +142,9 @@ p {
 .subtitulo {
   color: white;
   text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 650;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 /* ---------------- ENLACE ACTIVO EN MENU --------------------------
@@ -204,88 +201,58 @@ p {
 }
 
 /* -----------HOME PAGE GENERAL-------------- */
-.home-page {
-  background:
-    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
-    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
-    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
-}
-
-.home-page .hero::after {
-  background: linear-gradient(
-    180deg,
-    rgba(8, 10, 14, 0.42),
-    rgba(8, 10, 14, 0.56)
-  );
-}
-
 .home-page .hero h1,
 .home-page .hero p {
   color: #ffffff;
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra suave para que el texto resalte */
 }
 
-.editorial-ribbon {
+/* FRANJAS EDITORIALES */
+.franja-editorial {
   width: 100%;
   margin: 0;
-  padding: 22px 2.8vw;
-  display: grid;
-  grid-template-columns: minmax(140px, 240px) minmax(0, 1fr);
-  gap: 1rem 1.2rem;
-  align-items: start;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0e1219;
+  padding: 40px 10%;
+  background: #000;
+  border-top: none;
+  text-align: center;
 }
 
-.editorial-ribbon--alt {
-  background: #0e1219;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+.franja-editorial-alt {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea sutil inferior en la franja alternativa */
 }
 
-.ribbon-label {
-  color: #ff8383;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding-top: 0.42rem;
+/* Títulos de las franjas */
+.bloque-texto h2 {
+  margin: 0 0 1rem 0;
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Tamaño adaptable según pantalla */
 }
 
-.ribbon-main h2 {
+/* Resumen/Descripción de las franjas */
+.descripcion-texto {
+  margin: 0 auto;
+  color: #c6d3e5;
+  max-width: 800px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Secciones de cabecera de carruseles */
+.home-page .home-section-head {
+  background: #000;
+  text-align: center;
+  padding: 60px 0 10px; /* Más espacio superior */
+}
+
+.home-page .home-section-head h2 {
   margin: 0;
   color: #fff;
-  font-family: "Bebas Neue", "Oswald", sans-serif;
-  letter-spacing: 0.03em;
-  font-size: clamp(1.45rem, 2.8vw, 2.2rem);  /* clamp(mínimo, preferido, máximo) es una forma de decirle al navegador que ajuste el tamaño de la letra según la pantalla de forma automática. */
-}
-
-.ribbon-summary {
-  margin: 0.38rem 0 0;
-  color: #c6d3e5;
-  max-width: 110ch;
-  line-height: 1.58;
-}
-
-.home-page .home-section-head,
-.home-page .car-slider {
-  background: linear-gradient(
-    180deg,
-    rgba(17, 23, 33, 0.94) 0%,
-    rgba(13, 18, 26, 0.94) 100%
-  );
-}
-
-.home-page .car-slider {
-  padding-top: 24px;
-}
-
-@media (max-width: 760px) {
-  .editorial-ribbon {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 20px 4vw;
-  }
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Tamaño destacado y adaptable */
+  text-transform: uppercase;
 }
 
 /* ----------------- MENU CARRUSEL (LOOP) ----------------- */
@@ -294,7 +261,7 @@ p {
   padding: 34px 0 60px;
   position: relative;
   width: 100%;
-  background: #0a0a0a;
+  background: #000; /* Fondo negro sólido para coincidir con la página */
 }
 
 .slider-track {
@@ -355,11 +322,11 @@ p {
 
 /* -------------HOME RESPONSIVE------------- */
 @media (max-width: 1100px) {
-  .home-page .Menu {
+  .Menu {
     padding: 10px 14px;
   }
 
-  .home-page .Menu ul {
+  .Menu ul {
     gap: 16px;
   }
 
@@ -387,20 +354,20 @@ p {
 }
 
 @media (max-width: 780px) {
-  .home-page .Menu {
+  .Menu {
     flex-direction: column; /*Cambia el menú de horizontal a vertical:*/
     align-items: stretch; /*Elementos ocupen todo el ancho disponible y no queden centrados ni comprimidos*/
     gap: 0.55rem;
   }
 
-  .home-page .Menu ul {
+  .Menu ul {
     justify-content: space-between; /*Reparte los elementos horizontalmente:*/
     flex-wrap: wrap; /*Permite que los elementos salten a otra línea si no caben (CSS Flexbox wrap)*/
     gap: 0.45rem;
   }
 
-  .home-page .Menu ul li a,
-  .home-page .nav-link-home {
+  .Menu ul li a,
+  .nav-link-home {
     font-size: 1.03rem;
   }
 
@@ -422,16 +389,6 @@ p {
 
   .home-page .hero p {
     font-size: 0.95rem;
-  }
-
-  .home-page .editorial-ribbon {
-    grid-template-columns: 1fr;
-    gap: 0.52rem;
-    padding: 18px 4.2vw;
-  }
-
-  .home-page .ribbon-label {
-    padding-top: 0;
   }
 
   .home-page .home-section-head {
@@ -465,12 +422,12 @@ p {
 }
 
 @media (max-width: 480px) {
-  .home-page .Menu {
+  .Menu {
     padding: 9px 10px;
   }
 
-  .home-page .Menu ul li a,
-  .home-page .nav-link-home {
+  .Menu ul li a,
+  .nav-link-home {
     font-size: 0.96rem;
   }
 

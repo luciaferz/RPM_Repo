@@ -4,11 +4,17 @@ body.decade-page {
   /* Estas son "variables" de CSS. Funcionan como etiquetas donde se guarda un color para usarlo en muchas partes del archivo sin tener que escribir el código de color muchas veces. 
      Solo funcionan dentro de ese body y sus hijos.*/
   --decade-color: #e63946; /*custom properties - almacena valores reutilizable*/
-  --decade-color-soft: rgba(230, 57, 70, 0.18); /* custom properties - usa ese valor*/
+  --decade-color-soft: rgba(
+    230,
+    57,
+    70,
+    0.18
+  ); /* custom properties - usa ese valor*/
 }
 
-body.decade-page[data-decade="1960"] { /*data-  atributo personalizado. Guarda el valor de la década en el HTML para usarlo en CSS o JavaScript sin afectar a la estructura visual.*/
-  --decade-color: #e63946; 
+body.decade-page[data-decade="1960"] {
+  /*data-  atributo personalizado. Guarda el valor de la década en el HTML para usarlo en CSS o JavaScript sin afectar a la estructura visual.*/
+  --decade-color: #e63946;
   --decade-color-soft: rgba(230, 57, 70, 0.18);
 }
 
@@ -38,7 +44,10 @@ body.decade-page[data-decade="2010"] {
 }
 
 .garage-main {
-  width: min(1500px, 96%); /* min(1500px, 96%) le dice al cuadro que como máximo mida 1500px, pero que si la pantalla es pequeña se ajuste al 96% de la misma. */
+  width: min(
+    1500px,
+    96%
+  ); /* min(1500px, 96%) le dice al cuadro que como máximo mida 1500px, pero que si la pantalla es pequeña se ajuste al 96% de la misma. */
   margin: 0 auto;
   padding: 30px 0 50px;
 }
@@ -54,7 +63,11 @@ body.decade-page[data-decade="2010"] {
   text-align: left;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
-  font-size: clamp(2.5rem, 5vw, 4rem);   /* clamp: ajusta el tamaño del título automáticamente entre un mínimo (2.5rem) y un máximo (4rem). */
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    4rem
+  ); /* clamp: ajusta el tamaño del título automáticamente entre un mínimo (2.5rem) y un máximo (4rem). */
 }
 
 .garage-lead {
@@ -84,8 +97,11 @@ body.decade-page[data-decade="2010"] {
 }
 
 .cars-grid {
-  display: grid;   /* El sistema 'grid' nos permite organizar elementos en una cuadrícula (filas y columnas) */
-  grid-template-columns: repeat(3, minmax(0, 1fr));   /* repeat(3, minmax(0, 1fr)) crea 3 columnas iguales que se reparten el espacio disponible.
+  display: grid; /* El sistema 'grid' nos permite organizar elementos en una cuadrícula (filas y columnas) */
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  ); /* repeat(3, minmax(0, 1fr)) crea 3 columnas iguales que se reparten el espacio disponible.
                                                        fr = “fracción del espacio disponible”
                                                        1fr = una parte igual del contenedor
                                                        minmax(0, 1fr) = Evita que el contenido “rompa” la cuadrícula*/
@@ -130,6 +146,7 @@ body.decade-page[data-decade="2010"] {
   margin: 0 0 10px;
   font-size: 1.5rem;
   min-height: 3.2rem;
+  /* Hereda el resto de estilos visuales de styles.css */
 }
 
 .car-description {
@@ -156,7 +173,8 @@ body.decade-page[data-decade="2010"] {
   cursor: pointer;
 }
 
-.car-thumb-button.active { /*.active se añade con js button.classList.add("active");*/
+.car-thumb-button.active {
+  /*.active se añade con js button.classList.add("active");*/
   border-color: var(--decade-color);
   box-shadow: 0 0 0 2px var(--decade-color-soft);
 }
@@ -171,7 +189,9 @@ body.decade-page[data-decade="2010"] {
 }
 
 .info-toggle {
-  --btn-color: var(--decade-color); /*--btn-color toma el valor de otra variable: estás “renombrando” o “adaptando” el color del tema para este componente (Así se puede cambiar el botón sin tocar el sistema global.)
+  --btn-color: var(
+    --decade-color
+  ); /*--btn-color toma el valor de otra variable: estás “renombrando” o “adaptando” el color del tema para este componente (Así se puede cambiar el botón sin tocar el sistema global.)
                                      --decade-color = color global del tema (1960, 1970, etc.)
                                      --btn-color = color específico del botón*/
   width: 100%;
@@ -184,11 +204,13 @@ body.decade-page[data-decade="2010"] {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.car-extra-info.open { /*.open se añade con js panel.classList.add("open"); - clase que indica que está “abierto” */
+.car-extra-info.open {
+  /*.open se añade con js panel.classList.add("open"); - clase que indica que está “abierto” */
   display: block;
 }
 
-.info-block + .info-block { /*selecciona un .info-block que viene justo después de otro .info-block - + combinador de hermano adyacente.*/
+.info-block + .info-block {
+  /*selecciona un .info-block que viene justo después de otro .info-block - + combinador de hermano adyacente.*/
   margin-top: 14px;
 }
 
@@ -243,32 +265,24 @@ body.decade-page[data-decade="2010"] {
   color: #9cd93a;
 }
 
-
-@media (max-width: 992px) { /*Cuando la pantalla mide 992px o menos - EL grid de coches pasa a 2 columnas en lugar de 3 (responsive)*/
+@media (max-width: 992px) {
+  /*Cuando la pantalla mide 992px o menos - EL grid de coches pasa a 2 columnas en lugar de 3 (responsive)*/
   .cars-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 768px) { /*Se adapta todo el diseño para móvil - se pone a una columna en vertical*/
+@media (max-width: 768px) {
+  /*Se adapta todo el diseño para móvil - se pone a una columna en vertical*/
   .garage-main {
     width: 94%;
     padding: 22px 0 40px;
   }
 
-  .Menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .Menu ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+  /* El Menú se gestiona globalmente en styles.css para evitar duplicidad */
 
   .cars-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /*Responsive para que los coches se vean en una sola columna en pantallas pequeñas*/
   }
 
   .car-main-image {
