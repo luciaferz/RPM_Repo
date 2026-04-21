@@ -160,8 +160,6 @@ p {
   padding-bottom: 3px;
 }
 
-/* ------------ESTILO HOME------------------ */
-
 /* ------------------ HERO SECTION---------------------- */
 .hero {
   height: 100vh;
@@ -203,6 +201,91 @@ p {
 
 .hero p {
   color: #ccc;
+}
+
+/* -----------HOME PAGE GENERAL-------------- */
+.home-page {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
+    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
+}
+
+.home-page .hero::after {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 14, 0.42),
+    rgba(8, 10, 14, 0.56)
+  );
+}
+
+.home-page .hero h1,
+.home-page .hero p {
+  color: #ffffff;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.editorial-ribbon {
+  width: 100%;
+  margin: 0;
+  padding: 22px 2.8vw;
+  display: grid;
+  grid-template-columns: minmax(140px, 240px) minmax(0, 1fr);
+  gap: 1rem 1.2rem;
+  align-items: start;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0e1219;
+}
+
+.editorial-ribbon--alt {
+  background: #0e1219;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ribbon-label {
+  color: #ff8383;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding-top: 0.42rem;
+}
+
+.ribbon-main h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Bebas Neue", "Oswald", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: clamp(1.45rem, 2.8vw, 2.2rem);  /* clamp(mínimo, preferido, máximo) es una forma de decirle al navegador que ajuste el tamaño de la letra según la pantalla de forma automática. */
+}
+
+.ribbon-summary {
+  margin: 0.38rem 0 0;
+  color: #c6d3e5;
+  max-width: 110ch;
+  line-height: 1.58;
+}
+
+.home-page .home-section-head,
+.home-page .car-slider {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 23, 33, 0.94) 0%,
+    rgba(13, 18, 26, 0.94) 100%
+  );
+}
+
+.home-page .car-slider {
+  padding-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .editorial-ribbon {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 20px 4vw;
+  }
 }
 
 /* ----------------- MENU CARRUSEL (LOOP) ----------------- */
@@ -268,82 +351,6 @@ p {
   inset: 0; /*Ocupa toda la tarjeta (CSS Logical Properties inset -  Distancias lógicas entre un elemento posicionado y los bordes de su contenedor de referencia)*/
   z-index: 2; /*Lo pone por encima de otros elementos*/
   pointer-events: auto; /*Permite que este elemento reciba clics */
-}
-
-
-/* -------------- SLIDER ---------------*/
-.slider {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto 2rem auto;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
-}
-
-.slides img {
-  width: 100%;
-  flex-shrink: 0;
-  display: none;
-  border-radius: 10px;
-}
-
-.slides img.active {
-  display: block;
-}
-
-.slider-btn {
-  position: absolute; /*Saca el botón del flujo normal y lo coloca encima del slider.*/
-  top: 50%; /*Lo coloca a la mitad vertical del contenedor.*/
-  transform: translateY(-50%); /*Ajuste  para centrarlo perfectamente (porque top: 50% por sí solo no lo centra exacto).*/
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  font-size: 2rem;
-  padding: 0.2em 0.6em;
-  cursor: pointer; /*Cambia el cursor a “mano” al pasar el ratón.*/
-  z-index: 2;
-  border-radius: 50%;
-  transition: background 0.2s;
-}
-
-.slider-btn.prev {
-  left: 10px;
-}
-
-.slider-btn.next {
-  right: 10px;
-}
-
-.slider-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Texto animado debajo del slider */
-.car-text {
-  text-align: center;
-  margin-top: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.5s,
-    transform 0.5s;
-}
-
-.car-text.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 600px) { /*@media → condición (como un “if”) - Aplica estos estilos SOLO si la pantalla mide 600px o menos*/
-  .slider {
-    max-width: 100%;
-  }
 }
 
 /* -------------HOME RESPONSIVE------------- */
@@ -487,94 +494,5 @@ p {
 
   .home-page .overlay {
     font-size: 1.35rem;
-  }
-}
-
-/* ============================================
-   HOME PAGE REFRESH ( estilo editorial + contacto)
-   ============================================ */
-.home-page {
-  background:
-    radial-gradient(circle at 12% 0%, rgba(255, 84, 84, 0.12), transparent 34%),
-    radial-gradient(circle at 86% 0%, rgba(94, 165, 255, 0.1), transparent 30%),
-    linear-gradient(180deg, #0e1219 0%, #0c1016 45%, #0a0d12 100%);
-}
-
-.home-page .hero::after {
-  background: linear-gradient(
-    180deg,
-    rgba(8, 10, 14, 0.42),
-    rgba(8, 10, 14, 0.56)
-  );
-}
-
-.home-page .hero h1,
-.home-page .hero p {
-  color: #ffffff;
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-}
-
-.editorial-ribbon {
-  width: 100%;
-  margin: 0;
-  padding: 22px 2.8vw;
-  display: grid;
-  grid-template-columns: minmax(140px, 240px) minmax(0, 1fr);
-  gap: 1rem 1.2rem;
-  align-items: start;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: #0e1219;
-}
-
-.editorial-ribbon--alt {
-  background: #0e1219;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.ribbon-label {
-  color: #ff8383;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding-top: 0.42rem;
-}
-
-.ribbon-main h2 {
-  margin: 0;
-  color: #fff;
-  font-family: "Bebas Neue", "Oswald", sans-serif;
-  letter-spacing: 0.03em;
-  /* clamp(mínimo, preferido, máximo) es una forma de decirle al navegador que 
-     ajuste el tamaño de la letra según la pantalla de forma automática. */
-  font-size: clamp(1.45rem, 2.8vw, 2.2rem);
-}
-
-.ribbon-summary {
-  margin: 0.38rem 0 0;
-  color: #c6d3e5;
-  max-width: 110ch;
-  line-height: 1.58;
-}
-
-.home-page .home-section-head,
-.home-page .car-slider {
-  background: linear-gradient(
-    180deg,
-    rgba(17, 23, 33, 0.94) 0%,
-    rgba(13, 18, 26, 0.94) 100%
-  );
-}
-
-.home-page .car-slider {
-  padding-top: 24px;
-}
-
-@media (max-width: 760px) {
-  .editorial-ribbon {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 20px 4vw;
   }
 }
