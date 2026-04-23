@@ -18,7 +18,7 @@
 .contact-hero .contact-kicker {
   margin: 0;
   color: #f20a0a;
-  text-transform: uppercase;
+  text-transform: uppercase; /*uppercase: Convierte el texto en mayúsculas*/
   letter-spacing: 0.12em;
   font-size: 0.74rem;
   font-weight: 700;
@@ -30,8 +30,11 @@
   color: #fff;
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
-  /* clamp: ajusta el tamaño automáticamente según el ancho de la pantalla */
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-size: clamp(
+    2.1rem,
+    4vw,
+    3.2rem
+  ); /* clamp: ajusta el tamaño automáticamente según el ancho de la pantalla */
 }
 
 .contact-hero p {
@@ -59,22 +62,17 @@
 
 .contact-form {
   margin-top: 0.8rem;
-  /* display: grid organiza los campos de texto uno debajo de otro automáticamente */
-  display: grid;
+  display: grid; /* display: grid organiza los campos de texto uno debajo de otro automáticamente */
   gap: 0.45rem;
 }
 
-.field-message {
+.contact-form .text-danger {
   display: none;
-  margin: -0.1rem 0 0.2rem;
+  margin: 0.2rem 0 0.5rem;
   color: #f20a0a;
-  font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-  font-size: 0.9rem;
+  font-family: "Cairo", sans-serif;
+  font-size: 0.85rem;
   line-height: 1.45;
-}
-
-.field-message.is-visible {
-  display: block;
 }
 
 .contact-form label {
@@ -87,33 +85,51 @@
 
 .contact-form input,
 .contact-form textarea {
+  /*todos los <input> y <textarea> dentro de .contact-form*/
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   background: #050505;
-  color: #fff;
+  color: #ffffff !important; /* Fuerza las letras que escribe el usuario a blanco */
   padding: 0.62rem 0.72rem;
   font-family: "Cairo", "Roboto", "Poppins", "Arial", sans-serif;
-  transition: border-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease; /*Transicion suave*/
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f20a0a;
+  background: #050505; /* Asegura que el fondo siga siendo oscuro */
+}
+
+/* Evita que el navegador ponga el fondo blanco al autocompletar */
+.contact-form input:-webkit-autofill, /*input autofill: mantiene el diseño oscuro ✔*/
+.contact-form input:-webkit-autofill:hover, /*webkit-autofill rellenar automaticamente el campo*/
+.contact-form input:-webkit-autofill:focus,
+.contact-form textarea:-webkit-autofill,
+.contact-form textarea:-webkit-autofill:hover,
+.contact-form textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff; /*Fuerza texto blanco*/
+  -webkit-box-shadow: 0 0 0px 1000px #050505 inset; /*Reemplaza fondo del navegador*/
+  transition: background-color 5000s ease-in-out 0s; /*bloquear estilos automáticos del navegador*/
 }
 
 .contact-form input.is-invalid,
-.contact-form textarea.is-invalid {
-  border-color: #f20a0a;
-}
-
-.contact-form input.is-invalid,
-.contact-form textarea.is-invalid {
-  border-color: #f20a0a;
+.contact-form textarea.is-invalid,
+.contact-form input:invalid:not(:placeholder-shown) {
+  /*is-invalid es una clase de Bootstrap - Indicar que un campo tiene errores de validación poniendo automaticamente border rojo (solo funcion si se añade js).*/
+  border-color: #f20a0a !important; /*Sobrescribe el color por defecto de Bootstrap*/
 }
 
 .contact-form button {
-  /* Inherits from .btn-rpm */
+  /* Inherits from .btn-rpm -  boton del formulario */
 }
 
 .contact-actions {
   margin-top: 1.5rem;
-  /* display: flex organiza el botón y el enlace en la misma fila */
-  display: flex;
+  display: flex; /* display: flex organiza el botón y el enlace en la misma fila */
   gap: 1.25rem;
   align-items: center;
   flex-wrap: wrap; /* Si no caben, el segundo elemento bajará a la siguiente fila */
@@ -142,10 +158,12 @@
 }
 
 .contact-back-link:hover::after {
+  /*Hace que una línea se expanda completamente cuando pasas el ratón por un enlace.*/
   width: 100%;
 }
 
-@media (max-width: 860px) { /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/
+@media (max-width: 860px) {
+  /*@media → condición (como un “if” en programación) - Aplica estos estilos SOLO si la pantalla mide 860px o menos*/
   .contact-main {
     padding: 1rem 4vw 1.8rem;
   }

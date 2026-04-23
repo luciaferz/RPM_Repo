@@ -18,8 +18,7 @@
 
 .rpm-footer h3 {
   margin: 0.42rem 0 0;
-  /* clamp: ajusta el tamaño del texto según el ancho de la pantalla */
-  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  font-size: clamp(1.45rem, 2.6vw, 2rem);  /* clamp: ajusta el tamaño del texto según el ancho de la pantalla */
   font-family: "Bebas Neue", "Oswald", sans-serif;
   letter-spacing: 0.03em;
 }
@@ -31,48 +30,46 @@
   max-width: 56ch;
 }
 
-/* Usamos el nombre del footer delante para asegurar prioridad máxima */
-.rpm-footer .rpm-footer-contact {
-  /* 1. ELIMINAR EL MARCO (RESET) */
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 0 2px 0 !important; /* Espacio justo para la línea */
-  box-shadow: none !important;
-  
-  /* 2. ESTILO DEL TEXTO */
-  display: inline-block !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  font-family: "Oswald", sans-serif !important;
-  text-transform: uppercase !important;
-  font-size: 0.95rem !important;
-  position: relative !important; /* Vital para el efecto */
+.rpm-footer-contact {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 2px;
 }
 
-/* 3. LA LÍNEA ROJA (EL AFTER) */
-.rpm-footer .rpm-footer-contact::after {
-  content: "";
+/* ::after crea la línea roja animada que aparece al pasar el ratón */
+.rpm-footer-contact::after {
+  content: ""; /*Crea el pseudo-elemento, pero sin texto dentro*/
   position: absolute;
   left: 0;
-  bottom: 0;           /* Pegada al final del texto */
-  width: 0%;           /* Invisible al principio */
-  height: 2px;         /* Grosor de la línea */
+  bottom: 0;
+  width: 0%;
+  height: 2px;
   background-color: #f20a0a;
   transition: width 0.3s ease;
 }
 
-/* 4. EFECTO HOVER */
-.rpm-footer .rpm-footer-contact:hover::after {
-  width: 100%;         /* La línea se desplaza */
+.rpm-footer-contact:hover::after { /*Transcion al pasar el raton - linea roja se desplaza (sin ello se queda fija)*/
+  width: 100%;
 }
 
-.rpm-footer .rpm-footer-contact:hover {
-  background: transparent !important; /* Evita que Bootstrap lo ponga rojo */
-  color: #fff !important;
+.rpm-footer-contact::after { /* ::after crea la línea roja animada que aparece al pasar el ratón */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #f20a0a;
+  transition: width 0.3s ease;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px) { /*Diseño responsive @media - Aplica estos estilos SOLO si la pantalla mide 900px o menos (CSS Media Queries)*/
   .rpm-footer {
     padding: 1rem 4vw;
   }

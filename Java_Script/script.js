@@ -1,42 +1,31 @@
-/* ============================================
-   FUNCIÃ“N: highlightActivePage()
-   ============================================
-   PropÃ³sito: Resaltar el enlace del menÃº que
-   corresponde a la pÃ¡gina actual.
-   
-   CÃ³mo funciona:
-   1. Obtiene la ruta y el query string actual.
-   2. Selecciona todos los enlaces del menÃº con jQuery.
-   3. Compara la URL actual con el href de cada enlace.
-   4. AÃ±ade la clase 'active' al enlace correcto y se la quita a los demÃ¡s.
-   ============================================ */
 function highlightActivePage() {
+  //marcar en el menú qué página se esta viendo en el momento.
   // Obtenemos la ruta y el query string actual (p. ej. /secciones.html?decada=1960)
-  const currentFullRoute = window.location.pathname + window.location.search;
+  const currentFullRoute = window.location.pathname + window.location.search; //Guarda la página actual completa.
 
   $(".Menu a").each(function () {
+    //Recorre todos los enlaces del menú y usa jQuery para seleccionar todos los <a> del menú.
     const $link = $(this);
-    const href = $link.attr("href") || "";
+    const href = $link.attr("href") || ""; //Lee cada enlace y obtiene el link de cada botón del menú.
 
     // Un enlace es activo si:
     // 1. La ruta completa actual incluye el href del enlace
     // 2. Es el Home (caso especial por estructura de carpetas)
     const isActive =
       currentFullRoute.includes(href) ||
-      (currentFullRoute.includes("Home") && href.includes("Home.html"));
+      ((currentFullRoute === "/" || currentFullRoute.includes("index")) &&
+        href.includes("index.html"));
 
-    $link.toggleClass("active", isActive);
+    $link.toggleClass("active", isActive); //Activa o desctiva la clase 'active' si es la página actual añade .active si no la quita
   });
 }
 
-// jQuery: $(function () {}) espera a que el DOM estÃ© listo.
-// AquÃ­ se agrupan todas las interacciones comunes de la web.
+// jQuery: $(function () {}) espera a que el DOM esté listo.
+// Aquí se agrupan todas las interacciones comunes de la web.
 $(function () {
   highlightActivePage();
 
-  // ============================================
-  // SLIDER DE CARRUSEL (HOME)
-  // ============================================
+  // --------------- SLIDER DE CARRUSEL (HOME)------------------
   // jQuery: $("#sliderTrack") selecciona el carrusel principal de Home.
   const $track = $("#sliderTrack");
   let speed = 0.3;
@@ -47,27 +36,28 @@ $(function () {
     if (!$track.length) return;
 
     if (!isSliderPaused) {
-      pos += speed;
+      pos += speed; //Mueve el slider hacia la izquierda poco a poco.
     }
 
-    // Si llegamos a la mitad del scroll (donde empiezan las copias de las fotos), reiniciamos.
+    // Si se llega a la mitad del scroll (donde empiezan las copias de las fotos) se reinicia.
     if (pos >= $track[0].scrollWidth / 2) {
       pos = 0;
     }
 
     $track.css("transform", `translateX(-${pos}px)`);
-    // requestAnimationFrame es una funciÃ³n avanzada del navegador que llama a 'loopSlider' 
-    // unas 60 veces por segundo, creando una animaciÃ³n muy suave para el carrusel.
+
+    // requestAnimationFrame es una función del navegador que llama a 'loopSlider' que crea una animación muy suave para el carrusel (ejecuta a 60 FPS)
     requestAnimationFrame(loopSlider);
   }
 
   if ($track.length) {
-    // jQuery: .on() se usa para registrar eventos de ratÃ³n en el slider (parar al pasar el ratÃ³n).
+    // jQuery: .on() se usa para registrar eventos de ratón en el slider (pausar al pasar el ratón).
     $track.on("mouseenter", function () {
       isSliderPaused = true;
     });
 
     $track.on("mouseleave", function () {
+      //Reanuda el movimiento del slider al salir el ratón.
       isSliderPaused = false;
     });
 
@@ -83,69 +73,7 @@ $(function () {
     }
   });
 
-  // ============================================
-  // SLIDERS MANUALES (TARJETAS DE COCHES)
-  // ============================================
-  // jQuery: busca todos los sliders manuales con [data-slider]
-  // y simplifica la gestiÃ³n de botones, imÃ¡genes activas y texto asociado.
-  $("[data-slider]").each(function () {
-    const $slider = $(this);
-    const $slides = $slider.find(".slides img");
-    const $text = $slider.parent().find(".car-text").first();
-    let current = 0;
-    let interval;
-
-    function showSlide(index) {
-      $slides.removeClass("active").eq(index).addClass("active");
-
-      if ($text.length) {
-        $text.removeClass("active");
-        // setTimeout espera un tiempo (100 milisegundos) antes de ejecutar la funciÃ³n de dentro.
-        // Lo usamos para hacer un pequeÃ±o efecto de retardo al cambiar el texto.
-        setTimeout(function () {
-          $text.addClass("active");
-        }, 100);
-      }
-    }
-
-    function nextSlide() {
-      current = (current + 1) % $slides.length;
-      showSlide(current);
-    }
-
-    function prevSlide() {
-      current = (current - 1 + $slides.length) % $slides.length;
-      showSlide(current);
-    }
-
-    function startInterval() {
-      interval = setInterval(nextSlide, 3000);
-    }
-
-    function resetInterval() {
-      clearInterval(interval);
-      startInterval();
-    }
-
-    // jQuery: .find() localiza los botones dentro de cada slider 
-    // y .on("click") conecta la navegaciÃ³n manual.
-    $slider.find(".next").on("click", function () {
-      nextSlide();
-      resetInterval();
-    });
-
-    $slider.find(".prev").on("click", function () {
-      prevSlide();
-      resetInterval();
-    });
-
-    showSlide(current);
-    startInterval();
-  });
-
-  // ============================================
-  // VALIDACIÃ“N DE FORMULARIO DE CONTACTO
-  // ============================================
+  // ---------------- VALIDACIÓN DE FORMULARIO DE CONTACTO-----------------
   // jQuery: selecciona el formulario de contacto para validar los campos.
   const $contactForm = $(".contact-form");
 
@@ -154,13 +82,13 @@ $(function () {
   // jQuery: recoge todos los campos a validar del formulario.
   const $requiredFields = $contactForm.find("#nombre, #email, #mensaje");
 
-  /* FUNCIÃ“N: getFieldMessage()
-     PropÃ³sito: Devuelve el mensaje de error correspondiente a cada campo. */
+  /* FUNCIÓN: getFieldMessage() - Devuelve el mensaje de error correspondiente a cada campo. */
   function getFieldMessage($field) {
-    const fieldId = $field.attr("id");
-    const value = ($field.val() || "").trim();
+    const fieldId = $field.attr("id"); //Identifica el campo por su id (nombre, email o mensaje).
+    const value = ($field.val() || "").trim(); //Lee el valor del campo y .trim() elimina espacios al principio y al final.
 
     if (fieldId === "nombre" && !value) {
+      //Hace obligatorio rellenar el campo
       return "Es obligatorio rellenar el campo";
     }
 
@@ -169,7 +97,7 @@ $(function () {
         return "Es obligatorio rellenar el campo";
       }
 
-      const hasAt = value.includes("@");
+      const hasAt = value.includes("@"); //Comprueba si el email incluye @, si no lo incluye devuelve un mensaje de error.
 
       if (!hasAt) {
         return "Formato incorrecto necesario incluir @";
@@ -180,11 +108,10 @@ $(function () {
       return "Es obligatorio rellenar el campo";
     }
 
-    return "";
+    return ""; // Si no hay errores, devuelve una cadena vacía.
   }
 
-  /* FUNCIÃ“N: updateFieldState()
-     PropÃ³sito: Actualiza visualmente el campo y el mensaje de error. */
+  /* FUNCIÓN: updateFieldState() - Actualiza visualmente el campo y el mensaje de error. */
   function updateFieldState($field) {
     const message = getFieldMessage($field);
 
@@ -196,8 +123,8 @@ $(function () {
     // jQuery: actualiza la clase de error (borde rojo) y el texto del mensaje.
     $field.toggleClass("is-invalid", Boolean(message));
     $message.text(message);
-    
-    // Mostramos u ocultamos el elemento con .show() o .hide() segÃºn si hay error.
+
+    // Mostramos u ocultamos el elemento con .show() o .hide() según si hay error.
     if (message) {
       $message.show();
     } else {
@@ -210,24 +137,25 @@ $(function () {
     updateFieldState($(this));
   });
 
-  // jQuery: controla el envÃ­o del formulario y evita enviarlo
-  // si alguno de los campos obligatorios sigue siendo invÃ¡lido.
+  // jQuery: controla el envío del formulario y evita enviarlo
+  // si alguno de los campos obligatorios sigue siendo inválido.
   $contactForm.on("submit", function (event) {
-    const invalidFields = [];
+    const invalidFields = []; //Se guardan los campos que están mal
 
     $requiredFields.each(function () {
+      //Recorre cada campo obligatorio para validar su estado.
       const $field = $(this);
-      updateFieldState($field);
+      updateFieldState($field); //Valida el campo y actualiza su estado visual (borde rojo y mensaje de error).
 
       if (getFieldMessage($field)) {
+        //Comprueba si hay error y lo añade a la lista de campos inválidos.
         invalidFields.push($field);
       }
     });
 
     if (invalidFields.length > 0) {
-      event.preventDefault(); // Evita que se envÃ­e el formulario
+      event.preventDefault(); // Evita que se envíe el formulario si hay campos inválidos.
       invalidFields[0].trigger("focus"); // Pone el foco en el primer error
     }
   });
 });
-
