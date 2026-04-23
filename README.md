@@ -206,7 +206,7 @@ Los errores detectados en CSS son:
 ![Error CSS 1](images/imagencss1.png)
 ![Error CSS 2](images/imagencss2.png)
 ![Error CSS 3](images/imagencss3.png)
-![Error CSS 4](images/imagencss4.png)
+![Error CSS 4](images/imagencss5.png)
 
 Estos errores aparecen porque el validador no reconoce algunas propiedades modernas utilizadas por **Bootstrap**, framework empleado en el desarrollo del proyecto.
 
