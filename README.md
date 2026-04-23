@@ -181,9 +181,9 @@ https://luciaferz.github.io/RPM_Repo/index.html
 
 Los errores que nos salen en el HTML son:
 
-![Error HTML 1](images/imagen1.png)
-![Error HTML 2](images/imagen2.png)
-![Error HTML 3](images/imagen3.png)
+![Error HTML 1](Verificacion_W3C/imagen1.png)
+![Error HTML 2](Verificacion_W3C/imagen2.png)
+![Error HTML 3](Verificacion_W3C/imagen3.png)
 
 Estos errores corresponden a:
 - Falta del atributo `alt` en los elementos `<img>`, necesario para accesibilidad.
@@ -193,7 +193,7 @@ Estos errores corresponden a:
 
 ## Solución aplicada a la etiqueta main
 
-![Solución](images/solucion.png)     
+![Solución](Verificacion_W3C/solucion.png)     
 
 
 
@@ -203,10 +203,10 @@ Estos errores corresponden a:
 
 Los errores detectados en CSS son:
 
-![Error CSS 1](images/imagencss1.png)
-![Error CSS 2](images/imagencss2.png)
-![Error CSS 3](images/imagencss3.png)
-![Error CSS 4](images/imagencss5.png)
+![Error CSS 1](Verificacion_W3C/imagencss1.png)
+![Error CSS 2](Verificacion_W3C/imagencss2.png)
+![Error CSS 3](Verificacion_W3C/imagencss3.png)
+![Error CSS 4](Verificacion_W3C/imagencss5.png)
 
 Estos errores aparecen porque el validador no reconoce algunas propiedades modernas utilizadas por **Bootstrap**, framework empleado en el desarrollo del proyecto.
 
