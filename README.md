@@ -169,8 +169,10 @@ Home
 
 Hemos usado:  
 -[Validador CSS del W3C](https://jigsaw.w3.org/css-validator/)
-[Validador HTML del W3C](https://validator.w3.org/) 
+
+-[Validador HTML del W3C](https://validator.w3.org/) 
 Sobre nuestra página:  
+
 https://luciaferz.github.io/RPM_Repo/index.html
 
 ---
