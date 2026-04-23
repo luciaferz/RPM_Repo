@@ -164,3 +164,49 @@ Home
 │   └── Info toggle (panel de detalles)
 └── Contacto → Formulario → Validación → Envío
 ```
+
+# Validación
+
+Hemos usado el **Servicio de Validación de CSS del W3C (CSS)** y el **W3C Markup Validation Service (HTML)** sobre nuestra página:  
+https://luciaferz.github.io/RPM_Repo/index.html
+
+---
+
+## Errores en HTML
+
+Los errores que nos salen en el HTML son:
+
+![Error HTML 1](images/imagen1.png)
+![Error HTML 2](images/imagen2.png)
+![Error HTML 3](images/imagen3.png)
+
+Estos errores corresponden a:
+- Falta del atributo `alt` en los elementos `<img>`, necesario para accesibilidad.
+- Un aviso sobre la etiqueta `<main>`,por un error de apertura.
+
+---
+
+## Solución aplicada a la etiqueta main
+
+![Solución](images/solucion.png)
+
+
+
+---
+
+## Errores en CSS
+
+Los errores detectados en CSS son:
+
+![Error CSS 1](images/imagencss1.png)
+![Error CSS 2](images/imagencss2.png)
+![Error CSS 3](images/imagencss3.png)
+![Error CSS 4](images/imagencss4.png)
+
+Estos errores aparecen porque el validador no reconoce algunas propiedades modernas utilizadas por **Bootstrap**, framework empleado en el desarrollo del proyecto.
+
+---
+
+## Conclusión
+
+Aunque el validador muestra errores, muchos de ellos no afectan al funcionamiento real de la página, ya que están relacionados con tecnologías actuales no totalmente soportadas por la herramienta de validación.
