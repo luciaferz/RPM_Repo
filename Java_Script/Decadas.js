@@ -376,6 +376,9 @@ function renderDecade() {
   // jQUERY: Seleccionamos elementos por ID usando $("#id") guardando la referencia del DOM
   const $title = $("#decadeHeading");
   const $lead = $("#garageLead");
+  const $subheading = $("#decadeSubheading");
+  const $narrative = $("#decadeNarrative");
+  const $content = $("#decadeContent");
   const $grid = $("#carsGrid");
 
   // jQUERY: Modificamos atributos del BODY usando .attr() guardadno asi la decada
@@ -384,6 +387,9 @@ function renderDecade() {
   // jQUERY: Cambiamos el texto con .text() y las clases con .attr("class", ...)
   $title.text(decade.title).attr("class", decade.headingClass);
   $lead.text(decade.intro);
+  $subheading.text("Modelos iconicos");
+  $narrative.text(decade.intro);
+  $content.attr("data-decade", decadeKey);
 
   let htmlCoches = "";
   decade.cars.forEach((car) => {
@@ -452,4 +458,3 @@ $(function () {
   setupGalleryEvents(); // Activa los clics de las fotos
   setupInfoToggleEvents(); // Activa los botones de información
 });
-

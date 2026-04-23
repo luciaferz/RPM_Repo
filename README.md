@@ -17,7 +17,7 @@ RPM_Repo/
 │   └── Decadas.js             # Gestión de décadas y galería
 └── HTML/
     ├── Contacto/
-    │   └── contacto.html       # Formulario de contacto
+│   └── Contacto.html       # Formulario de contacto
     ├── Decadas/
     │   ├── secciones.html      # Galería de coches
     │   ├── img_60s/
@@ -33,7 +33,7 @@ RPM_Repo/
 
 - **Home**: `index.html`
 - **Secciones**: `HTML/Decadas/secciones.html` (selección de década)
-- **Contacto**: `HTML/Contacto/contacto.html`
+- **Contacto**: `HTML/Contacto/Contacto.html`
 
 ---
 

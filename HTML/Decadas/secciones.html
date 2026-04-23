@@ -22,18 +22,30 @@
   <!-- data-decade="1960" es un "atributo de datos". Lo usamos desde JavaScript para saber qué colores y qué coches cargar según el año. -->
   <body class="decade-page" data-decade="1960">
     <nav class="Menu">
-      <a href="../Home/Home.html" class="nav-link-home">RPM</a>
+      <a href="../../index.html" class="nav-link-home">RPM</a>
       <ul>
-        <li><a href="secciones.html?decada=1960" class="nav-link decade-filter-link" data-decade-link="1960">60s</a></li>
-        <li><a href="secciones.html?decada=1970" class="nav-link decade-filter-link" data-decade-link="1970">70s</a></li>
-        <li><a href="secciones.html?decada=1980" class="nav-link decade-filter-link" data-decade-link="1980">80s</a></li>
-        <li><a href="secciones.html?decada=1990" class="nav-link decade-filter-link" data-decade-link="1990">90s</a></li>
-        <li><a href="secciones.html?decada=2000" class="nav-link decade-filter-link" data-decade-link="2000">00s</a></li>
-        <li><a href="secciones.html?decada=2010" class="nav-link decade-filter-link" data-decade-link="2010">10s</a></li>
+        <li>
+          <a href="secciones.html?decada=1960" class="nav-link decade-filter-link" data-decade-link="1960">60s</a>
+        </li>
+        <li>
+          <a href="secciones.html?decada=1970" class="nav-link decade-filter-link" data-decade-link="1970">70s</a>
+        </li>
+        <li>
+          <a href="secciones.html?decada=1980" class="nav-link decade-filter-link" data-decade-link="1980">80s</a>
+        </li>
+        <li>
+          <a href="secciones.html?decada=1990" class="nav-link decade-filter-link" data-decade-link="1990">90s</a>
+        </li>
+        <li>
+          <a href="secciones.html?decada=2000" class="nav-link decade-filter-link" data-decade-link="2000">00s</a>
+        </li>
+        <li>
+          <a href="secciones.html?decada=2010" class="nav-link decade-filter-link" data-decade-link="2010">10s</a>
+        </li>
       </ul>
     </nav>
 
-    <main class="garage-main"><!-- contenido principal-->
+    <main class="garage-main">
       <section class="garage-hero" aria-label="Cabecera de la década">
         <!-- El <h1> es el título principal. id="decadeHeading" nos permite controlarlo con JavaScript. -->
         <h1 id="decadeHeading" class="Titulo_Seccion60s">
@@ -51,7 +63,7 @@
           <!-- Este párrafo está vacío porque el texto se escribe solo desde JavaScript según la década -->
           <p id="decadeNarrative" class="section-narrative"></p>
         </header>
-        <div class="cars-grid" id="carsGrid"></div><!--inserción dinámica de coches-->
+        <div class="cars-grid" id="carsGrid"></div>
       </section>
     </main>
 
@@ -60,7 +72,7 @@
       <p class="footer-kicker">Contacto RPM</p>
       <h3>¿Tienes una idea para RPM?</h3>
       <p>Escríbenos desde la página de contacto.</p>
-      <a class="rpm-footer-contact" href="../Contacto/contacto.html"
+      <a class="rpm-footer-contact" href="../Contacto/Contacto.html"
         >Ir a contacto</a
       >
     </footer>
@@ -72,4 +84,3 @@
     <script src="../../Java_Script/Decadas.js"></script>
   </body>
 </html>
-

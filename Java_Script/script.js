@@ -1,4 +1,4 @@
-function highlightActivePage() {
+﻿function highlightActivePage() {
   //marcar en el menú qué página se esta viendo en el momento.
   // Obtenemos la ruta y el query string actual (p. ej. /secciones.html?decada=1960)
   const currentFullRoute = window.location.pathname + window.location.search; //Guarda la página actual completa.
