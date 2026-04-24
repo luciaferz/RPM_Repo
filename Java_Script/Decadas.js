@@ -336,7 +336,7 @@ function createCardHtml(car) {
     <article class="car-card" id="${car.id}">
       <img
         src="${mainImage.src}"
-        alt="${mainImage.alt}"
+        alt="${mainImage.alt || `Vista principal de ${car.name} (${car.year})`}"
         class="car-main-image"
         data-main-image
         loading="lazy"

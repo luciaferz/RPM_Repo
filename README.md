@@ -214,4 +214,4 @@ Estos errores aparecen porque el validador no reconoce algunas propiedades moder
 
 ## Conclusión
 
-Aunque el validador muestra errores, muchos de ellos no afectan al funcionamiento real de la página, ya que están relacionados con tecnologías actuales no totalmente soportadas por la herramienta de validación.
+Aunque el validador muestra errores, muchos de ellos no afectan al funcionamiento real de la página, ya que están relacionados con tecnologías actuales no totalmente soportadas por la herramienta de validación. Igualmente se han arreglado los errores pertenencientes al HTML para una mejora en la estructura y fluidez.
